@@ -1,11 +1,11 @@
 import Link from "next/link";
-import React from "react";
+import React, { FC } from "react";
 
 import me from "@/lib/data/me.json";
 import socials from "@/lib/data/socials.json";
 import Social from "../Social/Social";
 
-const Footer = () => {
+const Footer: FC = () => {
   return (
     <footer className="main-footer">
       <div className="main-container">
