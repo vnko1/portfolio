@@ -6,13 +6,13 @@ export default function Home() {
       <section className="home-hero">
         <Hero />
       </section>
-      <section className="about sec-pad">
+      <section id="about" className="about sec-pad">
         <About />
       </section>
-      <section className="projects sec-pad">
+      <section id="projects" className="projects sec-pad">
         <Projects />
       </section>
-      <section className="contact sec-pad dynamicBg">
+      <section id="contact" className="contact sec-pad dynamicBg">
         <Contacts />
       </section>
     </main>
