@@ -34,7 +34,7 @@ const Header: FC = () => {
   return (
     <header className="header">
       <div className="header__content">
-        <div className="header__logo-container">
+        <Link href="/" className="header__logo-container">
           <div className="header__logo-img-cont">
             <Image
               src="/me.png"
@@ -45,7 +45,7 @@ const Header: FC = () => {
             />
           </div>
           <span className="header__logo-sub">{me.FULL_NAME}</span>
-        </div>
+        </Link>
         <nav className="header__main">
           <ul className="header__links">
             {links.map((el, i) => (
