@@ -31,7 +31,7 @@
   }
   &__mouse-scroll-cont {
     position: absolute;
-    bottom: 3%;
+    bottom: 1%;
     left: 50%;
     transform: translateX(-50%);
 
@@ -71,6 +71,7 @@
     transform: translate(-50%, -50%);
     max-width: 90rem;
     width: 92%;
+    padding: 29rem 0 13rem 0;
 
     @include respond(phone) {
       padding: 19rem 0 13rem 0;
