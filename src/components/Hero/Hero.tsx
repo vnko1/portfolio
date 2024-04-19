@@ -1,8 +1,9 @@
 import React, { FC } from "react";
+import Link from "next/link";
 
+import { Social } from "@/components";
 import me from "@/lib/data/me.json";
 import socials from "@/lib/data/socials.json";
-import Social from "../Social/Social";
 
 const Hero: FC = () => {
   return (
@@ -18,9 +19,9 @@ const Hero: FC = () => {
         </div>
 
         <div className="home-hero__cta">
-          <a href="./#projects" className="btn btn--bg">
+          <Link href="/#projects" className="btn btn--bg">
             Projects
-          </a>
+          </Link>
         </div>
       </div>
       <ul className="home-hero__socials">
