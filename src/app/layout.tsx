@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Source_Code_Pro } from "next/font/google";
 import "../styles/css/style.css";
 import "../styles/scss/index.scss";
-import { Header } from "@/components";
+import { Footer, Header } from "@/components";
 
 const source = Source_Code_Pro({
   subsets: ["latin"],
@@ -25,6 +25,7 @@ export default function RootLayout({
       <body className={source.className}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

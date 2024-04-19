@@ -15,7 +15,7 @@ const Menu: FC<MenuProps> = ({ links, active, isVisible }) => {
   if (!active) return null;
   return (
     <div className={menuClassNames}>
-      <div className="header__sm-menu-content">
+      <nav className="header__sm-menu-content">
         <ul className="header__sm-menu-links">
           {links.map((el, i) => (
             <li key={i} className="header__sm-menu-link">
@@ -23,7 +23,7 @@ const Menu: FC<MenuProps> = ({ links, active, isVisible }) => {
             </li>
           ))}
         </ul>
-      </div>
+      </nav>
     </div>
   );
 };

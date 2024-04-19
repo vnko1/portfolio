@@ -46,7 +46,7 @@ const Header: FC = () => {
           </div>
           <span className="header__logo-sub">{me.FULL_NAME}</span>
         </div>
-        <div className="header__main">
+        <nav className="header__main">
           <ul className="header__links">
             {links.map((el, i) => (
               <li key={i} className="header__link-wrapper">
@@ -67,7 +67,7 @@ const Header: FC = () => {
               }
             />
           </button>
-        </div>
+        </nav>
       </div>
       <Menu links={links} isVisible={isVisible} active={active} />
     </header>
