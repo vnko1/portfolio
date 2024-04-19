@@ -1,27 +1,16 @@
 "use client";
-// import { submitHandler } from "@/lib/actions";
-import { FC } from "react";
-// import { useFormStatus } from "react-dom";
+import { FC, useRef } from "react";
+import { useFormStatus } from "react-dom";
+import { submitHandler } from "@/lib/actions";
 
 const Contacts: FC = () => {
-  // const [state, setState] = useState({ name: "", email: "", message: "" });
-  // const { pending } = useFormStatus();
-  // const ref = useRef<HTMLFormElement>(null);
+  const { pending } = useFormStatus();
+  const ref = useRef<HTMLFormElement>(null);
 
-  // const handleChange = (
-  //   event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  // ) => {
-  //   setState((state) => ({
-  //     ...state,
-  //     [event.target.name]: event.target.value,
-  //   }));
-  // };
-
-  // const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
-  //   event.preventDefault();
-  //   submitHandler(state);
-  //   ref.current?.reset();
-  // };
+  const actionHandler = async (formData: FormData) => {
+    submitHandler(formData);
+    ref.current?.reset();
+  };
 
   return (
     <div className="main-container">
@@ -31,13 +20,12 @@ const Contacts: FC = () => {
       </h2>
       <div className="contact__form-container">
         <form
-          // ref={ref}
+          ref={ref}
           id="form"
+          action={actionHandler}
           className="contact__form"
           name="contact"
-          method="post"
         >
-          <input type="hidden" name="form-name" value="contact" />
           <div className="contact__form-field">
             <label className="contact__form-label" htmlFor="name">
               Name
@@ -81,7 +69,7 @@ const Contacts: FC = () => {
           <button
             type="submit"
             className="btn btn--theme contact__btn"
-            // disabled={pending}
+            disabled={pending}
           >
             Submit
           </button>

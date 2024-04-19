@@ -1,19 +1,15 @@
 "use server";
 
-const encode = (data: { [key: string]: string }) => {
-  return Object.keys(data)
-    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-    .join("&");
-};
+const URL = process.env.FORM_URL as string;
 
-type FormValues = { name: string; email: string; message: string };
-
-export async function submitHandler(formValues: FormValues) {
+export async function submitHandler(formData: FormData) {
   try {
-    await fetch("/", {
+    await fetch(URL, {
       method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", ...formValues }),
+      body: formData,
+      headers: {
+        Accept: "application/json",
+      },
     });
     console.log("Form successfully submitted");
   } catch (error) {
