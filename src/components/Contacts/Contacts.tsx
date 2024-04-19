@@ -30,13 +30,7 @@ const Contacts: FC = () => {
         <span className="heading-sec__sub heading-sec__sub--lt">Write me!</span>
       </h2>
       <div className="contact__form-container">
-        <form
-          ref={ref}
-          id="form"
-          onSubmit={onSubmit}
-          className="contact__form"
-          data-netlify="true"
-        >
+        <form ref={ref} id="form" onSubmit={onSubmit} className="contact__form">
           <div className="contact__form-field">
             <label className="contact__form-label" htmlFor="name">
               Name
