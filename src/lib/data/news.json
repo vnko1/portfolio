@@ -3,8 +3,8 @@
   "description": "News web app for searching news...",
   "liveLink": "https://vnko1.github.io/news-project/",
   "codeLink": "https://github.com/vnko1/news-project",
-  "link": "./news/",
-  "image": "/assets/news.png",
+  "link": "/news",
+  "image": "/news.png",
   "overview": "A News web app for searching news, with the ability to search by keyword, filter by date and category, authorize, adds news to favorites, and read pages.",
   "mainDescription": "Role: Team Lead, developer. Completed: filter by date, authorization, saving news as favorites, and as read in the Firebase database.",
   "tools": ["HTML", "SCSS", "JavaScript", "Rest API", "AJAX", "Parcel"]

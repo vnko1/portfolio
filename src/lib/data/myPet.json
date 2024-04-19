@@ -3,8 +3,8 @@
   "description": "A web service created to help you find your beloved domestic companion...",
   "liveLink": "https://your-pet-frontend.vercel.app/",
   "codeLink": "https://github.com/GoIT-Final-Project",
-  "link": "./my-pet/",
-  "image": "/assets/my-pet.png",
+  "link": "/my-pet",
+  "image": "/my-pet.png",
   "overview": "A web service created to help you find your beloved domestic companion, who will become your true soulmate. You can create your personal account, post advertisements for selling or adopting animals, or find a new friend for your family.",
   "mainDescription": "Role: Team Lead, developer. Completed: authorization.",
   "tools": [
