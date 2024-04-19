@@ -1,14 +1,25 @@
 "use client";
 import { submitHandler } from "@/lib/actions";
-import { FC, useRef } from "react";
+import { ChangeEvent, FC, FormEvent, useRef, useState } from "react";
 import { useFormStatus } from "react-dom";
 
 const Contacts: FC = () => {
+  const [state, setState] = useState({ name: "", email: "", message: "" });
   const { pending } = useFormStatus();
   const ref = useRef<HTMLFormElement>(null);
 
-  const onSubmit = async (formData: FormData) => {
-    submitHandler(formData);
+  const handleChange = (
+    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setState((state) => ({
+      ...state,
+      [event.target.name]: event.target.value,
+    }));
+  };
+
+  const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    submitHandler(state);
     ref.current?.reset();
   };
 
@@ -22,7 +33,7 @@ const Contacts: FC = () => {
         <form
           ref={ref}
           id="form"
-          action={onSubmit}
+          onSubmit={onSubmit}
           className="contact__form"
           data-netlify="true"
         >
@@ -31,6 +42,7 @@ const Contacts: FC = () => {
               Name
             </label>
             <input
+              onChange={handleChange}
               required
               placeholder="Enter Your Name"
               type="text"
@@ -44,6 +56,7 @@ const Contacts: FC = () => {
               Email
             </label>
             <input
+              onChange={handleChange}
               required
               placeholder="Enter Your Email"
               type="text"
@@ -57,6 +70,7 @@ const Contacts: FC = () => {
               Message
             </label>
             <textarea
+              onChange={handleChange}
               required
               cols={30}
               rows={10}
