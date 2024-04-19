@@ -4,15 +4,16 @@ const URL = process.env.FORM_URL as string;
 
 export async function submitHandler(formData: FormData) {
   try {
-    await fetch(URL, {
+    const res = await fetch(URL, {
       method: "POST",
       body: formData,
       headers: {
         Accept: "application/json",
       },
     });
-    console.log("Form successfully submitted");
+
+    return await res.json();
   } catch (error) {
-    console.log("🚀 ~ submitHandler ~ error:", error);
+    return error;
   }
 }
