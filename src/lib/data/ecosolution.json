@@ -1,0 +1,19 @@
+{
+  "title": "Ecosolution",
+  "description": "Development and implementation of renewable non-polluting energy...",
+  "liveLink": "https://lighthearted-speculoos-bd192e.netlify.app/",
+  "codeLink": "https://github.com/vnko1/tw-ecosolution",
+  "link": "/ecosolution",
+  "image": "/ecosolution.png",
+  "overview": "A web service about development and implementation of renewable non-polluting energy sources, generating power generation using energy wind, sun, water, biomass",
+  "mainDescription": "Role: developer.",
+  "tools": [
+    "HTML",
+    "SCSS",
+    "TypeScript",
+    "React",
+    "Vite",
+    "Tailwind CSS",
+    "Material UI"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "title": "Chapter",
+  "description": "This is a social network platform...",
+  "liveLink": "https://dev.chapter-web.com/",
+  "codeLink": "https://github.com/ArtemBohak/Chapter",
+  "link": "/chapter",
+  "image": "/chapter.png",
+  "overview": "This is a social network platform. Here you can share your impressions, exchange book recommendations, and connect with other book lovers. The platform will have features such as creating and haring posts, liking and commenting on posts, and following other users. The platform will also have an authentication system, user profiles, and a feed that can be filtered by book categories and genres. The goal is  to create a community.",
+  "mainDescription": "Role: Developer. Completed: authorization, authorization by google, feed, settings and notification page.",
+  "tools": [
+    "HTML",
+    "SCSS",
+    "TypeScript",
+    "React",
+    "Vite",
+    "Redux",
+    "Tailwind CSS",
+    "Socket.IO",
+    "Formik",
+    "Rest API",
+    "AJAX"
+  ]
+}
