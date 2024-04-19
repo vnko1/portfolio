@@ -16,6 +16,7 @@ const Hero: FC = () => {
         <div className="home-hero__info">
           <p className="text-primary">{me.HERO_DESCRIPTION}</p>
         </div>
+
         <div className="home-hero__cta">
           <a href="./#projects" className="btn btn--bg">
             Projects

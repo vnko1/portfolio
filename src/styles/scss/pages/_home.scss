@@ -5,12 +5,12 @@
       rgba($themeClrPrimary, 0.8),
       rgba($themeClrPrimary, 0.8)
     ),
-    url(/assets/common-bg.svg);
+    url(/common-bg.svg);
   background-position: center;
 
   height: 100vh;
 
-  min-height: 80rem;
+  min-height: 100rem;
   max-height: 120rem;
   position: relative;
 
