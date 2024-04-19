@@ -1,4 +1,4 @@
-import { Hero, About, Projects } from "@/components";
+import { Hero, About, Projects, Contacts } from "@/components";
 
 export default function Home() {
   return (
@@ -11,6 +11,9 @@ export default function Home() {
       </section>
       <section className="projects sec-pad">
         <Projects />
+      </section>
+      <section className="contact sec-pad dynamicBg">
+        <Contacts />
       </section>
     </main>
   );
