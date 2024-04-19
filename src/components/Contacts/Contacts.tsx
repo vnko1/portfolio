@@ -1,27 +1,27 @@
 "use client";
-import { submitHandler } from "@/lib/actions";
-import { ChangeEvent, FC, FormEvent, useRef, useState } from "react";
-import { useFormStatus } from "react-dom";
+// import { submitHandler } from "@/lib/actions";
+import { FC } from "react";
+// import { useFormStatus } from "react-dom";
 
 const Contacts: FC = () => {
-  const [state, setState] = useState({ name: "", email: "", message: "" });
-  const { pending } = useFormStatus();
-  const ref = useRef<HTMLFormElement>(null);
+  // const [state, setState] = useState({ name: "", email: "", message: "" });
+  // const { pending } = useFormStatus();
+  // const ref = useRef<HTMLFormElement>(null);
 
-  const handleChange = (
-    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setState((state) => ({
-      ...state,
-      [event.target.name]: event.target.value,
-    }));
-  };
+  // const handleChange = (
+  //   event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  // ) => {
+  //   setState((state) => ({
+  //     ...state,
+  //     [event.target.name]: event.target.value,
+  //   }));
+  // };
 
-  const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    submitHandler(state);
-    ref.current?.reset();
-  };
+  // const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
+  //   event.preventDefault();
+  //   submitHandler(state);
+  //   ref.current?.reset();
+  // };
 
   return (
     <div className="main-container">
@@ -30,13 +30,19 @@ const Contacts: FC = () => {
         <span className="heading-sec__sub heading-sec__sub--lt">Write me!</span>
       </h2>
       <div className="contact__form-container">
-        <form ref={ref} id="form" onSubmit={onSubmit} className="contact__form">
+        <form
+          // ref={ref}
+          id="form"
+          className="contact__form"
+          name="contact"
+          method="post"
+        >
+          <input type="hidden" name="form-name" value="contact" />
           <div className="contact__form-field">
             <label className="contact__form-label" htmlFor="name">
               Name
             </label>
             <input
-              onChange={handleChange}
               required
               placeholder="Enter Your Name"
               type="text"
@@ -50,7 +56,6 @@ const Contacts: FC = () => {
               Email
             </label>
             <input
-              onChange={handleChange}
               required
               placeholder="Enter Your Email"
               type="text"
@@ -64,7 +69,6 @@ const Contacts: FC = () => {
               Message
             </label>
             <textarea
-              onChange={handleChange}
               required
               cols={30}
               rows={10}
@@ -77,7 +81,7 @@ const Contacts: FC = () => {
           <button
             type="submit"
             className="btn btn--theme contact__btn"
-            disabled={pending}
+            // disabled={pending}
           >
             Submit
           </button>
