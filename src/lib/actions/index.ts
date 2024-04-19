@@ -1,8 +1,10 @@
 "use server";
 
+const URL = process.env.FORM_URL as string;
+
 export async function submitHandler(formData: FormData) {
   try {
-    await fetch("https://formspree.io/f/xoqgyega", {
+    await fetch(URL, {
       method: "POST",
       body: formData,
       headers: {
