@@ -1,6 +1,7 @@
 "use client";
 import { FC, useRef } from "react";
 import { useFormStatus } from "react-dom";
+import toast, { Toaster } from "react-hot-toast";
 import { submitHandler } from "@/lib/actions";
 
 const Contacts: FC = () => {
@@ -8,8 +9,16 @@ const Contacts: FC = () => {
   const ref = useRef<HTMLFormElement>(null);
 
   const actionHandler = async (formData: FormData) => {
-    submitHandler(formData);
-    ref.current?.reset();
+    const res = await submitHandler(formData);
+
+    if (res.ok) {
+      ref.current?.reset();
+      return toast.success("Your message was sent");
+    }
+    if (res.errors || res.error)
+      return toast.error(res.errors[0].message || res.error);
+
+    return toast.error("Something wrong! Try again never :)");
   };
 
   return (
@@ -74,6 +83,10 @@ const Contacts: FC = () => {
             Submit
           </button>
         </form>
+        <Toaster
+          position="top-right"
+          toastOptions={{ style: { fontSize: "20px" } }}
+        />
       </div>
     </div>
   );
