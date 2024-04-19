@@ -1,16 +1,16 @@
 "use client";
-import { FC } from "react";
-// import { useFormStatus } from "react-dom";
-// import { submitHandler } from "@/lib/actions";
+import { FC, useRef } from "react";
+import { useFormStatus } from "react-dom";
+import { submitHandler } from "@/lib/actions";
 
 const Contacts: FC = () => {
-  // const { pending } = useFormStatus();
-  // const ref = useRef<HTMLFormElement>(null);
+  const { pending } = useFormStatus();
+  const ref = useRef<HTMLFormElement>(null);
 
-  // const actionHandler = async (formData: FormData) => {
-  //   submitHandler(formData);
-  //   ref.current?.reset();
-  // };
+  const actionHandler = async (formData: FormData) => {
+    submitHandler(formData);
+    ref.current?.reset();
+  };
 
   return (
     <div className="main-container">
@@ -20,9 +20,9 @@ const Contacts: FC = () => {
       </h2>
       <div className="contact__form-container">
         <form
-          // ref={ref}
+          ref={ref}
           id="form"
-          // action={actionHandler}
+          action={actionHandler}
           className="contact__form"
           name="contact"
         >
@@ -69,7 +69,7 @@ const Contacts: FC = () => {
           <button
             type="submit"
             className="btn btn--theme contact__btn"
-            // disabled={pending}
+            disabled={pending}
           >
             Submit
           </button>
