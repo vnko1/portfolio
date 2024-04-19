@@ -1,8 +1,9 @@
 "use client";
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+import { Menu } from "@/components";
 import me from "@/lib/data/me.json";
 
 const links = [
@@ -13,7 +14,23 @@ const links = [
 ];
 
 const Header: FC = () => {
-  const [activeMenu, setActiveMenu] = useState(false);
+  const [active, setActive] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    if (active) {
+      setIsVisible(true);
+    }
+  }, [active]);
+
+  const toggleMenu = () => {
+    if (!active) return setActive(true);
+    setIsVisible(false);
+    setTimeout(() => {
+      setActive(false);
+    }, 350);
+  };
+
   return (
     <header className="header">
       <div className="header__content">
@@ -39,35 +56,20 @@ const Header: FC = () => {
               </li>
             ))}
           </ul>
-          <button
-            className="header__main-ham-menu-cont"
-            onClick={() => setActiveMenu(!activeMenu)}
-          >
+          <button className="header__main-ham-menu-cont" onClick={toggleMenu}>
             <Image
-              src={activeMenu ? "/ham-menu-close.svg" : "/ham-menu.svg"}
-              alt={`hamburger menu ${activeMenu ? "close" : ""}`}
+              src={active ? "/ham-menu-close.svg" : "/ham-menu.svg"}
+              alt={`hamburger menu ${active ? "close" : ""}`}
               width={26}
               height={26}
               className={
-                activeMenu
-                  ? "header__main-ham-menu-close"
-                  : "header__main-ham-menu"
+                active ? "header__main-ham-menu-close" : "header__main-ham-menu"
               }
             />
           </button>
         </div>
       </div>
-      <div className="header__sm-menu">
-        <div className="header__sm-menu-content">
-          <ul className="header__sm-menu-links">
-            {links.map((el, i) => (
-              <li key={i} className="header__sm-menu-link">
-                <Link href={el.href}>{el.label}</Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
+      <Menu links={links} isVisible={isVisible} active={active} />
     </header>
   );
 };
