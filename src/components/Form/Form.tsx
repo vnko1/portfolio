@@ -1,6 +1,5 @@
 "use client";
 import { FC } from "react";
-import { useFormStatus } from "react-dom";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import toast from "react-hot-toast";
@@ -14,13 +13,11 @@ import styles from "./Form.module.scss";
 const defaultValues = { name: "", email: "", message: "" };
 
 const Form: FC = () => {
-  const { pending } = useFormStatus();
-
   const {
     register,
     handleSubmit,
     reset,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm<FormValues>({
     resolver: yupResolver(schema),
     mode: "onSubmit",
@@ -95,9 +92,9 @@ const Form: FC = () => {
       <button
         type="submit"
         className="btn btn--theme contact__btn"
-        disabled={pending}
+        disabled={isSubmitting}
       >
-        Submit
+        {isSubmitting ? "Lading..." : "Submit"}
       </button>
     </form>
   );
