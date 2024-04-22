@@ -39,6 +39,7 @@ const Form: FC = () => {
   return (
     <form
       id="form"
+      autoComplete="on"
       className="contact__form"
       name="contact"
       onSubmit={handleSubmit(onHandleSubmit)}
@@ -49,6 +50,7 @@ const Form: FC = () => {
         </label>
         <input
           {...register("name")}
+          autoComplete="on"
           placeholder="Enter Your Name"
           type="text"
           className="contact__form-input"
@@ -64,6 +66,7 @@ const Form: FC = () => {
         </label>
         <input
           {...register("email")}
+          autoComplete="on"
           placeholder="Enter Your Email"
           type="text"
           className="contact__form-input"
@@ -79,6 +82,7 @@ const Form: FC = () => {
         </label>
         <textarea
           {...register("message")}
+          autoComplete="on"
           cols={30}
           rows={10}
           className="contact__form-input"
