@@ -1,26 +1,10 @@
-"use client";
-import { FC, useRef } from "react";
-import { useFormStatus } from "react-dom";
-import toast, { Toaster } from "react-hot-toast";
-import { submitHandler } from "@/lib/actions";
+
+import { FC } from "react";
+
+import { Toaster } from "react-hot-toast";
+import { Form } from "@/components";
 
 const Contacts: FC = () => {
-  const { pending } = useFormStatus();
-  const ref = useRef<HTMLFormElement>(null);
-
-  const actionHandler = async (formData: FormData) => {
-    const res = await submitHandler(formData);
-
-    if (res.ok) {
-      ref.current?.reset();
-      return toast.success("Your message was sent");
-    }
-    if (res.errors || res.error)
-      return toast.error(res.errors[0].message || res.error);
-
-    return toast.error("Something wrong! Try again never :)");
-  };
-
   return (
     <div className="main-container">
       <h2 className="heading heading-sec heading-sec__mb-med">
@@ -28,61 +12,7 @@ const Contacts: FC = () => {
         <span className="heading-sec__sub heading-sec__sub--lt">Write me!</span>
       </h2>
       <div className="contact__form-container">
-        <form
-          ref={ref}
-          id="form"
-          action={actionHandler}
-          className="contact__form"
-          name="contact"
-        >
-          <div className="contact__form-field">
-            <label className="contact__form-label" htmlFor="name">
-              Name
-            </label>
-            <input
-              required
-              placeholder="Enter Your Name"
-              type="text"
-              className="contact__form-input"
-              name="name"
-              id="name"
-            />
-          </div>
-          <div className="contact__form-field">
-            <label className="contact__form-label" htmlFor="email">
-              Email
-            </label>
-            <input
-              required
-              placeholder="Enter Your Email"
-              type="text"
-              className="contact__form-input"
-              name="email"
-              id="email"
-            />
-          </div>
-          <div className="contact__form-field">
-            <label className="contact__form-label" htmlFor="message">
-              Message
-            </label>
-            <textarea
-              required
-              cols={30}
-              rows={10}
-              className="contact__form-input"
-              placeholder="Enter Your Message"
-              name="message"
-              id="message"
-            ></textarea>
-          </div>
-          <button
-            type="submit"
-            className="btn btn--theme contact__btn"
-            disabled={pending}
-          >
-            Submit
-          </button>
-        </form>
+        <Form />
         <Toaster
           position="top-right"
           toastOptions={{ style: { fontSize: "20px" } }}

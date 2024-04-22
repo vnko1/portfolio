@@ -1,12 +1,14 @@
 "use server";
 
+import { FormValues } from "@/types";
+
 const URL = process.env.FORM_URL as string;
 
-export async function submitHandler(formData: FormData) {
+export async function submitHandler(values: FormValues) {
   try {
     const res = await fetch(URL, {
       method: "POST",
-      body: formData,
+      body: JSON.stringify(values),
       headers: {
         Accept: "application/json",
       },
