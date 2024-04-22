@@ -11,3 +11,5 @@ export type ProjectType = {
 };
 
 export type SocialTypes = { link: string; icon: string };
+
+export type FormValues = { name: string; email: string; message: string };
