@@ -13,5 +13,6 @@
   "Node.js",
   "MongoDB",
   "Mongoose",
-  "Express"
+  "Express",
+  "NestJs"
 ]
