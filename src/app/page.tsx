@@ -1,6 +1,8 @@
 import { Hero, About, Projects, Contacts } from "@/components";
+import { getProfile } from "@/lib/actions";
 
-export default function Home() {
+export default async function Home() {
+  const data = await getProfile();
   return (
     <main>
       <section className="home-hero">
@@ -13,7 +15,7 @@ export default function Home() {
         <Projects />
       </section>
       <section id="contact" className="contact sec-pad dynamicBg">
-        <Contacts />
+        <Contacts {...data.contactSection} />
       </section>
     </main>
   );

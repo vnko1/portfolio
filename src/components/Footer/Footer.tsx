@@ -1,6 +1,5 @@
 import React, { FC } from "react";
 import Link from "next/link";
-import { notFound } from "next/navigation";
 import { isAxiosError } from "axios";
 
 import { StrapiApi } from "@/api/strapiApi";
@@ -11,7 +10,7 @@ const strapi = new StrapiApi();
 const Footer: FC = async () => {
   const data = await strapi.getProfile(undefined);
 
-  if (isAxiosError(data) || data instanceof Error) notFound();
+  if (isAxiosError(data) || data instanceof Error) return null;
 
   return (
     <footer className="main-footer">
