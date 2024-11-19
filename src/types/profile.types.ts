@@ -12,6 +12,6 @@ export interface ProfileType {
   contactSection: SectionType;
   skills: Array<ListType>;
   contacts: Array<ContactType>;
-  footDescription: string;
+  footerDescription: string;
   projects: Array<ProjectType>;
 }

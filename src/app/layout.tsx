@@ -13,7 +13,7 @@ const source = Source_Code_Pro({
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const metadata: Metadata = {
-  title: "Portfiolio",
+  title: "Portfolio",
   description: "Andrii Valenko portfolio",
 };
 

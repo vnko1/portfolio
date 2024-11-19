@@ -1,11 +1,18 @@
-import Link from "next/link";
 import React, { FC } from "react";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { isAxiosError } from "axios";
 
-import me from "@/lib/data/me.json";
-import socials from "@/lib/data/socials.json";
+import { StrapiApi } from "@/api/strapiApi";
 import Social from "../Social/Social";
 
-const Footer: FC = () => {
+const strapi = new StrapiApi();
+
+const Footer: FC = async () => {
+  const data = await strapi.getProfile(undefined);
+
+  if (isAxiosError(data) || data instanceof Error) notFound();
+
   return (
     <footer className="main-footer">
       <div className="main-container">
@@ -15,20 +22,24 @@ const Footer: FC = () => {
               <span>Social</span>
             </h2>
             <ul className="main-footer__social-cont">
-              {socials.map((el, i) => (
-                <li key={i}>
-                  <Social link={el.link} icon={el.icon} isFooter />
+              {data.contacts.map((contact) => (
+                <li key={contact.id}>
+                  <Social
+                    link={contact.link}
+                    icon={contact.image.url}
+                    isFooter
+                  />
                 </li>
               ))}
             </ul>
           </div>
           <div className="main-footer__row main-footer__row-2">
-            <h4 className="heading heading-sm text-lt">{me.FULL_NAME}</h4>
-            <p className="main-footer__short-desc">{me.FOOTER_DESCR}</p>
+            <h4 className="heading heading-sm text-lt">Andrii Valenko</h4>
+            <p className="main-footer__short-desc">{data.footerDescription}</p>
           </div>
         </div>
         <div className="main-footer__lower" id="footer-copy">
-          &copy; Copyright 2024. Made by
+          &copy; Copyright 2024. Made by{" "}
           <Link id="footer-copy-link" href="/">
             Andrii Valenko
           </Link>
