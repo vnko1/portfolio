@@ -6,7 +6,12 @@ type SocialProps = { link: string; icon: string; isFooter?: boolean };
 const Social: FC<SocialProps> = ({ link, icon, isFooter = false }) => {
   if (isFooter)
     return (
-      <a rel="noreferrer noopener" href={link}>
+      <a
+        rel="noreferrer noopener"
+        href={link}
+        target="_blank"
+        rel="noreferrer noopener"
+      >
         <Image
           src={icon}
           alt="social icon"
