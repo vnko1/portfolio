@@ -4,7 +4,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import toast from "react-hot-toast";
 
-import { FormValues } from "@/types";
+import { FormValues } from "@/types/formValues.types";
 import { submitHandler } from "@/lib/actions";
 
 import { schema } from "./schema";

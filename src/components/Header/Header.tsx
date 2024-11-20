@@ -2,9 +2,12 @@
 import React, { FC, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { isAxiosError } from "axios";
 
+import { StrapiApi } from "@/api/strapiApi";
 import { Menu } from "@/components";
-import me from "@/lib/data/me.json";
+
+const strapi = new StrapiApi();
 
 const links = [
   { href: "/", label: "Home" },
@@ -16,12 +19,20 @@ const links = [
 const Header: FC = () => {
   const [active, setActive] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [avatar, setAvatar] = useState<null | string>(null);
 
   useEffect(() => {
     if (active) {
       setIsVisible(true);
     }
   }, [active]);
+
+  useEffect(() => {
+    strapi.getProfile(undefined).then((data) => {
+      if (isAxiosError(data) || data instanceof Error) return;
+      setAvatar(data.avatar.url);
+    });
+  }, []);
 
   const toggleMenu = () => {
     if (!active) return setActive(true);
@@ -36,15 +47,17 @@ const Header: FC = () => {
       <div className="header__content">
         <Link href="/" className="header__logo-container">
           <div className="header__logo-img-cont">
-            <Image
-              src="/me.png"
-              alt="Andrii Valenko Logo Image"
-              className="header__logo-img"
-              width={52}
-              height={52}
-            />
+            {avatar && (
+              <Image
+                src={avatar}
+                alt="Andrii Valenko Logo Image"
+                className="header__logo-img"
+                width={52}
+                height={52}
+              />
+            )}
           </div>
-          <span className="header__logo-sub">{me.FULL_NAME}</span>
+          <span className="header__logo-sub">Andrii Valenko</span>
         </Link>
         <nav className="header__main">
           <ul className="header__links">

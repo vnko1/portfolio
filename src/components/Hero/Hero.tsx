@@ -2,20 +2,24 @@ import React, { FC } from "react";
 import Link from "next/link";
 
 import { Social } from "@/components";
-import me from "@/lib/data/me.json";
-import socials from "@/lib/data/socials.json";
+import { SectionType } from "@/types/section.types";
+import { ContactType } from "@/types/contact.types";
 
-const Hero: FC = () => {
+interface HeroProps extends SectionType {
+  contacts: Array<ContactType>;
+}
+
+const Hero: FC<HeroProps> = ({ subTitle, contacts }) => {
   return (
     <>
       <div className="home-hero__content">
         <h1 className="heading-primary">
           Hey, My name is
           <br />
-          {me.FULL_NAME}
+          Andrii Valenko
         </h1>
         <div className="home-hero__info">
-          <p className="text-primary">{me.HERO_DESCRIPTION}</p>
+          <p className="text-primary">{subTitle}</p>
         </div>
 
         <div className="home-hero__cta">
@@ -25,9 +29,9 @@ const Hero: FC = () => {
         </div>
       </div>
       <ul className="home-hero__socials">
-        {socials.map((el, i) => (
-          <li key={i}>
-            <Social link={el.link} icon={el.icon} />
+        {contacts.map((contact) => (
+          <li key={contact.id}>
+            <Social link={contact.link} icon={contact.image.url} />
           </li>
         ))}
       </ul>

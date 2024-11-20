@@ -6,7 +6,7 @@ import axios, {
 } from "axios";
 
 export abstract class Api {
-  instance: AxiosInstance;
+  protected instance: AxiosInstance;
   constructor(config?: CreateAxiosDefaults) {
     this.instance = axios.create(config);
   }

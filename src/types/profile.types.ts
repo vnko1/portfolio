@@ -5,6 +5,8 @@ import { SectionType } from "./section.types";
 import { StrapiImageType } from "./strapiImage.types";
 
 export interface ProfileType {
+  id: number;
+  documentId: string;
   avatar: StrapiImageType;
   heroSection: SectionType;
   aboutSection: SectionType;

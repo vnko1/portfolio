@@ -1,25 +1,25 @@
 import React from "react";
-
 import { ProjectDescription, ProjectTitle } from "@/components";
-import data from "@/lib/data/ecosolution.json";
+import { getProject } from "@/lib/actions";
 
-function EcosolutionPage() {
+async function Page({ params }: { params: { slug: string } }) {
+  const data = await getProject(params.slug);
+
   return (
     <main>
       <section className="project-cs-hero">
         <ProjectTitle
           title={data.title}
-          description={data.description}
+          subTitle={data.subTitle}
           liveLink={data.liveLink}
         />
       </section>
       <section className="project-details">
         <ProjectDescription
           overview={data.overview}
-          mainDescription={data.mainDescription}
           liveLink={data.liveLink}
           codeLink={data.codeLink}
-          image={data.image}
+          banner={data.banner}
           tools={data.tools}
         />
       </section>
@@ -27,4 +27,4 @@ function EcosolutionPage() {
   );
 }
 
-export default EcosolutionPage;
+export default Page;
