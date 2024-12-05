@@ -6,6 +6,7 @@ export class StrapiApi extends Api {
   constructor() {
     super({
       baseURL: `${
+        // * TODO change env
         process.env.BASE_URL || "https://portfiolio-server.onrender.com"
       }/api`,
     });

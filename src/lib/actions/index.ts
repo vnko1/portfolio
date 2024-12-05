@@ -5,7 +5,7 @@ import { isAxiosError } from "axios";
 
 import { FormValues } from "@/types/formValues.types";
 import { StrapiApi } from "@/api/strapiApi";
-
+// * TODO change env
 const URL = process.env.FORM_URL || "https://formspree.io/f/xoqgyega";
 const strapi = new StrapiApi();
 
