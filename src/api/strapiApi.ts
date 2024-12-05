@@ -4,7 +4,11 @@ import { ProjectType } from "@/types/project.types";
 
 export class StrapiApi extends Api {
   constructor() {
-    super({ baseURL: `${process.env.BASE_URL}/api` });
+    super({
+      baseURL: `${
+        process.env.BASE_URL || "https://portfiolio-server.onrender.com"
+      }/api`,
+    });
   }
 
   getProfile = this.tryCatchWrapper<undefined, ProfileType>(async () => {
