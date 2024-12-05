@@ -7,7 +7,7 @@ export class StrapiApi extends Api {
     super({
       baseURL: `${
         // * TODO change env
-        process.env.NEXT_PUBLIC_BASE_URL
+        process.env.BASE_URL
       }/api`,
     });
   }

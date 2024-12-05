@@ -6,7 +6,7 @@ import { isAxiosError } from "axios";
 import { FormValues } from "@/types/formValues.types";
 import { StrapiApi } from "@/api/strapiApi";
 // * TODO change env
-const URL = process.env.NEXT_PUBLIC_FORM_URL as string;
+const URL = process.env.FORM_URL as string;
 const strapi = new StrapiApi();
 
 export async function submitHandler(values: FormValues) {
