@@ -3,7 +3,7 @@ name: Deploy to Production
 on:
   push:
     branches:
-      - main # Триггер на коммит в ветку main
+      - main
 
 jobs:
   deploy:
@@ -26,6 +26,9 @@ jobs:
         uses: webfactory/ssh-agent@v0.5.3
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Add server to known_hosts
+        run: ssh-keyscan -H 62.72.20.238 >> ~/.ssh/known_hosts
 
       - name: PM2 Deploy
         run: pm2 deploy ecosystem.config.js production --force
