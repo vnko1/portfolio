@@ -1,0 +1,26 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches:
+      - main # Триггер на коммит в ветку main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18" # Укажите вашу версию Node.js
+          cache: "npm"
+
+      - name: Install PM2
+        run: npm install -g pm2
+
+      - name: PM2 Deploy
+        run: pm2 deploy ecosystem.config.js production --force
