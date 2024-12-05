@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   env: {
-    BASE_URL: process.env.BASE_URL,
     FORM_URL: process.env.FORM_URL,
+    BASE_URL: process.env.BASE_URL,
   },
   images: {
     remotePatterns: [
