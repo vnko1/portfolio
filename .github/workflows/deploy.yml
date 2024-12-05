@@ -16,11 +16,16 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: "18" # Укажите вашу версию Node.js
+          node-version: "18"
           cache: "npm"
 
       - name: Install PM2
         run: npm install -g pm2
+
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
       - name: PM2 Deploy
         run: pm2 deploy ecosystem.config.js production --force
