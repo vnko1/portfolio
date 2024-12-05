@@ -5,8 +5,6 @@ module.exports = {
       script: "npm start",
       env: {
         NODE_ENV: "production",
-        // BASE_URL: "https://portfiolio-server.onrender.com",
-        // FORM_URL: "https://formspree.io/f/xoqgyega",
       },
     },
   ],
