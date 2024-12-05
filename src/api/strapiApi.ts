@@ -7,7 +7,7 @@ export class StrapiApi extends Api {
     super({
       baseURL: `${
         // * TODO change env
-        process.env.BASE_URL || "https://portfiolio-server.onrender.com"
+        process.env.NEXT_PUBLIC_BASE_URL
       }/api`,
     });
   }
