@@ -4,7 +4,7 @@ import { ProjectType } from "@/types/project.types";
 
 export class StrapiApi extends Api {
   constructor() {
-    super({ baseURL: `${process.env.NEXT_PUBLIC_BASE_URL}/api` });
+    super({ baseURL: `${process.env.BASE_URL}/api` });
   }
 
   getProfile = this.tryCatchWrapper<undefined, ProfileType>(async () => {

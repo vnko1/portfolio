@@ -5,8 +5,8 @@ module.exports = {
       script: "npm start",
       env: {
         NODE_ENV: "production",
-        NEXT_PUBLIC_BASE_URL: "https://portfiolio-server.onrender.com",
-        NEXT_PUBLIC_FORM_URL: "https://formspree.io/f/xoqgyega",
+        BASE_URL: "https://portfiolio-server.onrender.com",
+        FORM_URL: "https://formspree.io/f/xoqgyega",
       },
     },
   ],
