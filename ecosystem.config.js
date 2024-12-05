@@ -17,7 +17,7 @@ module.exports = {
       host: "62.72.20.238",
       ref: "origin/main",
       repo: "https://github.com/vnko1/portfolio.git",
-      path: "/home/ubuntu/apps/portfolio",
+      path: "/var/www/portfolio",
       "pre-deploy-local": "",
       "post-deploy":
         "source ~/.nvm/nvm.sh && npm install && npm run build && pm2 reload ecosystem.config.js --env production",
