@@ -13,14 +13,7 @@ const Project: FC<ProjectProps> = ({ title, description, image, link }) => {
   return (
     <div className="projects__row">
       <div className="projects__row-img-cont">
-        <Image
-          src={image}
-          alt="Software Screenshot"
-          className="projects__row-img"
-          loading="lazy"
-          width={718}
-          height={538}
-        />
+        <Image src={image} alt="Software Screenshot" fill />
       </div>
       <div className="projects__row-content">
         <h3 className="projects__row-content-title">{title}</h3>
