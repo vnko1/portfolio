@@ -1,7 +1,7 @@
 "use client";
 import { FC } from "react";
 import { SubmitHandler, useForm, Controller } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { yupResolver } from "@hookform/resolvers/yup";
 
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -23,7 +23,7 @@ const Form: FC = () => {
     reset,
     formState: { errors },
   } = useForm<FormValues>({
-    resolver: zodResolver(schema),
+    resolver: yupResolver(schema),
     mode: "onSubmit",
     defaultValues,
   });
