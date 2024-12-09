@@ -1,49 +1,31 @@
-import React, { FC } from "react";
-import Link from "next/link";
-import { isAxiosError } from "axios";
+import React from "react";
 
-import { StrapiApi } from "@/api/strapiApi";
-import Social from "../Social/Social";
+import Image from "next/image";
+import { ContactType } from "@/types/contact.types";
 
-const strapi = new StrapiApi();
+interface FooterProps {
+  contacts: Array<ContactType>;
+  mode: string;
+}
 
-const Footer: FC = async () => {
-  const data = await strapi.getProfile(undefined);
-
-  if (isAxiosError(data) || data instanceof Error) return null;
-
+const Footer: React.FC<FooterProps> = ({ contacts, mode }) => {
   return (
-    <footer className="main-footer">
-      <div className="main-container">
-        <div className="main-footer__upper">
-          <div className="main-footer__row main-footer__row-1">
-            <h2 className="heading heading-sm main-footer__heading-sm">
-              <span>Social</span>
-            </h2>
-            <ul className="main-footer__social-cont">
-              {data.contacts.map((contact) => (
-                <li key={contact.id}>
-                  <Social
-                    link={contact.link}
-                    icon={contact.image.url}
-                    isFooter
-                  />
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="main-footer__row main-footer__row-2">
-            <h4 className="heading heading-sm text-lt">Andrii Valenko</h4>
-            <p className="main-footer__short-desc">{data.footerDescription}</p>
-          </div>
-        </div>
-        <div className="main-footer__lower" id="footer-copy">
-          &copy; Copyright 2024. Made by{" "}
-          <Link id="footer-copy-link" href="/">
-            Andrii Valenko
-          </Link>
-        </div>
-      </div>
+    <footer>
+      {contacts.map((contact) => (
+        <a
+          key={contact.id}
+          href={contact.link}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Image
+            src={mode === "dark" ? contact.darkIcon.url : contact.lightIcon.url}
+            alt="contact icon"
+            width={32}
+            height={32}
+          />
+        </a>
+      ))}
     </footer>
   );
 };

@@ -1,7 +1,8 @@
 import { StrapiImageType } from "./strapiImage.types";
 
 export interface ContactType {
-  id: number;
   link: string;
-  image: StrapiImageType;
+  lightIcon: StrapiImageType;
+  darkIcon: StrapiImageType;
+  id: number;
 }

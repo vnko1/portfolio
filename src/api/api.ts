@@ -18,7 +18,9 @@ export abstract class Api {
       try {
         return await cb(data);
       } catch (error) {
-        if (isAxiosError(error)) return error;
+        if (isAxiosError(error)) {
+          return error;
+        }
         return new Error("Something wrong!");
       }
     };

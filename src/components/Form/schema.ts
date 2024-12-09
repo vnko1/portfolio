@@ -1,12 +1,7 @@
-import * as yup from "yup";
+import * as zod from "zod";
 
-export const schema = yup
-  .object({
-    name: yup.string().required("Name is required"),
-    email: yup
-      .string()
-      .email("Enter a valid email")
-      .required("Email is required"),
-    message: yup.string().required("Message is required"),
-  })
-  .required();
+export const schema = zod.object({
+  name: zod.string({ required_error: "Name is required" }),
+  email: zod.string({ required_error: "Name is required" }).email(),
+  message: zod.string().optional(),
+});
