@@ -4,6 +4,7 @@ const nextConfig = {
     FORM_URL: process.env.FORM_URL,
     BASE_URL: process.env.BASE_URL,
   },
+
   images: {
     remotePatterns: [
       {

@@ -1,33 +1,44 @@
-import React, { FC } from "react";
-
-import { SectionType } from "@/types/section.types";
 import { ProjectType } from "@/types/project.types";
+import Image from "next/image";
+import React from "react";
 
-import { Project } from "./components";
-
-interface ProjectsProps extends SectionType {
+interface ProjectsProps {
   projects: Array<ProjectType>;
 }
 
-const Projects: FC<ProjectsProps> = ({ title, subTitle, projects }) => {
+const Projects: React.FC<ProjectsProps> = ({ projects }) => {
   return (
-    <div className="main-container">
-      <h2 className="heading heading-sec heading-sec__mb-bg">
-        <span className="heading-sec__main">{title}</span>
-        <span className="heading-sec__sub">{subTitle}</span>
-      </h2>
-      <ul className="projects__content">
+    <div className="projects-container" id="projects">
+      <h1>Personal Projects</h1>
+      <div className="projects-grid">
         {projects.map((project) => (
-          <li key={project.id}>
-            <Project
-              title={project.title}
-              description={project.preview}
-              link={`projects/${project.documentId}`}
-              image={project.banner.url}
-            />
-          </li>
+          <div key={project.id} className="project">
+            <a
+              href={project.liveLink}
+              target="_blank"
+              rel="noreferrer"
+              className="projects-link"
+            >
+              <Image
+                src={project.banner.url}
+                className="zoom"
+                alt="thumbnail"
+                fill
+                sizes="100%"
+              />
+            </a>
+            <a
+              href={project.codeLink || project.liveLink}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <h2>{project.title}</h2>
+            </a>
+            <p>{project.description}</p>
+            {project.role && <p>{project.role}</p>}
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };

@@ -1,44 +1,80 @@
-import React, { FC } from "react";
-import Link from "next/link";
+import React from "react";
+import Image from "next/image";
+import { PortfolioType } from "@/types/portfolio.types";
 
-import { Social } from "@/components";
-import { SectionType } from "@/types/section.types";
-import { ContactType } from "@/types/contact.types";
-
-interface HeroProps extends SectionType {
-  contacts: Array<ContactType>;
+interface HeroProps
+  extends Pick<
+    PortfolioType,
+    "firstName" | "lastName" | "position" | "avatar" | "contacts"
+  > {
+  mode: string;
 }
 
-const Hero: FC<HeroProps> = ({ subTitle, contacts }) => {
+const Hero: React.FC<HeroProps> = ({
+  avatar,
+  firstName,
+  lastName,
+  position,
+  contacts,
+  mode,
+}) => {
   return (
-    <>
-      <div className="home-hero__content">
-        <h1 className="heading-primary">
-          Hey, My name is
-          <br />
-          Andrii Valenko
-        </h1>
-        <div className="home-hero__info">
-          <p className="text-primary">{subTitle}</p>
+    <div className="container">
+      <div className="about-section">
+        <div className="image-wrapper">
+          <Image src={avatar.url} alt="Avatar" fill sizes="100%" priority />
         </div>
+        <div className="content">
+          <div className="social_icons">
+            {contacts.map((contact) => (
+              <a
+                key={contact.id}
+                href={contact.link}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Image
+                  src={
+                    mode === "dark"
+                      ? contact.darkIcon.url
+                      : contact.lightIcon.url
+                  }
+                  alt="contact icon"
+                  width={32}
+                  height={32}
+                />
+              </a>
+            ))}
+          </div>
+          <h1>
+            {firstName} {lastName}
+          </h1>
+          <p>{position}</p>
 
-        <div className="home-hero__cta">
-          <Link href="/#projects" className="btn btn--bg">
-            Projects
-          </Link>
+          <div className="mobile_social_icons">
+            {contacts.map((contact) => (
+              <a
+                key={contact.id}
+                href={contact.link}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Image
+                  src={
+                    mode === "dark"
+                      ? contact.darkIcon.url
+                      : contact.lightIcon.url
+                  }
+                  alt="contact icon"
+                  width={32}
+                  height={32}
+                />
+              </a>
+            ))}
+          </div>
         </div>
       </div>
-      <ul className="home-hero__socials">
-        {contacts.map((contact) => (
-          <li key={contact.id}>
-            <Social link={contact.link} icon={contact.image.url} />
-          </li>
-        ))}
-      </ul>
-      <div className="home-hero__mouse-scroll-cont">
-        <div className="mouse"></div>
-      </div>
-    </>
+    </div>
   );
 };
 

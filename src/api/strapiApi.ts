@@ -1,24 +1,42 @@
-import { ProfileType } from "@/types/profile.types";
+import { PortfolioType } from "@/types/portfolio.types";
 import { Api } from "./api";
-import { ProjectType } from "@/types/project.types";
 
 export class StrapiApi extends Api {
   constructor() {
     super({
-      baseURL: `${
-        // * TODO change env
-        process.env.BASE_URL
-      }/api`,
+      baseURL: `${process.env.BASE_URL}/api`,
     });
   }
 
-  getProfile = this.tryCatchWrapper<undefined, ProfileType>(async () => {
-    return (await this.instance("profile")).data[0];
-  });
-
-  getProject = this.tryCatchWrapper<string, ProjectType>(
-    async (slug: string) => {
-      return (await this.instance("projects" + "/" + slug)).data;
+  getProfile = this.tryCatchWrapper<undefined, Array<PortfolioType>>(
+    async () => {
+      return (
+        await this.instance("portfolio", {
+          params: {
+            populate: {
+              avatar: { fields: ["url"] },
+              contacts: {
+                populate: {
+                  lightIcon: { fields: ["url"] },
+                  darkIcon: { fields: ["url"] },
+                },
+              },
+              expertise: {
+                populate: {
+                  lightIcon: { fields: ["url"] },
+                  darkIcon: { fields: ["url"] },
+                  stackList: true,
+                },
+              },
+              careerHistory: { filters: { isVisible: { $eq: true } } },
+              projects: {
+                filters: { isVisible: { $eq: true } },
+                populate: { banner: { fields: ["url"] } },
+              },
+            },
+          },
+        })
+      ).data;
     }
   );
 }

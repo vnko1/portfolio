@@ -5,7 +5,7 @@ import { isAxiosError } from "axios";
 
 import { FormValues } from "@/types/formValues.types";
 import { StrapiApi } from "@/api/strapiApi";
-// * TODO change env
+
 const URL = process.env.FORM_URL as string;
 const strapi = new StrapiApi();
 
@@ -27,13 +27,6 @@ export async function submitHandler(values: FormValues) {
 
 export async function getProfile() {
   const data = await strapi.getProfile(undefined);
-
-  if (isAxiosError(data) || data instanceof Error) notFound();
-  return data;
-}
-
-export async function getProject(slug: string) {
-  const data = await strapi.getProject(slug);
 
   if (isAxiosError(data) || data instanceof Error) notFound();
   return data;
