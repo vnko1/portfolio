@@ -35,7 +35,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
               <h2>{project.title}</h2>
             </a>
             <p>{project.description}</p>
-            {project.role && <p>{project.role}</p>}
+            {project.role && <p>Role: {project.role}</p>}
           </div>
         ))}
       </div>
