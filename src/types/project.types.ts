@@ -2,10 +2,11 @@ import { StrapiImageType } from "./strapiImage.types";
 
 export interface ProjectType {
   id: number;
-  link: string;
-  codeLink: string;
+  liveLink: string;
+  codeLink: string | null;
   title: string;
   description: string;
   banner: StrapiImageType;
   isVisible: boolean;
+  role: string | null;
 }

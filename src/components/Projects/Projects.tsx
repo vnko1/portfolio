@@ -14,7 +14,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
         {projects.map((project) => (
           <div key={project.id} className="project">
             <a
-              href={project.link}
+              href={project.liveLink}
               target="_blank"
               rel="noreferrer"
               className="projects-link"
@@ -27,10 +27,15 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
                 sizes="100%"
               />
             </a>
-            <a href={project.codeLink} target="_blank" rel="noreferrer">
+            <a
+              href={project.codeLink || project.liveLink}
+              target="_blank"
+              rel="noreferrer"
+            >
               <h2>{project.title}</h2>
             </a>
             <p>{project.description}</p>
+            {project.role && <p>{project.role}</p>}
           </div>
         ))}
       </div>

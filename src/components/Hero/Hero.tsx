@@ -22,7 +22,7 @@ const Hero: React.FC<HeroProps> = ({
     <div className="container">
       <div className="about-section">
         <div className="image-wrapper">
-          <Image src={avatar.url} alt="Avatar" fill sizes="100%" />
+          <Image src={avatar.url} alt="Avatar" fill sizes="100%" priority />
         </div>
         <div className="content">
           <div className="social_icons">
