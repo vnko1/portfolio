@@ -77,7 +77,7 @@ const Form: FC = () => {
                 render={({ field }) => (
                   <TextField
                     {...field}
-                    // id="outlined-required"
+                    id="outlined-required"
                     label="Email / Phone"
                     placeholder="How can I reach you?"
                     error={!!errors.email}
@@ -96,7 +96,7 @@ const Form: FC = () => {
               render={({ field }) => (
                 <TextField
                   {...field}
-                  // id="outlined-multiline-static"
+                  id="outlined-multiline-static"
                   label="Message"
                   placeholder="Send me any inquiries or questions"
                   multiline
