@@ -29,15 +29,14 @@ const Form: FC = () => {
   });
 
   const onHandleSubmit: SubmitHandler<FormValues> = async (data) => {
-    const res = await submitHandler(data);
-    if (res.ok) {
-      reset();
-      return toast.success("Your message was sent");
-    }
-    if (res.errors || res.error)
-      return toast.error(res.errors[0].message || res.error);
-
-    return toast.error("Something wrong! Try again later.");
+    toast.promise(submitHandler(data), {
+      loading: "Sending your message...",
+      success: () => {
+        reset();
+        return <b>Your message was sent!</b>;
+      },
+      error: <b>Something wrong! Try again later.</b>,
+    });
   };
 
   return (

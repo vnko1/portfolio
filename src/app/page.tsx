@@ -1,6 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
+import { Toaster } from "react-hot-toast";
 
+import { PortfolioType } from "@/types/portfolio.types";
 import {
   Expertise,
   FadeIn,
@@ -13,7 +15,6 @@ import {
   Timeline,
 } from "@/components";
 import { getProfile } from "@/lib/actions";
-import { PortfolioType } from "@/types/portfolio.types";
 
 const getSystemTheme = () => {
   return window.matchMedia("(prefers-color-scheme: dark)").matches
@@ -64,6 +65,7 @@ export default function Home() {
         </main>
       </FadeIn>
       <Footer contacts={profile[0].contacts} mode={mode} />
+      <Toaster position="top-left" reverseOrder={false} />
     </div>
   );
 }
