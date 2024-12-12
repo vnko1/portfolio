@@ -23,8 +23,9 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
                 src={project.banner.url}
                 className="zoom"
                 alt="thumbnail"
-                fill
                 sizes="100%"
+                width={0}
+                height={0}
               />
             </a>
             <a
