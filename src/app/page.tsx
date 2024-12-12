@@ -65,7 +65,11 @@ export default function Home() {
         </main>
       </FadeIn>
       <Footer contacts={profile[0].contacts} mode={mode} />
-      <Toaster position="top-left" reverseOrder={false} />
+      <Toaster
+        position="top-left"
+        reverseOrder={false}
+        toastOptions={{ duration: 4000 }}
+      />
     </div>
   );
 }
