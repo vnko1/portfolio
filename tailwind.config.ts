@@ -21,7 +21,6 @@ export default {
       light: "#fff",
       accent: "#f0cfaa",
     },
-    extend: {},
   },
   plugins: [],
 } satisfies Config;

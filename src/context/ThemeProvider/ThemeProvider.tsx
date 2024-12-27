@@ -2,46 +2,44 @@
 import React, { FC, useEffect, useState } from "react";
 
 import { ThemeProviderContext } from "@/hooks";
-import { setDataToLS } from "@/utils";
+import { setDataToLS, getDataFromLS } from "@/utils";
 
-import { ThemeProviderProps, ThemeType } from "./ThemeProvider.types";
+import { ThemeProviderProps } from "./ThemeProvider.types";
 import { StarFields } from "@/components";
 
 const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
-  const [theme, setTheme] = useState<ThemeType>("dark");
+  const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
+    const currentTheme = getDataFromLS<string>("theme");
     if (
-      localStorage.theme === "dark" ||
-      (!("theme" in localStorage) &&
+      currentTheme === "dark" ||
+      (currentTheme === null &&
         window.matchMedia("(prefers-color-scheme: dark)").matches)
     ) {
       document.documentElement.classList.add("dark");
-      setTheme("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      setTheme("light");
+      setIsDark(true);
     }
   }, []);
 
   const toggleTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
-    setTheme(newTheme);
-    setDataToLS({ theme: newTheme });
-
-    document.documentElement.classList.toggle(
-      "dark",
-      theme === "dark"
-    );
+    if (document.documentElement.classList.contains("dark")) {
+      document.documentElement.classList.remove("dark");
+      setDataToLS({ theme: "light" });
+      setIsDark(false);
+    } else {
+      document.documentElement.classList.add("dark");
+      setDataToLS({ theme: "dark" });
+      setIsDark(true);
+    }
   };
-  console.log(theme);
 
   return (
-    <ThemeProviderContext.Provider value={{ theme, toggleTheme }}>
+    <ThemeProviderContext.Provider value={{ toggleTheme }}>
       <button onClick={toggleTheme} className='text-black'>
         THEME
       </button>
-      <StarFields isLight={theme === "light"} />
+      <StarFields isLight={!isDark} />
       {children}
     </ThemeProviderContext.Provider>
   );
