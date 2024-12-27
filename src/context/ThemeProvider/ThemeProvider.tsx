@@ -3,9 +3,9 @@ import React, { FC, useEffect, useState } from "react";
 
 import { ThemeProviderContext } from "@/hooks";
 import { setDataToLS, getDataFromLS } from "@/utils";
+import { Button, StarFields } from "@/components";
 
 import { ThemeProviderProps } from "./ThemeProvider.types";
-import { StarFields } from "@/components";
 
 const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
   const [isDark, setIsDark] = useState(false);
@@ -36,10 +36,8 @@ const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
 
   return (
     <ThemeProviderContext.Provider value={{ toggleTheme }}>
-      <button onClick={toggleTheme} className='text-black'>
-        THEME
-      </button>
-      <StarFields isLight={!isDark} />
+      <Button onClick={toggleTheme}>Contact</Button>
+      {/* <StarFields isLight={!isDark} /> */}
       {children}
     </ThemeProviderContext.Provider>
   );
