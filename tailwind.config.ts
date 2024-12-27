@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 export default {
+  darkMode: "selector",
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -9,6 +10,7 @@ export default {
   theme: {
     screens: { sm: "375px", md: "744px", lg: "1024px", xl: "1440px" },
     fontSize: {
+      xs: "0.75rem",
       sm: "1.25rem",
       md: "1.5rem",
       lg: "2.25rem",
@@ -16,8 +18,8 @@ export default {
     },
     extend: {
       colors: {
-        background: "var(--primary)",
-        foreground: "var(--secondary)",
+        dark: "var(--dark)",
+        light: "var(--light)",
         accent: "var(--accent)",
       },
     },

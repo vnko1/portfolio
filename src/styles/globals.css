@@ -3,13 +3,33 @@
 @tailwind utilities;
 
 :root {
-  --primary: #222;
-  --secondary: #ffffff;
+  --dark: #222;
+  --light: #ffffff;
   --accent: #f0cfaa;
 }
 
 body {
-  color: var(--secondary);
-  background: var(--primary);
+  color: var(--light);
+  background: var(--dark);
   font-size: 1.25rem;
+}
+
+@layer base {
+  h1 {
+    @apply text-lg md:text-xl text-dark dark:text-light;
+  }
+
+  h2 {
+    @apply text-lg;
+  }
+
+  p {
+    @apply text-sm;
+  }
+}
+
+@layer components {
+  .stack {
+    @apply text-xs text-dark dark:text-light;
+  }
 }

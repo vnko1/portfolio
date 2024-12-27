@@ -1,10 +1,10 @@
 import { Wrapper } from "@/components";
-
+export const revalidate = 300;
 export default function Home() {
   return (
     <main>
       <Wrapper>
-        <p className='text-xl'>HELLO</p>
+        <h1 className='stack'>HELLO</h1>
       </Wrapper>
     </main>
   );

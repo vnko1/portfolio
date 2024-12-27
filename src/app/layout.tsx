@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@/styles/globals.css";
+
+import { ThemeProvider } from "@/context";
 import { StarFields } from "@/components";
 
 const inter = Inter({
@@ -22,10 +24,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={inter.className}>
-        <StarFields />
-        {children}
-      </body>
+      <ThemeProvider>
+        <body className={inter.className}>
+          <StarFields />
+          {children}
+        </body>
+      </ThemeProvider>
     </html>
   );
 }
