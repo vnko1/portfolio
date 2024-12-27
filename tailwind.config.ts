@@ -16,13 +16,12 @@ export default {
       lg: "2.25rem",
       xl: "3rem",
     },
-    extend: {
-      colors: {
-        dark: "var(--dark)",
-        light: "var(--light)",
-        accent: "var(--accent)",
-      },
+    colors: {
+      dark: "#222",
+      light: "#fff",
+      accent: "#f0cfaa",
     },
+    extend: {},
   },
   plugins: [],
 } satisfies Config;

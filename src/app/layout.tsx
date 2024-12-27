@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import "@/styles/globals.css";
 
 import { ThemeProvider } from "@/context";
-import { StarFields } from "@/components";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -24,12 +23,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <ThemeProvider>
-        <body className={inter.className}>
-          <StarFields />
-          {children}
-        </body>
-      </ThemeProvider>
+      <body className={inter.className}>
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
     </html>
   );
 }
