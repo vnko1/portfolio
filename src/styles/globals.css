@@ -3,19 +3,45 @@
 @tailwind utilities;
 
 body {
-  @apply text-dark dark:text-light text-xs bg-light dark:bg-dark;
+  @apply bg-gl-0 dark:bg-gd-0 text-gl-600 dark:text-gd-600;
 }
 
 @layer base {
   h1 {
-    @apply text-lg md:text-xl;
+    @apply text-h1_sm leading-xl font-semibold md:text-h1_md md:font-bold md:leading-xxl md:tracking-tight lg:leading-3xl lg:text-h1_lg;
   }
 
   h2 {
-    @apply text-lg;
+    @apply tracking-tight leading-sm font-semibold text-h2_sm lg:leading-xl lg:text-h2_lg;
   }
 
-  p {
-    @apply text-sm;
+  h3 {
+    @apply tracking-tight leading-md font-semibold text-h3_sm lg:text-h3_lg lg:leading-lg;
+  }
+}
+
+@layer components {
+  .subtitle {
+    @apply leading-sm text-md font-normal lg:leading-sm lg:text-lg;
+  }
+
+  .body1 {
+    @apply leading-xs text-base font-normal lg:leading-sm lg:text-md;
+  }
+
+  .body2 {
+    @apply leading-xs text-base font-normal;
+  }
+
+  .body3 {
+    @apply leading-xxs text-sm font-normal;
+  }
+
+  .icon-st {
+    @apply stroke-gl-600 dark:stroke-gd-600;
+  }
+
+  .icon-fl {
+    @apply fill-gl-600 dark:fill-gd-600;
   }
 }
