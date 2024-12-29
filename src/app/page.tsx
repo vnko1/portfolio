@@ -1,3 +1,5 @@
+import { Experience } from "@/components";
+
 export const revalidate = 300;
 
 export default function Home() {
@@ -66,6 +68,7 @@ export default function Home() {
       exercitationem esse beatae hic magnam officiis libero nemo animi
       doloremque tenetur. Cumque quam quas tempora reiciendis aliquam
       iusto inventore! Molestias nihil minima fugiat iure non.
+      <Experience />
     </main>
   );
 }
