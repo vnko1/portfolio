@@ -53,10 +53,7 @@ const Menu: React.FC<MenuProps> = ({ active, setActive }) => {
         {isDark ? <MoonIcon /> : <SunIcon />}
       </button>
       <div className='px-xs'>
-        <DownloadButton
-          href='/cv.pdf'
-          download='Example-PDF-document'
-        />
+        <DownloadButton href={null} />
       </div>
     </div>
   );

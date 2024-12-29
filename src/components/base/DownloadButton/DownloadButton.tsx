@@ -3,7 +3,7 @@ import Link from "next/link";
 
 interface DownloadButtonProps {
   href: string | null;
-  download: string;
+  download?: string;
   classNames?: string;
 }
 

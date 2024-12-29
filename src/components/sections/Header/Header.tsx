@@ -54,10 +54,7 @@ const Header: React.FC = () => {
             aria-label='switch theme button'>
             {isDark ? <MoonIcon /> : <SunIcon />}
           </button>
-          <DownloadButton
-            href='/cv.pdf'
-            download='Example-PDF-document'
-          />
+          <DownloadButton href={null} />
         </div>
       </div>
       <Menu setActive={setActive} active={active} />
