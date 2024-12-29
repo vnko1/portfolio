@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply bg-gl-0 dark:bg-gd-0 text-gl-600 dark:text-gd-600;
+  @apply bg-gl-0 dark:bg-gd-0 text-gl-600 dark:text-gd-600 scroll-smooth;
 }
 
 @layer base {
@@ -78,7 +78,7 @@ body {
   }
 
   .button {
-    @apply py-[0.375rem] px-4 rounded-xl text-base font-medium leading-xs text-gl-50 dark:text-gd-50 bg-gl-900 dark:bg-gd-900 transition-all duration-150;
+    @apply py-[0.375rem] px-4 rounded-xl text-base font-medium leading-xs text-gl-50 dark:text-gd-50 bg-gl-900 dark:bg-gd-900 transition-all duration-150 cursor-pointer;
   }
 
   .button:hover,

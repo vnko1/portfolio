@@ -8,6 +8,7 @@ interface WrapperProps {
   tag?: WrapperTagType;
   classNames?: string;
   accentColor?: boolean;
+  id?: string;
 }
 
 const Wrapper: React.FC<WrapperProps> = ({
@@ -15,8 +16,10 @@ const Wrapper: React.FC<WrapperProps> = ({
   classNames,
   accentColor = false,
   children,
+  id,
 }) => (
   <Tag
+    id={id}
     className={clsx(
       "w-full mx-auto overflow-x-hidden",
       Tag === "section" ? "py-lg lg:py-xxl" : "",

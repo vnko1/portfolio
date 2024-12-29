@@ -4,12 +4,12 @@ import { ThemeProviderType } from "@/context";
 export const ThemeProviderContext =
   createContext<ThemeProviderType | null>(null);
 
-export const useThemeProvider = () => {
-  const themeProviderContext = useContext(ThemeProviderContext);
+export const useTheme = () => {
+  const themeProvider = useContext(ThemeProviderContext);
 
-  if (!themeProviderContext)
+  if (!themeProvider)
     throw new Error(
-      "useThemeProvider has to be used within <ThemeProviderContext.Provider>"
+      "useTheme has to be used within <ThemeProviderContext.Provider>"
     );
-  return themeProviderContext;
+  return themeProvider;
 };
