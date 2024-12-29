@@ -37,11 +37,11 @@ body {
     @apply leading-xxs text-sm font-normal;
   }
 
-  .icon-st {
+  .icon-stroke {
     @apply stroke-gl-600 dark:stroke-gd-600;
   }
 
-  .icon-fl {
+  .icon-fill {
     @apply fill-gl-600 dark:fill-gd-600;
   }
 }
