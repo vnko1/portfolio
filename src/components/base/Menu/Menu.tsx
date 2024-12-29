@@ -38,6 +38,7 @@ const Menu: React.FC<MenuProps> = ({ active, setActive }) => {
       <div className='flex justify-between px-xs pb-xs border-b border-b-gl-100 dark:border-b-gd-100'>
         <Logo setActive={setActive} />
         <button
+          aria-label='close menu button'
           className='button icon'
           onClick={() => setActive(false)}>
           <CrossIcon />
@@ -46,7 +47,8 @@ const Menu: React.FC<MenuProps> = ({ active, setActive }) => {
       <Navigation classNames='px-xs pb-xs border-b border-b-gl-100 dark:border-b-gd-100' />
       <button
         className='flex justify-between px-xs text-base font-normal leading-xs text-gl-600 dark:text-gd-600'
-        onClick={toggleTheme}>
+        onClick={toggleTheme}
+        aria-label='switch theme button'>
         Switch Theme
         {isDark ? <MoonIcon /> : <SunIcon />}
       </button>

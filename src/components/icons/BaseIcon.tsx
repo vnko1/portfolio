@@ -7,7 +7,7 @@ interface BaseIconProps extends IconProps {
 
 const BaseIcon: React.FC<BaseIconProps> = ({
   children,
-  size = 32,
+  size = 24,
   ...props
 }) => (
   <svg

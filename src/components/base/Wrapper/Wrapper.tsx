@@ -34,6 +34,9 @@ const Wrapper: React.FC<WrapperProps> = ({
         Tag === "section" || Tag === "header"
           ? "max-w-md lg:max-w-sm lg:px-md"
           : "",
+        Tag === "header"
+          ? "flex justify-between items-center border-b border-b-gl-100 dark:border-b-gd-100"
+          : "",
         Tag === "footer" ? "max-w-lg lg:max-w-sm lg:px-md" : ""
       )}>
       {children}
