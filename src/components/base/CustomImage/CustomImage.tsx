@@ -1,5 +1,5 @@
-import Image, { ImageProps } from "next/image";
 import { FC } from "react";
+import Image, { ImageProps } from "next/image";
 
 const CustomImage: FC<ImageProps> = ({ alt, src, ...props }) => {
   return (

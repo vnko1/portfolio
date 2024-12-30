@@ -5,11 +5,11 @@ import { ExperienceType } from "@/types";
 import { defaultImageDescription } from "@/utils";
 import { CustomImage } from "@/components";
 
-interface ExperienceProps extends ExperienceType {
+interface ExperienceCardProps extends ExperienceType {
   classNames?: string;
 }
 
-const Experience: React.FC<ExperienceProps> = ({
+const ExperienceCard: React.FC<ExperienceCardProps> = ({
   classNames,
   description,
   title,
@@ -19,7 +19,7 @@ const Experience: React.FC<ExperienceProps> = ({
 }) => {
   return (
     <div
-      className={`p-md rounded-xl bg-gl-0 dark:bg-gd-100 shadow-md dark:shadow-xl flex flex-col gap-1-lg lg:flex-row lg:justify-between lg:items-start ${classNames}`}>
+      className={`p-md rounded-xl bg-gl-0 dark:bg-gd-100 shadow-md dark:shadow-xl flex flex-col gap-1-lg lg:flex-row lg:justify-between lg:items-start lg:max-w-[74%] ${classNames}`}>
       {icon && (
         <CustomImage
           src={icon.url}
@@ -54,4 +54,4 @@ const Experience: React.FC<ExperienceProps> = ({
   );
 };
 
-export default Experience;
+export default ExperienceCard;

@@ -23,7 +23,9 @@ const Wrapper: React.FC<WrapperProps> = ({
     className={clsx(
       "w-full mx-auto overflow-x-hidden",
       Tag === "section" ? "py-lg lg:py-xxl" : "",
-      Tag === "header" ? "py-xs" : "",
+      Tag === "header"
+        ? "py-xs border-b border-b-gl-100 dark:border-b-gd-100"
+        : "",
       Tag === "footer" ? "py-sm" : "",
       accentColor ? "bg-gl-50 dark:bg-gd-50" : "bg-gl-0 dark:bg-gd-0",
       classNames
@@ -34,9 +36,7 @@ const Wrapper: React.FC<WrapperProps> = ({
         Tag === "section" || Tag === "header"
           ? "max-w-md lg:max-w-sm lg:px-md"
           : "",
-        Tag === "header"
-          ? "flex justify-between items-center border-b border-b-gl-100 dark:border-b-gd-100"
-          : "",
+        Tag === "header" ? "flex justify-between items-center " : "",
         Tag === "footer" ? "max-w-lg lg:max-w-sm lg:px-md" : ""
       )}>
       {children}
