@@ -2,7 +2,8 @@ import { ImageType } from "./media.types";
 import { UIDType } from "./uid.types";
 
 export interface SkillType extends UIDType {
-  icon: ImageType;
+  iconLight: ImageType;
+  iconDark: ImageType;
   iconDescription: string | null;
   title: string;
 }

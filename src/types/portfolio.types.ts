@@ -28,5 +28,6 @@ export interface PortfolioType extends UIDType {
   emailLink: string;
   emailText: string;
   fileName: string | null;
-  file: FileType;
+  file: FileType | null;
+  fileLink: string;
 }
