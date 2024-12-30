@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 import { ProjectType } from "@/types";
 import { defaultImageDescription } from "@/utils";
@@ -7,7 +8,6 @@ import {
   GithubIcon,
   NavigationIcon,
 } from "@/components";
-import Link from "next/link";
 
 interface ProjectCardProps extends ProjectType {
   classNames?: string;

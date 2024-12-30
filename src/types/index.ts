@@ -5,3 +5,5 @@ export * from "./icon.types";
 export * from "./project.types";
 export * from "./skill.types";
 export * from "./link.types";
+export * from "./portfolio.types";
+export * from "./section.types";
