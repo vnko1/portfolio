@@ -31,7 +31,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
         {period}
       </p>
       <div className='flex flex-col gap-1-lg'>
-        <h4 className='subtitle text-gl-900 dark:text-gd-900'>
+        <h4 className='subtitle font-semibold text-gl-900 dark:text-gd-900'>
           {title}
         </h4>
         <Markdown

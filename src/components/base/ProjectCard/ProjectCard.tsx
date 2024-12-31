@@ -41,7 +41,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         />
       </div>
       <div className='flex-1 p-md bg-gl-100 dark:bg-gd-100 lg:p-4-xl flex flex-col gap-2-md'>
-        <h4 className='subtitle text-gl-900 dark:text-gd-900'>
+        <h4 className='subtitle font-semibold text-gl-900 dark:text-gd-900'>
           {title}
         </h4>
         <p className='body2'>{description}</p>
