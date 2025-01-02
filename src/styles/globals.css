@@ -112,4 +112,8 @@ body {
   .tag {
     @apply inline-flex justify-center py-1 px-5 rounded-xl text-sm leading-xxs font-medium text-gl-600 dark:text-gd-600 bg-gl-200 dark:bg-gd-200;
   }
+
+  .banner {
+    @apply max-w-[80%] lg:max-w-[320px] border-[8px] border-gl-0 dark:border-gd-0;
+  }
 }

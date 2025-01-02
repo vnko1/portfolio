@@ -6,5 +6,4 @@ export { default as DownloadButton } from "./DownloadButton/DownloadButton";
 export { default as CustomImage } from "./CustomImage/CustomImage";
 export { default as ExperienceCard } from "./ExperienceCard/ExperienceCard";
 export { default as ProjectCard } from "./ProjectCard/ProjectCard";
-export { default as Banner } from "./Banner/Banner";
 export { default as Skill } from "./Skill/Skill";
