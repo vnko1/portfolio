@@ -114,6 +114,6 @@ body {
   }
 
   .banner {
-    @apply max-w-[80%] lg:max-w-[320px] border-[8px] border-gl-0 dark:border-gd-0;
+    @apply max-w-[80%] lg:max-w-[320px] border-[8px] border-gl-0 dark:border-gd-0 object-cover;
   }
 }
