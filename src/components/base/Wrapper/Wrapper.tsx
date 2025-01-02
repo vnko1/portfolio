@@ -9,11 +9,13 @@ interface WrapperProps {
   classNames?: string;
   accentColor?: boolean;
   id?: string;
+  containerClassNames?: string;
 }
 
 const Wrapper: React.FC<WrapperProps> = ({
   tag: Tag = "section",
   classNames,
+  containerClassNames,
   accentColor = false,
   children,
   id,
@@ -21,7 +23,7 @@ const Wrapper: React.FC<WrapperProps> = ({
   <Tag
     id={id}
     className={clsx(
-      "w-full mx-auto overflow-x-hidden",
+      "max-w-[1920px] w-full mx-auto overflow-hidden",
       Tag === "section" ? "py-lg lg:py-xxl" : "",
       Tag === "header"
         ? "py-xs border-b border-b-gl-100 dark:border-b-gd-100"
@@ -32,12 +34,13 @@ const Wrapper: React.FC<WrapperProps> = ({
     )}>
     <div
       className={clsx(
-        "w-full mx-auto overflow-x-hidden",
+        "w-full mx-auto overflow-hidden",
         Tag === "section" || Tag === "header"
           ? "max-w-md lg:max-w-sm lg:px-md"
           : "",
         Tag === "header" ? "flex justify-between items-center " : "",
-        Tag === "footer" ? "max-w-lg lg:max-w-sm lg:px-md" : ""
+        Tag === "footer" ? "max-w-lg lg:max-w-sm lg:px-md" : "",
+        containerClassNames
       )}>
       {children}
     </div>

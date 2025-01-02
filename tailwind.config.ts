@@ -105,6 +105,7 @@ export default {
           950: "#ffffff",
         },
         emerald: "#10b981",
+        red: "#b91c1c",
       },
       boxShadow: {
         md: "0px 4px 3px 0px rgba(0, 0, 0, 0.07), 0px 2px 2px 0px rgba(0, 0, 0, 0.06)",
