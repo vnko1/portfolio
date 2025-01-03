@@ -35,6 +35,7 @@ const Hero: React.FC<HeroProps> = ({
         src={avatar.url}
         alt={defaultImageDescription}
         className='banner'
+        priority
       />
       <div className='self-start flex flex-col gap-4-xl'>
         <div>
