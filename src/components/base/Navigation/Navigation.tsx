@@ -1,6 +1,6 @@
 import React from "react";
-import { links } from "@/utils";
 import Link from "next/link";
+import { links } from "@/utils";
 
 interface NavigationProps {
   classNames?: string;

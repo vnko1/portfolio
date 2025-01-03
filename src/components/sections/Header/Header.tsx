@@ -8,10 +8,8 @@ import {
   Wrapper,
   Menu,
   Logo,
-  BurgerIcon,
   Navigation,
-  MoonIcon,
-  SunIcon,
+  BaseIcon,
   DownloadButton,
 } from "@/components";
 
@@ -43,7 +41,7 @@ const Header: React.FC = () => {
         aria-label='open menu button'
         onClick={() => setActive(true)}
         className='button icon lg:hidden'>
-        <BurgerIcon />
+        <BaseIcon icon='burger' />
       </button>
       <div className='hidden lg:flex items-center'>
         <Navigation classNames='pr-2-md border-r border-r-gl-100 dark:border-r-gd-100' />
@@ -52,7 +50,11 @@ const Header: React.FC = () => {
             className='button icon'
             onClick={toggleTheme}
             aria-label='switch theme button'>
-            {isDark ? <MoonIcon /> : <SunIcon />}
+            {isDark ? (
+              <BaseIcon icon='moon' />
+            ) : (
+              <BaseIcon icon='sun' />
+            )}
           </button>
           <DownloadButton href={null} />
         </div>

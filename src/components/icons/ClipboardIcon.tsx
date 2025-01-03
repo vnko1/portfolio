@@ -1,9 +1,7 @@
 import React from "react";
-import { IconProps } from "@/types";
-import BaseIcon from "./BaseIcon";
 
-const ClipboardIcon: React.FC<IconProps> = (props) => (
-  <BaseIcon {...props}>
+const ClipboardIcon: React.FC = () => (
+  <>
     <path
       d='M20 8H10C8.89543 8 8 8.89543 8 10V20C8 21.1046 8.89543 22 10 22H20C21.1046 22 22 21.1046 22 20V10C22 8.89543 21.1046 8 20 8Z'
       className='icon-stroke'
@@ -18,7 +16,7 @@ const ClipboardIcon: React.FC<IconProps> = (props) => (
       strokeLinecap='round'
       strokeLinejoin='round'
     />
-  </BaseIcon>
+  </>
 );
 
 export default ClipboardIcon;

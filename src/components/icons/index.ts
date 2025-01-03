@@ -1,11 +1,1 @@
-export { default as LetterIcon } from "./LetterIcon";
-export { default as ClipboardIcon } from "./ClipboardIcon";
-export { default as GithubIcon } from "./GithubIcon";
-export { default as PhoneIcon } from "./PhoneIcon";
-export { default as CopyrightIcon } from "./CopyrightIcon";
-export { default as MoonIcon } from "./MoonIcon";
-export { default as SunIcon } from "./SunIcon";
-export { default as CrossIcon } from "./CrossIcon";
-export { default as BurgerIcon } from "./BurgerIcon";
-export { default as LocationIcon } from "./LocationIcon";
-export { default as NavigationIcon } from "./NavigationIcon";
+export { default as BaseIcon } from "./BaseIcon";

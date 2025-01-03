@@ -1,9 +1,7 @@
 import React from "react";
-import { IconProps } from "@/types";
-import BaseIcon from "./BaseIcon";
 
-const CrossIcon: React.FC<IconProps> = (props) => (
-  <BaseIcon {...props}>
+const CrossIcon: React.FC = () => (
+  <>
     <path
       d='M24 8L8 24'
       className='icon-stroke'
@@ -18,7 +16,7 @@ const CrossIcon: React.FC<IconProps> = (props) => (
       strokeLinecap='round'
       strokeLinejoin='round'
     />
-  </BaseIcon>
+  </>
 );
 
 export default CrossIcon;

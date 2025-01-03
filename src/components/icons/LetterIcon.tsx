@@ -1,9 +1,7 @@
 import React from "react";
-import { IconProps } from "@/types";
-import BaseIcon from "./BaseIcon";
 
-const LetterIcon: React.FC<IconProps> = (props) => (
-  <BaseIcon {...props}>
+const LetterIcon: React.FC = () => (
+  <>
     <path
       d='M26.6667 5.33301H5.33341C3.86066 5.33301 2.66675 6.52692 2.66675 7.99967V23.9997C2.66675 25.4724 3.86066 26.6663 5.33341 26.6663H26.6667C28.1395 26.6663 29.3334 25.4724 29.3334 23.9997V7.99967C29.3334 6.52692 28.1395 5.33301 26.6667 5.33301Z'
       className='icon-stroke'
@@ -18,6 +16,6 @@ const LetterIcon: React.FC<IconProps> = (props) => (
       strokeLinecap='round'
       strokeLinejoin='round'
     />
-  </BaseIcon>
+  </>
 );
 export default LetterIcon;

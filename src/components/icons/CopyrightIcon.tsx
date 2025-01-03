@@ -1,9 +1,7 @@
 import React from "react";
-import { IconProps } from "@/types";
-import BaseIcon from "./BaseIcon";
 
-const CopyrightIcon: React.FC<IconProps> = (props) => (
-  <BaseIcon {...props}>
+const CopyrightIcon: React.FC = () => (
+  <>
     <path
       d='M16.0001 29.3337C23.3639 29.3337 29.3334 23.3641 29.3334 16.0003C29.3334 8.63653 23.3639 2.66699 16.0001 2.66699C8.63628 2.66699 2.66675 8.63653 2.66675 16.0003C2.66675 23.3641 8.63628 29.3337 16.0001 29.3337Z'
       className='icon-stroke'
@@ -18,7 +16,7 @@ const CopyrightIcon: React.FC<IconProps> = (props) => (
       strokeLinecap='round'
       strokeLinejoin='round'
     />
-  </BaseIcon>
+  </>
 );
 
 export default CopyrightIcon;

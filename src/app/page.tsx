@@ -19,6 +19,17 @@ export default function Home() {
         locationText='Kyiv, Ukraine'
         isAvailable
         isAvailableText={"Available for new projects"}
+        links={[
+          {
+            title: "github",
+            link: "/",
+            linkText: "",
+            icon: null,
+            iconDescription: null,
+            id: 1,
+            documentId: "as",
+          },
+        ]}
       />
     </main>
   );

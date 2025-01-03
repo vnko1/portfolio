@@ -5,10 +5,8 @@ import clsx from "clsx";
 import { useGetScreenSize, useTheme } from "@/hooks";
 import {
   Logo,
-  CrossIcon,
+  BaseIcon,
   Navigation,
-  SunIcon,
-  MoonIcon,
   DownloadButton,
 } from "@/components";
 
@@ -41,7 +39,7 @@ const Menu: React.FC<MenuProps> = ({ active, setActive }) => {
           aria-label='close menu button'
           className='button icon'
           onClick={() => setActive(false)}>
-          <CrossIcon />
+          <BaseIcon icon='cross' />
         </button>
       </div>
       <Navigation classNames='px-xs pb-xs border-b border-b-gl-100 dark:border-b-gd-100' />
@@ -50,7 +48,7 @@ const Menu: React.FC<MenuProps> = ({ active, setActive }) => {
         onClick={toggleTheme}
         aria-label='switch theme button'>
         Switch Theme
-        {isDark ? <MoonIcon /> : <SunIcon />}
+        {isDark ? <BaseIcon icon='moon' /> : <BaseIcon icon='sun' />}
       </button>
       <div className='px-xs'>
         <DownloadButton href={null} />

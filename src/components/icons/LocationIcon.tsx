@@ -1,9 +1,7 @@
 import React from "react";
-import { IconProps } from "@/types";
-import BaseIcon from "./BaseIcon";
 
-const LocationIcon: React.FC<IconProps> = (props) => (
-  <BaseIcon {...props}>
+const LocationIcon: React.FC = () => (
+  <>
     <path
       d='M26.6666 13.3337C26.6666 21.3337 15.9999 29.3337 15.9999 29.3337C15.9999 29.3337 5.33325 21.3337 5.33325 13.3337C5.33325 10.5047 6.45706 7.79157 8.45745 5.79119C10.4578 3.7908 13.1709 2.66699 15.9999 2.66699C18.8289 2.66699 21.542 3.7908 23.5424 5.79119C25.5428 7.79157 26.6666 10.5047 26.6666 13.3337Z'
       className='icon-stroke'
@@ -18,7 +16,7 @@ const LocationIcon: React.FC<IconProps> = (props) => (
       strokeLinecap='round'
       strokeLinejoin='round'
     />
-  </BaseIcon>
+  </>
 );
 
 export default LocationIcon;

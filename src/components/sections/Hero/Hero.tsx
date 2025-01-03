@@ -1,9 +1,9 @@
 import React from "react";
+import Link from "next/link";
 
 import { PortfolioType } from "@/types";
-import { CustomImage, LocationIcon, Wrapper } from "@/components";
+import { CustomImage, BaseIcon, Wrapper } from "@/components";
 import { defaultImageDescription } from "@/utils";
-import Link from "next/link";
 
 interface HeroProps
   extends Pick<
@@ -14,6 +14,7 @@ interface HeroProps
     | "locationText"
     | "isAvailable"
     | "isAvailableText"
+    | "links"
   > {
   classNames?: string;
 }
@@ -25,6 +26,7 @@ const Hero: React.FC<HeroProps> = ({
   locationText,
   isAvailable,
   isAvailableText,
+  links,
 }) => {
   if (!heroSection) return null;
   return (
@@ -49,7 +51,7 @@ const Hero: React.FC<HeroProps> = ({
             target='_blank'
             rel='noopener noreferrer'
             className='body2 relative text-gl-600 dark:text-gd-600 pl-3-sm flex items-center gap-0-md mb-0-md'>
-            <LocationIcon className='absolute left-0' />
+            <BaseIcon icon='location' className='absolute left-0' />
             {locationText}
           </Link>
           <p className='relative body2 text-gl-600 dark:text-gd-600 pl-3-sm  flex items-center gap-0-md'>
@@ -60,6 +62,16 @@ const Hero: React.FC<HeroProps> = ({
             />
             {isAvailableText}
           </p>
+        </div>
+        <div className='flex gap-0-sm'>
+          {links.map((link) => (
+            <Link
+              key={link.id}
+              href={link.link}
+              className='button icon'>
+              <BaseIcon icon={link.title} />
+            </Link>
+          ))}
         </div>
       </div>
     </Wrapper>

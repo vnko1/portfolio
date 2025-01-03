@@ -1,9 +1,7 @@
 import React from "react";
-import { IconProps } from "@/types";
-import BaseIcon from "./BaseIcon";
 
-const SunIcon: React.FC<IconProps> = (props) => (
-  <BaseIcon {...props}>
+const SunIcon: React.FC = () => (
+  <>
     <path
       d='M16.0001 21.3337C18.9456 21.3337 21.3334 18.9458 21.3334 16.0003C21.3334 13.0548 18.9456 10.667 16.0001 10.667C13.0546 10.667 10.6667 13.0548 10.6667 16.0003C10.6667 18.9458 13.0546 21.3337 16.0001 21.3337Z'
       className='icon-stroke'
@@ -67,7 +65,7 @@ const SunIcon: React.FC<IconProps> = (props) => (
       strokeLinecap='round'
       strokeLinejoin='round'
     />
-  </BaseIcon>
+  </>
 );
 
 export default SunIcon;

@@ -3,11 +3,7 @@ import Link from "next/link";
 
 import { ProjectType } from "@/types";
 import { defaultImageDescription } from "@/utils";
-import {
-  CustomImage,
-  GithubIcon,
-  NavigationIcon,
-} from "@/components";
+import { CustomImage, BaseIcon } from "@/components";
 
 interface ProjectCardProps extends ProjectType {
   classNames?: string;
@@ -54,11 +50,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         </ul>
         <div className='flex gap-1-lg items-center'>
           <Link href={liveLink} className='button icon'>
-            <NavigationIcon />
+            <BaseIcon icon='navigation' />
           </Link>
           {codeLink && (
             <Link href={codeLink} className='button icon'>
-              <GithubIcon />
+              <BaseIcon icon='github' />
             </Link>
           )}
         </div>

@@ -1,9 +1,7 @@
 import React from "react";
-import { IconProps } from "@/types";
-import BaseIcon from "./BaseIcon";
 
-const BurgerIcon: React.FC<IconProps> = (props) => (
-  <BaseIcon {...props}>
+const BurgerIcon: React.FC = () => (
+  <>
     <path
       d='M5.33325 16H26.6666'
       className='icon-stroke'
@@ -25,7 +23,7 @@ const BurgerIcon: React.FC<IconProps> = (props) => (
       strokeLinecap='round'
       strokeLinejoin='round'
     />
-  </BaseIcon>
+  </>
 );
 
 export default BurgerIcon;

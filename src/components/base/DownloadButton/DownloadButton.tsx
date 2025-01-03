@@ -5,12 +5,14 @@ interface DownloadButtonProps {
   href: string | null;
   download?: string;
   classNames?: string;
+  text?: string;
 }
 
 const DownloadButton: React.FC<DownloadButtonProps> = ({
   href,
   download = "cv",
   classNames,
+  text = "Download CV",
 }) => {
   if (!href) return null;
   return (
@@ -21,7 +23,7 @@ const DownloadButton: React.FC<DownloadButtonProps> = ({
       target='_blank'
       rel='noreferrer'
       aria-label='file download link'>
-      Download CV
+      {text}
     </Link>
   );
 };
