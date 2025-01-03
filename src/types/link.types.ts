@@ -6,4 +6,5 @@ export interface LinkType extends UIDType {
   linkText: string;
   icon: ImageType | null;
   iconDescription: string | null;
+  title: string;
 }

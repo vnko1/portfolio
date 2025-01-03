@@ -1,6 +1,6 @@
 import React from "react";
 
-import { ImageType, PortfolioType } from "@/types";
+import { PortfolioType } from "@/types";
 import { CustomImage, LocationIcon, Wrapper } from "@/components";
 import { defaultImageDescription } from "@/utils";
 import Link from "next/link";
@@ -14,7 +14,9 @@ interface HeroProps
     | "locationText"
     | "isAvailable"
     | "isAvailableText"
-  > {}
+  > {
+  classNames?: string;
+}
 
 const Hero: React.FC<HeroProps> = ({
   heroSection,
