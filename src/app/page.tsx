@@ -1,4 +1,4 @@
-import { About, Hero } from "@/components";
+import { About, Hero, Skills } from "@/components";
 
 export const revalidate = 300;
 
@@ -38,6 +38,20 @@ export default function Home() {
             "I'm a passionate, self-proclaimed designer who specializes in full stack development (React.js & Node.js). I am very enthusiastic about bringing the technical and visual aspects of digital products to life. User experience, pixel perfect design, and writing clear, readable, highly performant code matters to me.",
         }}
         banner={{ url: "/1.jpg", id: 1, documentId: "asd" }}
+      />
+      <Skills
+        skillsSection={{
+          title: "Skills",
+          description:
+            "The skills, tools and technologies I am really good at:",
+        }}
+        skills={[
+          {
+            documentId: "12",
+            iconLight: { url: "/icon.svg" },
+            iconDark: { url: "/icon.svg" },
+          },
+        ]}
       />
     </main>
   );

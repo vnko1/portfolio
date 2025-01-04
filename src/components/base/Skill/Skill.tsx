@@ -18,7 +18,7 @@ const Skill: React.FC<SkillProps> = ({
     <div
       className={`inline-flex flex-col items-center gap-0-md ${classNames}`}>
       <CustomImage
-        className='dark:hidden w-[64px] h-[64px'
+        className='dark:hidden w-[64px] h-[64px]'
         src={iconLight.url}
         alt={iconDescription || defaultImageDescription}
       />

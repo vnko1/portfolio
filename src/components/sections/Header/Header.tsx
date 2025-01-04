@@ -30,7 +30,7 @@ const Header: React.FC = () => {
     return () => window.removeEventListener("scroll", onHandleScroll);
   }, []);
   const headerClassNames = clsx(
-    "sticky left-0 -top-px overflow-hidden transition-all duration-300 bg-gl-0 dark:bg-gd-0",
+    "sticky z-50 left-0 -top-px overflow-hidden transition-all duration-300 bg-gl-0 dark:bg-gd-0",
     scrollY > 0 ? "bg-gl-50 dark:bg-gd-50 backdrop-blur-xl" : ""
   );
 
