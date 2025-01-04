@@ -1,4 +1,4 @@
-import { Hero } from "@/components";
+import { About, Hero } from "@/components";
 
 export const revalidate = 300;
 
@@ -30,6 +30,14 @@ export default function Home() {
             documentId: "as",
           },
         ]}
+      />
+      <About
+        aboutMeSection={{
+          title: "About me",
+          secondaryDescription:
+            "I'm a passionate, self-proclaimed designer who specializes in full stack development (React.js & Node.js). I am very enthusiastic about bringing the technical and visual aspects of digital products to life. User experience, pixel perfect design, and writing clear, readable, highly performant code matters to me.",
+        }}
+        banner={{ url: "/1.jpg", id: 1, documentId: "asd" }}
       />
     </main>
   );
