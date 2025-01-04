@@ -1,4 +1,5 @@
-import { About, Hero, Skills } from "@/components";
+import { About, Experience, Hero, Skills, Work } from "@/components";
+import Contact from "@/components/sections/Contact/Contact";
 
 export const revalidate = 300;
 
@@ -52,6 +53,38 @@ export default function Home() {
             iconDark: { url: "/icon.svg" },
           },
         ]}
+      />
+      <Experience
+        experience={[
+          {
+            title: "Sr. Frontend Developer",
+            description:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            period: "Nov 2021 - Present",
+          },
+        ]}
+        experienceSection={{
+          title: "Experience",
+          description:
+            "Here is a quick summary of my most recent experiences:",
+        }}
+      />
+      {/* <Work
+        projects={[{}]}
+        projectsSection={{
+          title: "Work",
+          description:
+            "Some of the noteworthy projects I have built:",
+        }}
+      /> */}
+      <Contact
+        contactMeSection={{
+          title: "Get in touch",
+          description:
+            "What’s next? Feel free to reach out to me if you're looking for a developer, have a query, or simply want to connect.",
+        }}
+        emailLink='ad'
+        emailText='mail@mail.com'
       />
     </main>
   );

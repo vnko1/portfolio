@@ -7,3 +7,4 @@ export { default as CustomImage } from "./CustomImage/CustomImage";
 export { default as ExperienceCard } from "./ExperienceCard/ExperienceCard";
 export { default as ProjectCard } from "./ProjectCard/ProjectCard";
 export { default as Skill } from "./Skill/Skill";
+export { default as CopyButton } from "./CopyButton/CopyButton";

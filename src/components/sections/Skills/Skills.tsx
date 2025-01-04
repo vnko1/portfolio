@@ -10,8 +10,8 @@ interface SkillsProps
 const Skills: React.FC<SkillsProps> = ({ skillsSection, skills }) => {
   if (!(skillsSection && skills)) return null;
   return (
-    <Wrapper containerClassNames='flex flex-col items-center gap-2-md lg:gap-4-xl'>
-      <div className='flex flex-col gap-1-lg'>
+    <Wrapper containerClassNames='section-container'>
+      <div className='section-content'>
         <h4 className='tag mx-auto'>{skillsSection.title}</h4>
         <p className='subtitle text-center'>
           {skillsSection.description}

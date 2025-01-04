@@ -31,7 +31,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           reverse ? "border-l" : "border-r"
         }`}>
         <CustomImage
-          src={banner.url}
+          src={banner?.url ?? "#"}
           alt={bannerDescription || defaultImageDescription}
           className='rounded-xl h-auto w-auto lg:max-h-[384px] object-contain lg:object-cover'
         />

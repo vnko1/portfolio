@@ -25,6 +25,9 @@ body {
 }
 
 @layer components {
+  .h2 {
+    @apply tracking-tight leading-sm font-semibold text-h2_sm lg:leading-xl lg:text-h2_lg;
+  }
   .subtitle {
     @apply leading-sm text-md font-normal lg:leading-sm lg:text-lg;
   }
@@ -119,5 +122,13 @@ body {
 
   .banner.banner2 {
     @apply max-w-[80%] lg:max-w-[400px] lg:h-[480px];
+  }
+
+  .section-container {
+    @apply flex flex-col items-center gap-2-md lg:gap-4-xl;
+  }
+
+  .section-content {
+    @apply flex flex-col gap-1-lg;
   }
 }
