@@ -8,7 +8,7 @@ interface SkillsProps
 }
 
 const Skills: React.FC<SkillsProps> = ({ skillsSection, skills }) => {
-  if (!(skillsSection && skills)) return null;
+  if (!(skillsSection && skills) || !skills.length) return null;
   return (
     <Wrapper containerClassNames='section-container'>
       <div className='section-content'>

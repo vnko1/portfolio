@@ -72,6 +72,8 @@ const Hero: React.FC<HeroProps> = ({
             <Link
               key={link.id}
               href={link.link}
+              target='_blanc'
+              rel='noreferrer noopener'
               className='button icon'>
               <BaseIcon icon={link.title as IconsEnum} />
             </Link>

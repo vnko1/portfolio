@@ -73,6 +73,8 @@ const Contact: React.FC<ContactProps> = ({
             <Link
               key={link.id}
               href={link.link}
+              target='_blanc'
+              rel='noreferrer noopener'
               className='button icon'>
               <BaseIcon icon={link.title as IconsEnum} />
             </Link>

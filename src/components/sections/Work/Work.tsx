@@ -7,7 +7,7 @@ interface WorkProps
   classNames?: string;
 }
 const Work: React.FC<WorkProps> = ({ projectsSection, projects }) => {
-  if (!(projectsSection && projects)) return null;
+  if (!(projectsSection && projects) || !projects.length) return null;
 
   return (
     <Wrapper containerClassNames='section-container'>

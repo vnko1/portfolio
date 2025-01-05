@@ -10,7 +10,8 @@ const Experience: React.FC<ExperienceProps> = ({
   experienceSection,
   experience,
 }) => {
-  if (!(experienceSection && experience)) return null;
+  if (!(experienceSection && experience) || !experience.length)
+    return null;
 
   return (
     <Wrapper accentColor containerClassNames='section-container'>
