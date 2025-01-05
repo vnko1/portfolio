@@ -1,6 +1,7 @@
 "use client";
-import { BaseIcon } from "@/components/icons";
 import React from "react";
+import { IconsEnum } from "@/types";
+import { BaseIcon } from "@/components";
 
 interface CopyButtonProps {
   classNames?: string;
@@ -16,9 +17,9 @@ const CopyButton: React.FC<CopyButtonProps> = ({
   };
   return (
     <button className={`button icon ${classNames}`} onClick={onClick}>
-      <BaseIcon icon='clipboard' className='lg:hidden' />
+      <BaseIcon icon={IconsEnum.ClipBoard} className='lg:hidden' />
       <BaseIcon
-        icon='clipboard'
+        icon={IconsEnum.ClipBoard}
         size={32}
         className='hidden lg:block'
       />

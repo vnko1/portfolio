@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import clsx from "clsx";
 
+import { IconsEnum } from "@/types";
 import { useTheme } from "@/hooks";
 import {
   Wrapper,
@@ -41,7 +42,7 @@ const Header: React.FC = () => {
         aria-label='open menu button'
         onClick={() => setActive(true)}
         className='button icon lg:hidden'>
-        <BaseIcon icon='burger' />
+        <BaseIcon icon={IconsEnum.Burger} />
       </button>
       <div className='hidden lg:flex items-center'>
         <Navigation classNames='pr-2-md border-r border-r-gl-100 dark:border-r-gd-100' />
@@ -51,9 +52,9 @@ const Header: React.FC = () => {
             onClick={toggleTheme}
             aria-label='switch theme button'>
             {isDark ? (
-              <BaseIcon icon='moon' />
+              <BaseIcon icon={IconsEnum.Moon} />
             ) : (
-              <BaseIcon icon='sun' />
+              <BaseIcon icon={IconsEnum.Sun} />
             )}
           </button>
           <DownloadButton href={null} />

@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-import { PortfolioType } from "@/types";
+import { IconsEnum, PortfolioType } from "@/types";
 import { CustomImage, BaseIcon, Wrapper } from "@/components";
 import { defaultImageDescription } from "@/utils";
 
@@ -52,7 +52,10 @@ const Hero: React.FC<HeroProps> = ({
             target='_blank'
             rel='noopener noreferrer'
             className='body2 relative text-gl-600 dark:text-gd-600 pl-3-sm flex items-center gap-0-md mb-0-md'>
-            <BaseIcon icon='location' className='absolute left-0' />
+            <BaseIcon
+              icon={IconsEnum.Location}
+              className='absolute left-0'
+            />
             {locationText}
           </Link>
           <p className='relative body2 text-gl-600 dark:text-gd-600 pl-3-sm  flex items-center gap-0-md'>
@@ -70,7 +73,7 @@ const Hero: React.FC<HeroProps> = ({
               key={link.id}
               href={link.link}
               className='button icon'>
-              <BaseIcon icon={link.title} />
+              <BaseIcon icon={link.title as IconsEnum} />
             </Link>
           ))}
         </div>

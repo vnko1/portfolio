@@ -2,6 +2,7 @@
 import React, { useEffect } from "react";
 import clsx from "clsx";
 
+import { IconsEnum } from "@/types";
 import { useGetScreenSize, useTheme } from "@/hooks";
 import {
   Logo,
@@ -39,7 +40,7 @@ const Menu: React.FC<MenuProps> = ({ active, setActive }) => {
           aria-label='close menu button'
           className='button icon'
           onClick={() => setActive(false)}>
-          <BaseIcon icon='cross' />
+          <BaseIcon icon={IconsEnum.Cross} />
         </button>
       </div>
       <Navigation classNames='px-xs pb-xs border-b border-b-gl-100 dark:border-b-gd-100' />
@@ -48,7 +49,11 @@ const Menu: React.FC<MenuProps> = ({ active, setActive }) => {
         onClick={toggleTheme}
         aria-label='switch theme button'>
         Switch Theme
-        {isDark ? <BaseIcon icon='moon' /> : <BaseIcon icon='sun' />}
+        {isDark ? (
+          <BaseIcon icon={IconsEnum.Moon} />
+        ) : (
+          <BaseIcon icon={IconsEnum.Sun} />
+        )}
       </button>
       <div className='px-xs'>
         <DownloadButton href={null} />

@@ -85,6 +85,19 @@ export default function Home() {
         }}
         emailLink='ad'
         emailText='mail@mail.com'
+        phoneLink='ad'
+        phoneText='mail@mail.com'
+        links={[
+          {
+            title: "github",
+            link: "/",
+            linkText: "",
+            icon: null,
+            iconDescription: null,
+            id: 1,
+            documentId: "as",
+          },
+        ]}
       />
     </main>
   );

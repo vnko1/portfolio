@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-import { ProjectType } from "@/types";
+import { IconsEnum, ProjectType } from "@/types";
 import { defaultImageDescription } from "@/utils";
 import { CustomImage, BaseIcon } from "@/components";
 
@@ -50,11 +50,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         </ul>
         <div className='flex gap-1-lg items-center'>
           <Link href={liveLink} className='button icon'>
-            <BaseIcon icon='navigation' />
+            <BaseIcon icon={IconsEnum.Navigation} />
           </Link>
           {codeLink && (
             <Link href={codeLink} className='button icon'>
-              <BaseIcon icon='github' />
+              <BaseIcon icon={IconsEnum.Github} />
             </Link>
           )}
         </div>

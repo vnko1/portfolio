@@ -1,5 +1,6 @@
 import React from "react";
-import { IconProps } from "@/types";
+
+import { IconProps, IconsEnum } from "@/types";
 import BurgerIcon from "./BurgerIcon";
 import ClipboardIcon from "./ClipboardIcon";
 import CopyrightIcon from "./CopyrightIcon";
@@ -12,7 +13,7 @@ import NavigationIcon from "./NavigationIcon";
 import PhoneIcon from "./PhoneIcon";
 import SunIcon from "./SunIcon";
 
-const iconMap: Record<string, React.FC<IconProps>> = {
+const iconMap: Record<IconsEnum, React.FC<IconProps>> = {
   burger: BurgerIcon,
   clipboard: ClipboardIcon,
   copyright: CopyrightIcon,
