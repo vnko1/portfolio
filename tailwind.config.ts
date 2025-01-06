@@ -112,6 +112,11 @@ export default {
         lg: "0px 4px 3px 0px rgba(0, 0, 0, 0.10), 0px 10px 8px 0px rgba(0, 0, 0, 0.04)",
         xl: "0px 25px 25px 0px rgba(0, 0, 0, 0.15)",
       },
+      dropShadow: {
+        md: "0px 4px 3px 0px rgba(0, 0, 0, 0.07), 0px 2px 2px 0px rgba(0, 0, 0, 0.06)",
+        lg: "0px 4px 3px 0px rgba(0, 0, 0, 0.10), 0px 10px 8px 0px rgba(0, 0, 0, 0.04)",
+        xl: "0px 25px 25px 0px rgba(0, 0, 0, 0.15)",
+      },
     },
   },
   plugins: [],

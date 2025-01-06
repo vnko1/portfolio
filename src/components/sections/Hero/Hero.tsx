@@ -68,9 +68,9 @@ const Hero: React.FC<HeroProps> = ({
           </p>
         </div>
         <div className='flex gap-0-sm'>
-          {links.map((link) => (
+          {links.map((link, index) => (
             <Link
-              key={link.id}
+              key={index}
               href={link.link}
               target='_blanc'
               rel='noreferrer noopener'

@@ -22,8 +22,8 @@ const Experience: React.FC<ExperienceProps> = ({
         </p>
       </div>
       <ul className='flex flex-col gap-2-md lg:gap-4-xl w-full'>
-        {experience.map((item) => (
-          <li key={item.documentId}>
+        {experience.map((item, index) => (
+          <li key={index}>
             <ExperienceCard {...item} classNames='mx-auto' />
           </li>
         ))}

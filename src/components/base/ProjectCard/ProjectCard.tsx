@@ -23,7 +23,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => {
   return (
     <div
-      className={`flex flex-col rounded-xl shadow-md lg:shadow-lg ${
+      className={`flex flex-col rounded-xl overflow-hidden shadow-md lg:shadow-lg ${
         reverse ? "lg:flex-row-reverse" : "lg:flex-row"
       } ${classNames}`}>
       <div
@@ -42,8 +42,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         </h4>
         <p className='body2'>{description}</p>
         <ul className='flex flex-wrap gap-0-md'>
-          {techStacks.map(({ title, documentId }) => (
-            <li key={documentId} className='tag'>
+          {techStacks.map(({ title }, index) => (
+            <li key={index} className='tag'>
               {title}
             </li>
           ))}

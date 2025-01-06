@@ -65,9 +65,11 @@ const Contact: React.FC<ContactProps> = ({
         </li>
       </ul>
       <div className='flex flex-col gap-0-md'>
-        <p className='body2 text-gl-600 dark:text-gd-600'>
-          You may also find me on these platforms!
-        </p>
+        {contactMeSection.subText ? (
+          <p className='body2 text-gl-600 dark:text-gd-600'>
+            {contactMeSection.subText}
+          </p>
+        ) : null}
         <div className='flex gap-0-sm justify-center'>
           {links.map((link) => (
             <Link

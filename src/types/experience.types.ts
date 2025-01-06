@@ -5,6 +5,7 @@ export interface ExperienceType extends UIDType {
   title: string;
   period: string;
   description: string;
-  icon: ImageType | null;
+  iconLight: ImageType | null;
+  iconDark: ImageType | null;
   iconDescription: string | null;
 }

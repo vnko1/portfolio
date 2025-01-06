@@ -17,16 +17,20 @@ const Skill: React.FC<SkillProps> = ({
   return (
     <div
       className={`inline-flex flex-col items-center gap-0-md ${classNames}`}>
-      <CustomImage
-        className='dark:hidden w-[64px] h-[64px]'
-        src={iconLight.url}
-        alt={iconDescription || defaultImageDescription}
-      />
-      <CustomImage
-        className='hidden dark:block w-[64px] h-[64px]'
-        src={iconDark.url}
-        alt={iconDescription || defaultImageDescription}
-      />
+      {iconLight && (
+        <CustomImage
+          className='dark:hidden w-[64px] h-[64px]'
+          src={iconLight.url}
+          alt={iconDescription || defaultImageDescription}
+        />
+      )}
+      {iconDark && (
+        <CustomImage
+          className='hidden dark:block w-[64px] h-[64px]'
+          src={iconDark.url}
+          alt={iconDescription || defaultImageDescription}
+        />
+      )}
       <p className='body1 text-gl-600 dark:text-gd-600'>{title}</p>
     </div>
   );

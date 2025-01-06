@@ -10,8 +10,8 @@ const Navigation: React.FC<NavigationProps> = ({ classNames }) => {
   return (
     <nav className={classNames}>
       <ul className='flex flex-col gap-1-lg lg:flex-row lg:gap-2-md'>
-        {links.map(([label, href]) => (
-          <li key={href}>
+        {links.map(([label, href], index) => (
+          <li key={index}>
             <Link
               href={href}
               className='link menu lg:hidden'

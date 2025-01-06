@@ -14,20 +14,28 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
   description,
   title,
   period,
-  icon,
+  iconDark,
+  iconLight,
   iconDescription,
 }) => {
   return (
     <div
-      className={`p-md rounded-xl bg-gl-0 dark:bg-gd-100 shadow-md dark:shadow-xl flex flex-col gap-1-lg lg:flex-row lg:justify-between lg:items-start lg:max-w-[74%] ${classNames}`}>
-      {icon && (
+      className={`p-md rounded-xl bg-gl-0 dark:bg-gd-100 shadow-md dark:shadow-xl flex flex-col gap-2-lg lg:flex-row lg:justify-between lg:items-start lg:max-w-[74%] ${classNames}`}>
+      {iconLight && (
         <CustomImage
-          src={icon.url}
+          src={iconLight.url}
           alt={iconDescription || defaultImageDescription}
-          className='max-w-[40%] lg:max-w-[12.5%]'
+          className='w-full max-w-[40%] lg:max-w-[12.5%] dark:hidden'
         />
       )}
-      <p className='body2 text-gl-799 dark:text-gd-700 lg:order-1'>
+      {iconDark && (
+        <CustomImage
+          src={iconDark.url}
+          alt={iconDescription || defaultImageDescription}
+          className='w-full max-w-[40%] lg:max-w-[12.5%] hidden dark:block'
+        />
+      )}
+      <p className='w-[40%] body2 text-gl-799 dark:text-gd-700 lg:order-1'>
         {period}
       </p>
       <div className='flex flex-col gap-1-lg'>

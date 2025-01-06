@@ -19,7 +19,7 @@ const Work: React.FC<WorkProps> = ({ projectsSection, projects }) => {
       </div>
       <ul className='flex flex-col gap-2-md lg:gap-4-xl w-full'>
         {projects.map((item, index) => (
-          <li key={item.documentId}>
+          <li key={index}>
             <ProjectCard
               {...item}
               reverse={index % 2 === 0}

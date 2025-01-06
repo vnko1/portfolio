@@ -18,9 +18,9 @@ const Skills: React.FC<SkillsProps> = ({ skillsSection, skills }) => {
         </p>
       </div>
       {
-        <ul className='flex items-center justify-between flex-wrap'>
-          {skills.map((skill) => (
-            <li key={skill.documentId}>
+        <ul className='flex items-center justify-center flex-wrap gap-4-xs'>
+          {skills.map((skill, index) => (
+            <li key={index}>
               <Skill {...skill} />
             </li>
           ))}
