@@ -10,7 +10,7 @@ export interface PortfolioType extends UIDType {
   locationText: string;
   locationLink: string;
   isAvailable: boolean;
-  isAvailableText: string | null;
+  isAvailableText: string;
   links: LinkType[];
   avatar: ImageType;
   banner: ImageType | null;
