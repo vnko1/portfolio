@@ -1,9 +1,3 @@
-export { default as Form } from "./Form/Form";
-export { default as Navigation } from "./Navigation/Navigation";
-export { default as FadeIn } from "./FadeIn/FadeIn";
-export { default as Hero } from "./Hero/Hero";
-export { default as Expertise } from "./Expertise/Expertise";
-export { default as Timeline } from "./TimeLine/TimeLine";
-export { default as Projects } from "./Projects/Projects";
-export { default as Footer } from "./Footer/Footer";
-export { default as Loader } from "./Loader/Loader";
+export * from "./base";
+export * from "./icons";
+export * from "./sections";

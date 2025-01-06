@@ -1,12 +1,13 @@
-import { StrapiImageType } from "./strapiImage.types";
+import { UIDType } from "./uid.types";
+import { ImageType } from "./media.types";
+import { SkillType } from "./skill.types";
 
-export interface ProjectType {
-  id: number;
-  liveLink: string;
-  codeLink: string | null;
+export interface ProjectType extends UIDType {
+  banner: ImageType | null;
+  bannerDescription: string | null;
   title: string;
   description: string;
-  banner: StrapiImageType;
-  isVisible: boolean;
-  role: string | null;
+  liveLink: string;
+  codeLink: string | null;
+  techStacks: Array<SkillType>;
 }

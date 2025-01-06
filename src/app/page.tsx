@@ -1,75 +1,41 @@
-"use client";
-import { useEffect, useState } from "react";
-import { Toaster } from "react-hot-toast";
+import { notFound } from "next/navigation";
 
-import { PortfolioType } from "@/types/portfolio.types";
+import { strapiApi } from "@/api";
+import { PortfolioType } from "@/types";
 import {
-  Expertise,
-  FadeIn,
-  Footer,
-  Form,
+  About,
+  Experience,
   Hero,
-  Loader,
-  Navigation,
-  Projects,
-  Timeline,
+  Skills,
+  Work,
+  Contact,
 } from "@/components";
-import { getProfile } from "@/lib/actions";
 
-const getSystemTheme = () => {
-  return window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light";
-};
+export const revalidate = 300;
 
-export default function Home() {
-  const [mode, setMode] = useState<string>("light");
-  const [profile, setProfile] = useState<null | PortfolioType[]>(null);
+export default async function Home() {
+  const res = await strapiApi.request<[PortfolioType]>(
+    "/api/portfolio",
+    { method: "GET" }
+  );
 
-  const handleModeChange = () => {
-    if (mode === "dark") {
-      setMode("light");
-    } else {
-      setMode("dark");
-    }
-  };
+  if (
+    typeof res === "string" ||
+    res instanceof Blob ||
+    res instanceof Error
+  )
+    notFound();
 
-  useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-  }, []);
-
-  useEffect(() => {
-    setMode(getSystemTheme());
-  }, []);
-
-  useEffect(() => {
-    getProfile().then((data) => setProfile(data));
-  }, []);
-
-  if (!profile) return <Loader open />;
+  const portfolioData = res[0];
 
   return (
-    <div
-      className={`main-container ${
-        mode === "dark" ? "dark-mode" : "light-mode"
-      }`}
-    >
-      <Navigation mode={mode} modeChange={handleModeChange} />
-      <FadeIn transitionDuration={700}>
-        <main>
-          <Hero mode={mode} {...profile[0]} />
-          <Expertise mode={mode} {...profile[0]} />
-          <Timeline {...profile[0]} />
-          <Projects {...profile[0]} />
-          <Form />
-        </main>
-      </FadeIn>
-      <Footer contacts={profile[0].contacts} mode={mode} />
-      <Toaster
-        position="top-left"
-        reverseOrder={false}
-        toastOptions={{ duration: 4000 }}
-      />
-    </div>
+    <main>
+      <Hero {...portfolioData} />
+      <About {...portfolioData} />
+      <Skills {...portfolioData} />
+      <Experience {...portfolioData} />
+      <Work {...portfolioData} />
+      <Contact {...portfolioData} />
+    </main>
   );
 }
