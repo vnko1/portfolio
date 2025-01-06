@@ -8,3 +8,4 @@ export { default as ExperienceCard } from "./ExperienceCard/ExperienceCard";
 export { default as ProjectCard } from "./ProjectCard/ProjectCard";
 export { default as Skill } from "./Skill/Skill";
 export { default as CopyButton } from "./CopyButton/CopyButton";
+export { default as Loader } from "./Loader/Loader";
