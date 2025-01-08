@@ -24,12 +24,14 @@ const Wrapper: React.FC<WrapperProps> = ({
     id={id}
     className={clsx(
       "w-full mx-auto overflow-hidden",
-      Tag === "section" ? "py-lg lg:py-xxl" : "",
-      Tag === "header"
-        ? "py-xs border-b border-b-gl-100 dark:border-b-gd-100"
+      Tag === "section"
+        ? `py-lg lg:py-xxl ${
+            accentColor
+              ? "bg-gl-50 dark:bg-gd-50"
+              : "bg-gl-0 dark:bg-gd-0"
+          }`
         : "",
-      Tag === "footer" ? "py-sm" : "",
-      accentColor ? "bg-gl-50 dark:bg-gd-50" : "bg-gl-0 dark:bg-gd-0",
+
       classNames
     )}>
     <div className='max-w-[1920px] w-full mx-auto overflow-hidden'>

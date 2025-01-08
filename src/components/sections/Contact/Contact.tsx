@@ -25,7 +25,10 @@ const Contact: React.FC<ContactProps> = ({
 }) => {
   if (!contactMeSection) return null;
   return (
-    <Wrapper containerClassNames='section-container' accentColor>
+    <Wrapper
+      containerClassNames='section-container'
+      accentColor
+      id='contact'>
       <div className='section-content'>
         <h4 className='tag mx-auto'>{contactMeSection.title}</h4>
         <p className='subtitle text-center max-w-[60%] mx-auto'>

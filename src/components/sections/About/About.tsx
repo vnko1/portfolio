@@ -14,7 +14,10 @@ const About: React.FC<AboutProps> = ({ banner, aboutMeSection }) => {
   if (!aboutMeSection) return null;
 
   return (
-    <Wrapper accentColor containerClassNames='section-container'>
+    <Wrapper
+      accentColor
+      containerClassNames='section-container'
+      id='about'>
       <h4 className='tag mx-auto'>{aboutMeSection.title}</h4>
       <div className='flex flex-col items-center gap-4-xl w-full lg:flex-row lg:justify-between'>
         {banner && (
