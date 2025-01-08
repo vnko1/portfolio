@@ -1,17 +1,50 @@
-export default class ApiInstance {
-  constructor(private baseUrl: RequestInfo | URL) {}
+type ResponseType = string | Blob | Error;
 
-  async request<T>(
+export default class ApiInstance {
+  private requestInterceptors: Array<
+    (init: RequestInit) => RequestInit | Promise<RequestInit>
+  > = [];
+  private responseInterceptors: Array<
+    (response: Response) => Response | Promise<Response>
+  > = [];
+
+  constructor(
+    private baseUrl: RequestInfo | URL,
+    private baseInit: RequestInit = {}
+  ) {}
+
+  addRequestInterceptor(
+    interceptor: (
+      init: RequestInit
+    ) => RequestInit | Promise<RequestInit>
+  ) {
+    this.requestInterceptors.push(interceptor);
+  }
+
+  addResponseInterceptor(
+    interceptor: (response: Response) => Response | Promise<Response>
+  ) {
+    this.responseInterceptors.push(interceptor);
+  }
+
+  private async request<T>(
+    method: string,
     input: RequestInfo | URL,
     init?: RequestInit
-  ): Promise<T | string | Blob | Error> {
-    try {
-      const url =
-        this.baseUrl instanceof URL
-          ? new URL(input.toString(), this.baseUrl)
-          : `${this.baseUrl}${input}`;
+  ): Promise<T | ResponseType> {
+    const url = new URL(input.toString(), this.baseUrl.toString());
+    let baseInit: RequestInit = { ...this.baseInit, ...init, method };
 
-      const response = await fetch(url, init);
+    for (const interceptor of this.requestInterceptors) {
+      baseInit = await interceptor(baseInit);
+    }
+
+    try {
+      const response = await fetch(url.toString(), baseInit);
+
+      for (const interceptor of this.responseInterceptors) {
+        await interceptor(response);
+      }
 
       if (!response.ok)
         throw new Error(`HTTP error! status: ${response.status}`);
@@ -20,17 +53,21 @@ export default class ApiInstance {
 
       if (contentType.includes("application/json"))
         return response.json();
-      else if (contentType.includes("text/")) return response.text();
+      else if (contentType.includes("text/"))
+        return response.text() as unknown as T;
 
-      return response.blob();
+      return response.blob() as unknown as T;
     } catch (error) {
-      console.error(error);
-      return new Error(
-        error instanceof Error
-          ? error.message
-          : "Something went wrong during the API request."
-      );
+      throw this.handleError(error) as never as T;
     }
+  }
+
+  private handleError(error: unknown) {
+    return new Error(
+      error instanceof Error
+        ? error.message
+        : "Something went wrong during the operation."
+    );
   }
 
   protected tryCatchWrapper<T, K>(
@@ -40,12 +77,52 @@ export default class ApiInstance {
       try {
         return await cb(data);
       } catch (error) {
-        throw new Error(
-          error instanceof Error
-            ? error.message
-            : "Something went wrong during the operation."
-        );
+        throw this.handleError(error);
       }
     };
+  }
+
+  get<T>(
+    input: RequestInfo | URL,
+    init?: RequestInit
+  ): Promise<T | ResponseType> {
+    return this.request("GET", input, init);
+  }
+
+  post<T>(
+    url: string,
+    body: unknown,
+    init?: RequestInit
+  ): Promise<T | ResponseType> {
+    return this.request<T>("POST", url, {
+      ...init,
+      body: JSON.stringify(body),
+      headers: {
+        ...init?.headers,
+        "Content-Type": "application/json",
+      },
+    });
+  }
+
+  put<T>(
+    url: string,
+    body: unknown,
+    init?: RequestInit
+  ): Promise<T | ResponseType> {
+    return this.request<T>("PUT", url, {
+      ...init,
+      body: JSON.stringify(body),
+      headers: {
+        ...init?.headers,
+        "Content-Type": "application/json",
+      },
+    });
+  }
+
+  delete<T>(
+    url: string,
+    init?: RequestInit
+  ): Promise<T | ResponseType> {
+    return this.request<T>("DELETE", url, init);
   }
 }
