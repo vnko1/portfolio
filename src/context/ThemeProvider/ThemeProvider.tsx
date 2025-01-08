@@ -1,10 +1,16 @@
 "use client";
-import React, { FC, useEffect, useState } from "react";
+import React, { createContext, FC, useEffect, useState } from "react";
 
-import { ThemeProviderContext } from "@/hooks";
 import { setDataToLS, getDataFromLS } from "@/utils";
 
-import { ThemeProviderProps } from "./ThemeProvider.types";
+import {
+  ThemeProviderProps,
+  ThemeProviderType,
+} from "./ThemeProvider.types";
+
+export const ThemeProviderContext = createContext<ThemeProviderType>(
+  {} as ThemeProviderType
+);
 
 const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
   const [isDark, setIsDark] = useState(false);

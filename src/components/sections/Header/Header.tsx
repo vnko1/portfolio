@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import clsx from "clsx";
 
 import { IconsEnum } from "@/types";
-import { useTheme } from "@/hooks";
+import { ThemeProviderContext } from "@/context";
 import {
   Wrapper,
   Menu,
@@ -17,7 +17,7 @@ import {
 const Header: React.FC = () => {
   const [active, setActive] = useState(false);
   const [scrollY, setScrollY] = useState(0);
-  const { toggleTheme, isDark } = useTheme();
+  const { isDark, toggleTheme } = use(ThemeProviderContext);
 
   useEffect(() => {
     const onHandleScroll = () => {

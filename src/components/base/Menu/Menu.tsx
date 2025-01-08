@@ -1,9 +1,10 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { use, useEffect } from "react";
 import clsx from "clsx";
 
 import { IconsEnum } from "@/types";
-import { useGetScreenSize, useTheme } from "@/hooks";
+import { ThemeProviderContext } from "@/context";
+import { useGetScreenSize } from "@/hooks";
 import {
   Logo,
   BaseIcon,
@@ -17,7 +18,7 @@ interface MenuProps {
 }
 
 const Menu: React.FC<MenuProps> = ({ active, setActive }) => {
-  const { toggleTheme, isDark } = useTheme();
+  const { isDark, toggleTheme } = use(ThemeProviderContext);
   const screenSize = useGetScreenSize();
 
   useEffect(() => {
