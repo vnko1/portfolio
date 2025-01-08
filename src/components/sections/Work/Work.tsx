@@ -10,7 +10,7 @@ const Work: React.FC<WorkProps> = ({ projectsSection, projects }) => {
   if (!(projectsSection && projects) || !projects.length) return null;
 
   return (
-    <Wrapper containerClassNames='section-container'>
+    <Wrapper containerClassNames='section-container' id='work'>
       <div className='section-content'>
         <h4 className='tag mx-auto'>{projectsSection.title}</h4>
         <p className='subtitle text-center'>

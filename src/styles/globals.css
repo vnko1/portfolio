@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  @apply scroll-smooth;
+}
+
 body {
   @apply h-screen bg-gl-0 dark:bg-gd-0 text-gl-600 dark:text-gd-600 scroll-smooth;
 }

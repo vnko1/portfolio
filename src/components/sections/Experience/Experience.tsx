@@ -14,7 +14,10 @@ const Experience: React.FC<ExperienceProps> = ({
     return null;
 
   return (
-    <Wrapper accentColor containerClassNames='section-container'>
+    <Wrapper
+      accentColor
+      containerClassNames='section-container'
+      id='experience'>
       <div className='section-content'>
         <h4 className='tag mx-auto'>{experienceSection.title}</h4>
         <p className='subtitle text-center'>
