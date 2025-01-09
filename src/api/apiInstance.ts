@@ -26,6 +26,13 @@ export default class ApiInstance {
   ) {
     this.responseInterceptors.push(interceptor);
   }
+  private handleError(error: unknown) {
+    return new Error(
+      error instanceof Error
+        ? error.message
+        : "Something went wrong during the operation."
+    );
+  }
 
   private async request<T>(
     method: string,
@@ -60,14 +67,6 @@ export default class ApiInstance {
     } catch (error) {
       throw this.handleError(error) as never as T;
     }
-  }
-
-  private handleError(error: unknown) {
-    return new Error(
-      error instanceof Error
-        ? error.message
-        : "Something went wrong during the operation."
-    );
   }
 
   protected tryCatchWrapper<T, K>(
