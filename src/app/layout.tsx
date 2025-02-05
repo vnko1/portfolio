@@ -1,15 +1,28 @@
 import React from "react";
 import type {Metadata} from "next";
-import {Inter} from "next/font/google";
+import {Roboto, League_Gothic, League_Spartan} from "next/font/google";
 import "@/styles/globals.css";
 
 
-const inter = Inter({
-    variable: "--font-inter",
+const roboto = Roboto({
+    variable: "--font-roboto",
     subsets: ["latin"],
     display: "swap",
-    weight: ["400", "500", "600", "700"],
+    weight: ["400", "700"],
 });
+const gothic = League_Gothic({
+    variable: "--font-gothic",
+    subsets: ["latin"],
+    display: "swap",
+    weight: ["400",],
+})
+const spartan = League_Spartan({
+    variable: "--font-spartan",
+    subsets: ["latin"],
+    display: "swap",
+    weight: ["400", "600", "700"],
+})
+
 
 export const metadata: Metadata = {
     title: "Portfolio",
@@ -23,7 +36,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang='en'>
-        <body className={inter.className}>
+        <body className={`${roboto.variable} ${gothic.variable} ${spartan.variable}`}>
         {
             children
         }
