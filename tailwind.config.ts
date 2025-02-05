@@ -10,18 +10,15 @@ export default {
     theme: {
         screens: {sm: "372px", xl: "1440px"},
         fontSize: {
-            sm: "0.875rem", // 14px
-            base: "1rem", // 16px
-            md: "1.125rem", // 18px
-            lg: "1.25rem", // 20px
-            xl: "1.5rem", // 24px
-            h3_sm: "1.5rem", // 24px
-            h3_lg: "1.875rem", // 30px
-            h2_sm: "1.125rem", // 18px
-            h2_lg: "2.25rem", // 36px
-            h1_sm: "2.25rem", // 36px
-            h1_md: "3rem", // 48px
-            h1_lg: "3.75rem", // 60px
+
+            xs: "1rem", // 16px
+            sm: "1.25rem", // 20px
+            md: "1.5rem", // 24px
+            lg: "2rem", // 32px
+            xl: "3rem", // 48px
+            xxl: "4rem", // 64px
+            "3xl": "6rem",// 96px
+
         },
         extend: {
             maxWidth: {sm: "80%", xl: "82%"},
@@ -60,7 +57,7 @@ export default {
                 grey: "#D9D9D9",
             },
             fontFamily: {
-                robot: ['var(--font-roboto)'],
+                roboto: ['var(--font-roboto)'],
                 gothic: ['var(--font-gothic)'],
                 spartan: ["var(--font-spartan)"]
             },

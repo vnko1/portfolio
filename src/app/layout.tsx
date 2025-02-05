@@ -20,7 +20,7 @@ const spartan = League_Spartan({
     variable: "--font-spartan",
     subsets: ["latin"],
     display: "swap",
-    weight: ["400", "600", "700"],
+    weight: ["400", "500", "600", "700"],
 })
 
 
