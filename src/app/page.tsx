@@ -1,9 +1,11 @@
-import { CustomLink } from "@/components";
+import { Skill } from "@/components";
 
 export default async function Home() {
   return (
     <main>
-      <CustomLink href="/">Contact me</CustomLink>
+      <Skill src="/symbol.svg" alt="HTML">
+        HTML
+      </Skill>
     </main>
   );
 }
