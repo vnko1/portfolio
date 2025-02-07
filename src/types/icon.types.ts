@@ -1,5 +1,5 @@
 export enum IconsEnum {
-    // Burger = "burger",
-    Arrow = "arrow",
-
+  // Burger = "burger",
+  Arrow = "arrow",
+  GitHub = "github",
 }

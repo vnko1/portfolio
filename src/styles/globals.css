@@ -11,6 +11,10 @@
     @apply font-spartan text-lg font-bold leading-normal text-black;
   }
 
+  h3 {
+    @apply font-roboto text-sm font-bold leading-normal text-black;
+  }
+
   img {
     @apply block w-full h-auto;
   }
