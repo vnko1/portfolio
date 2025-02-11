@@ -48,7 +48,16 @@ export default {
         "5-xl": "58px",
         "6-xs": "60px",
       },
-      colors: {},
+      colors: {
+        primary: "#5671A6", // indigo
+        secondary: "#B2CAD8", // pastel
+        gray: "#616161", // dark-gray
+        dark: "#383838", // charcoal
+        light: "#ffffff", // white
+        muted: "#616161", // silver-gray
+        black: "#000000", // black
+        accent: "#B3CBD9", // ice
+      },
       fontFamily: {
         poppins: ["var(--font-poppins)"],
         bai: ["var(--font-bai)"],
