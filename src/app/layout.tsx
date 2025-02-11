@@ -1,46 +1,35 @@
 import React from "react";
-import type {Metadata} from "next";
-import {Roboto, League_Gothic, League_Spartan} from "next/font/google";
+import type { Metadata } from "next";
+import { Poppins, Bai_Jamjuree } from "next/font/google";
 import "@/styles/globals.css";
 
-
-const roboto = Roboto({
-    variable: "--font-roboto",
-    subsets: ["latin"],
-    display: "swap",
-    weight: ["400", "700"],
+const poppins = Poppins({
+  variable: "--font-poppins",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
 });
-const gothic = League_Gothic({
-    variable: "--font-gothic",
-    subsets: ["latin"],
-    display: "swap",
-    weight: ["400",],
-})
-const spartan = League_Spartan({
-    variable: "--font-spartan",
-    subsets: ["latin"],
-    display: "swap",
-    weight: ["400", "500", "600", "700"],
-})
 
+const baj = Bai_Jamjuree({
+  variable: "--font-bai",
+  subsets: ["latin"],
+  display: "swap",
+  weight: "500",
+});
 
 export const metadata: Metadata = {
-    title: "Portfolio",
-    description: "Andrii Valenko portfolio",
+  title: "Portfolio",
+  description: "Andrii Valenko portfolio",
 };
 
 export default function RootLayout({
-                                       children,
-                                   }: Readonly<{
-    children: React.ReactNode;
+  children,
+}: Readonly<{
+  children: React.ReactNode;
 }>) {
-    return (
-        <html lang='en'>
-        <body className={`${roboto.variable} ${gothic.variable} ${spartan.variable}`}>
-        {
-            children
-        }
-        </body>
-        </html>
-    );
+  return (
+    <html lang="en">
+      <body className={`${poppins.variable} ${baj.variable}`}>{children}</body>
+    </html>
+  );
 }

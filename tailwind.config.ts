@@ -8,19 +8,16 @@ export default {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    screens: { sm: "372px", xl: "1440px" },
     fontSize: {
-      xs: "1rem", // 16px
-      sm: "1.25rem", // 20px
-      md: "1.5rem", // 24px
-      lg: "2rem", // 32px
-      xl: "3rem", // 48px
-      xxl: "4rem", // 64px
-      "3xl": "6rem", // 96px
+      xs: "0.75rem", // 12px
+      sm: "0.875rem", // 14px
+      base: "1rem", // 16px
+      md: "1.25rem", // 20px
+      lg: "1.5rem", // 24px
+      xl: "2rem", // 32px
     },
 
     extend: {
-      maxWidth: { sm: "80%", xl: "82%" },
       spacing: {
         "0-sm": "4px",
         "0-md": "8px",
@@ -51,15 +48,10 @@ export default {
         "5-xl": "58px",
         "6-xs": "60px",
       },
-      colors: {
-        black: "#000",
-        white: "#ffffff",
-        gr: "#D9D9D9",
-      },
+      colors: {},
       fontFamily: {
-        roboto: ["var(--font-roboto)"],
-        gothic: ["var(--font-gothic)"],
-        spartan: ["var(--font-spartan)"],
+        poppins: ["var(--font-poppins)"],
+        bai: ["var(--font-bai)"],
       },
     },
   },

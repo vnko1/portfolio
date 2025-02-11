@@ -2,18 +2,14 @@ import React from "react";
 
 import { IconsEnum } from "@/types";
 
-import ArrowIcon from "./Arrow";
-import GitHubIcon from "./GitHub";
+
+
+const iconMap: Record<IconsEnum, React.FC> = {};
 
 interface Props extends React.SVGAttributes<SVGElement> {
   icon: keyof typeof iconMap;
   size?: number;
 }
-
-const iconMap: Record<IconsEnum, React.FC> = {
-  [IconsEnum.Arrow]: ArrowIcon,
-  [IconsEnum.GitHub]: GitHubIcon,
-};
 
 const Icon: React.FC<Props> = ({ size = 24, icon, ...props }) => {
   const IconComponent = iconMap[icon];

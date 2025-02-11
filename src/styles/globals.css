@@ -4,15 +4,12 @@
 
 @layer base {
   h1 {
-    @apply font-gothic text-3xl font-normal leading-normal text-white;
   }
 
   h2 {
-    @apply font-spartan text-lg font-bold leading-normal text-black;
   }
 
   h3 {
-    @apply font-roboto text-sm font-bold leading-normal text-black;
   }
 
   img {
@@ -22,19 +19,15 @@
 
 @layer components {
   .subtitle {
-    @apply font-spartan text-lg font-normal leading-normal tracking-[11.52px] text-white;
+  }
+
+  .body {
   }
 
   .body1 {
-    @apply font-roboto text-xs font-normal leading-normal text-black;
   }
 
   .body2 {
-    @apply font-spartan text-md font-medium leading-normal text-black;
-  }
-
-  .body3 {
-    @apply font-spartan text-xxl font-bold leading-normal text-black;
   }
 }
 
@@ -43,5 +36,5 @@ html {
 }
 
 body {
-  @apply h-screen body1;
+  @apply h-screen body;
 }
