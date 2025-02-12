@@ -9,12 +9,13 @@ export default {
   ],
   theme: {
     fontSize: {
-      xs: "0.75rem", // 12px
-      sm: "0.875rem", // 14px
-      base: "1rem", // 16px
-      md: "1.25rem", // 20px
-      lg: "1.5rem", // 24px
-      xl: "2rem", // 32px
+      xxs: "1rem", // 16px
+      xs: "1.125rem", // 18px
+      sm: "1.25rem", // 20px
+      md: "1.5rem", // 24px
+      lg: "2rem", // 32px
+      xl: "3rem", // 48px
+      xxl: "4.5rem", // 72px
     },
 
     extend: {
@@ -59,8 +60,7 @@ export default {
         accent: "#B3CBD9", // ice
       },
       fontFamily: {
-        poppins: ["var(--font-poppins)"],
-        bai: ["var(--font-bai)"],
+        poppins: ["var(--font-inter)"],
       },
     },
   },

@@ -1,20 +1,13 @@
 import React from "react";
 import type { Metadata } from "next";
-import { Poppins, Bai_Jamjuree } from "next/font/google";
+import { Poppins, Bai_Jamjuree, Inter } from "next/font/google";
 import "@/styles/globals.css";
 
-const poppins = Poppins({
+const inter = Inter({
   variable: "--font-poppins",
   subsets: ["latin"],
   display: "swap",
-  weight: ["400", "500", "600", "700"],
-});
-
-const baj = Bai_Jamjuree({
-  variable: "--font-bai",
-  subsets: ["latin"],
-  display: "swap",
-  weight: "500",
+  weight: ["400", "500", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -29,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} ${baj.variable}`}>{children}</body>
+      <body className={inter.variable}>{children}</body>
     </html>
   );
 }
