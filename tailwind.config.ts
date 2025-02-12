@@ -17,7 +17,12 @@ export default {
       xl: "3rem", // 48px
       xxl: "4.5rem", // 72px
     },
-
+    lineHeight: {
+      2: "2.25rem",
+      32: "2rem",
+      36: "2.25rem",
+      82: "5.125rem",
+    },
     extend: {
       spacing: {
         "0-sm": "4px",
@@ -55,8 +60,7 @@ export default {
           secondary: "#FFDF00",
           light: "#ffffff",
           black: "#000000",
-          accent: "#5B1BFF",
-          "accent-light": "#754EF9",
+          accent: { 100: "#754EF9", 200: "#5B1BFF" },
           "text-main": "rgba(var(--color-text))",
           "text-primary": "rgba(var(--color-text-primary))",
           "text-secondary": "rgba(var(--color-text-secondary))",
@@ -66,15 +70,14 @@ export default {
           secondary: "#FFDF00",
           light: "#e0e0e0",
           black: "#000000",
-          accent: "#5B1BFF",
-          "accent-light": "#754EF9",
+          accent: { 100: "#754EF9", 200: "#5B1BFF" },
           "text-main": "rgba(var(--color-dark-text))",
           "text-primary": "rgba(var(--color-dark-text-primary))",
           "text-secondary": "rgba(var(--color-dark-text-secondary))",
         },
       },
       fontFamily: {
-        poppins: ["var(--font-inter)"],
+        inter: ["var(--font-inter)"],
       },
     },
   },

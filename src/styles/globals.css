@@ -14,12 +14,19 @@
   }
 
   h1 {
+    @apply font-extrabold text-xxl leading-82;
   }
 
   h2 {
+    @apply font-extrabold text-md leading-32;
   }
 
   h3 {
+    @apply font-bold text-sm leading-32;
+  }
+
+  p {
+    @apply font-normal text-xs leading-32;
   }
 
   img {
@@ -28,16 +35,16 @@
 }
 
 @layer components {
-  .subtitle {
-  }
-
   .body {
+    @apply font-normal text-xxs text-light-text-main dark:text-dark-text-secondary;
   }
 
   .body1 {
+    @apply font-medium text-xxs text-light-text-main dark:text-dark-text-secondary;
   }
 
   .body2 {
+    @apply font-semibold text-xxs text-light-light dark:text-dark-light;
   }
 }
 
@@ -46,5 +53,5 @@ html {
 }
 
 body {
-  @apply h-screen body;
+  @apply h-screen body font-inter text-light-primary dark:text-dark-primary bg-light-accent-200 dark:bg-dark-accent-200;
 }
