@@ -3,6 +3,16 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --color-text: rgba(30, 30, 30, 0.7);
+    --color-text-primary: rgba(30, 30, 30, 0.6);
+    --color-text-secondary: rgba(17, 17, 17, 0.7);
+
+    --color-dark-text: rgba(255, 255, 255, 0.9);
+    --color-dark-text-primary: rgba(255, 255, 255, 0.8);
+    --color-dark-text-secondary: rgba(255, 255, 255, 0.6);
+  }
+
   h1 {
   }
 

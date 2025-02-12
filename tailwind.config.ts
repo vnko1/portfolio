@@ -50,14 +50,28 @@ export default {
         "6-xs": "60px",
       },
       colors: {
-        primary: "#5671A6", // indigo
-        secondary: "#B2CAD8", // pastel
-        gray: "#616161", // dark-gray
-        dark: "#383838", // charcoal
-        light: "#ffffff", // white
-        muted: "#616161", // silver-gray
-        black: "#000000", // black
-        accent: "#B3CBD9", // ice
+        light: {
+          primary: "#1E1E1E",
+          secondary: "#FFDF00",
+          light: "#ffffff",
+          black: "#000000",
+          accent: "#5B1BFF",
+          "accent-light": "#754EF9",
+          "text-main": "rgba(var(--color-text))",
+          "text-primary": "rgba(var(--color-text-primary))",
+          "text-secondary": "rgba(var(--color-text-secondary))",
+        },
+        dark: {
+          primary: "#121212",
+          secondary: "#FFDF00",
+          light: "#e0e0e0",
+          black: "#000000",
+          accent: "#5B1BFF",
+          "accent-light": "#754EF9",
+          "text-main": "rgba(var(--color-dark-text))",
+          "text-primary": "rgba(var(--color-dark-text-primary))",
+          "text-secondary": "rgba(var(--color-dark-text-secondary))",
+        },
       },
       fontFamily: {
         poppins: ["var(--font-inter)"],
