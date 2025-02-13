@@ -18,6 +18,7 @@ export default {
       xxl: "4.5rem", // 72px
     },
     lineHeight: {
+      16: "1rem",
       20: "1.25rem",
       28: "1.75rem",
       32: "2rem",
@@ -29,8 +30,10 @@ export default {
         main: "url('/wallpaper.webp')",
       },
       spacing: {
-        "0-sm": "4px",
-        "0-md": "8px",
+        "0-sm": "2px",
+        "0-md": "4px",
+        "0-lg": "6px",
+        "0-xl": "8px",
         "1-xs": "10px",
         "1-sm": "12px",
         "1-md": "14px",

@@ -25,7 +25,7 @@ const IconButton: React.FC<Props> = ({
   size = 28,
   onClick,
 }) => {
-  const baseClassNames = `inline-flex items-center justify-center w-4-xs h-4-xs rounded-[50%] text-light-primary dark:text-dark-primary hover:bg-light-accent-200 focus:bg-light-accent-200 dark:hover:bg-light-accent-200 dark:focus:bg-light-accent-200 transition-all hover:text-light-light focus:text-light-light dark:hover:text-dark-light dark:focus:text-dark-light duration-300 ${classNames}`;
+  const baseClassNames = `inline-flex items-center justify-center w-4-xs h-4-xs rounded-[50%] text-light-primary dark:text-dark-primary hover:bg-light-accent-200 focus:bg-light-accent-200 dark:hover:bg-dark-accent-200 dark:focus:bg-dark-accent-200 hover:text-light-light focus:text-light-light dark:hover:text-dark-light dark:focus:text-dark-light transition-all duration-300 ${classNames}`;
 
   const handleClick = (
     e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement, MouseEvent>
