@@ -1,5 +1,15 @@
 export enum IconsEnum {
-  // Burger = "burger",
-  // Arrow = "arrow",
-  // GitHub = "github",
+  Home = "home",
+  Frame = "frame",
+  Note = "note",
+  Briefcase = "briefcase",
+  Messages = "messages",
+  Print = "print",
+  Download = "download",
+  ArrowDownCircle = "arrowDownCircle",
+  Point = "point",
+  CircleArrow = "circleArrow",
+  RightArrow = "rightArrow",
+  Light = "light",
+  Dark = "dark",
 }

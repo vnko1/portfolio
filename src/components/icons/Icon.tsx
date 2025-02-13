@@ -1,17 +1,13 @@
 import React from "react";
 
-import { IconsEnum } from "@/types";
-
-
-
-const iconMap: Record<IconsEnum, React.FC> = {};
+import { iconMap } from "./svg";
 
 interface Props extends React.SVGAttributes<SVGElement> {
   icon: keyof typeof iconMap;
   size?: number;
 }
 
-const Icon: React.FC<Props> = ({ size = 24, icon, ...props }) => {
+const Icon: React.FC<Props> = ({ size = 20, icon, ...props }) => {
   const IconComponent = iconMap[icon];
   if (!IconComponent) {
     console.warn(`Icon "${icon}" not found.`);
