@@ -33,11 +33,15 @@ const Button: React.FC<Props> = ({
 }) => {
   const baseClassNames = `inline-flex items-center justify-center gap-1-xs px-4-xs py-2-xs rounded-xl font-medium transition-all duration-300 ${
     reverse ? "flex-row-reverse" : ""
-  } ${classNames || ""}`;
+  }`;
 
   const classNamesMap = {
-    contained: `${baseClassNames} text-xxs leading-20 bg-light-accent-200 dark:bg-dark-accent-200 hover:bg-transparent focus:bg-transparent text-light-light dark:text-dark-light hover:text-light-primary dark:hover-text-dark-primary focus:text-light-primary dark:focus:hover-text-dark-primary`,
-    outlined: `${baseClassNames} text-xxs leading-28 tracking-[0.72px] text-light-primary dark:text-dark-primary hover:text-light-light dark:hover:text-dark-light focus:text-light-light dark:focus:text-dark-light hover:bg-light-accent-200 dark:hover:bg-dark-accent-200 focus:bg-light-accent-200 dark:focus:bg-dark-accent-200`,
+    contained: `${baseClassNames} text-xxs leading-20 bg-light-accent-200 dark:bg-dark-accent-200 hover:bg-transparent focus:bg-transparent text-light-light dark:text-dark-light hover:text-light-primary dark:hover-text-dark-primary focus:text-light-primary dark:focus:hover-text-dark-primary ${
+      classNames || ""
+    }`,
+    outlined: `${baseClassNames} text-xxs leading-28 tracking-[0.72px] text-light-primary dark:text-dark-primary hover:text-light-light dark:hover:text-dark-light focus:text-light-light dark:focus:text-dark-light hover:bg-light-accent-200 dark:hover:bg-dark-accent-200 focus:bg-light-accent-200 dark:focus:bg-dark-accent-200 ${
+      classNames || ""
+    }`,
   };
 
   const handleClick = (
