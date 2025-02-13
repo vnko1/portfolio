@@ -1,7 +1,7 @@
 import React from "react";
+import Image from "next/image";
 
 import { ServiceCardType } from "@/types";
-import Image from "next/image";
 
 interface Props extends ServiceCardType {
   classNames?: string;

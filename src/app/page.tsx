@@ -1,14 +1,17 @@
-import { ServiceCard } from "@/components";
+import { PriceCard } from "@/components";
 
 export default async function Home() {
   return (
     <main>
-      <ServiceCard
-        icon={{ url: "/dev.png", id: 1, documentId: "sda" }}
-        title="Web development"
-        description="Lorem ipsum dolor sit amet, solor adipiscing elit. Non nisl solor elementum."
+      <PriceCard
+        icon={{ id: 1, documentId: "asd", url: "/flash.svg" }}
         id={1}
-        documentId="12s"
+        documentId="asd"
+        tariff="basic"
+        currency="$"
+        amount={30}
+        billing_system={"/hr"}
+        includes="Web development; -Advertising; -Music Writing; -Photography"
       />
     </main>
   );

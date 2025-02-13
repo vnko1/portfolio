@@ -13,6 +13,7 @@ import CircleArrowIcon from "./CircleArrowIcon";
 import RightArrowIcon from "./RightArrowIcon";
 import LightIcon from "./LightIcon";
 import DarkIcon from "./DarkIcon";
+import CheckIcon from "./CheckIcon";
 
 export const iconMap: Record<IconsEnum, React.FC> = {
   [IconsEnum.Home]: HomeIcon,
@@ -28,4 +29,5 @@ export const iconMap: Record<IconsEnum, React.FC> = {
   [IconsEnum.RightArrow]: RightArrowIcon,
   [IconsEnum.Light]: LightIcon,
   [IconsEnum.Dark]: DarkIcon,
+  [IconsEnum.Check]: CheckIcon,
 };

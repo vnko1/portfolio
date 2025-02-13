@@ -12,4 +12,5 @@ export enum IconsEnum {
   RightArrow = "rightArrow",
   Light = "light",
   Dark = "dark",
+  Check = "check",
 }
