@@ -7,10 +7,12 @@
     --color-text: rgba(30, 30, 30, 0.7);
     --color-text-primary: rgba(30, 30, 30, 0.6);
     --color-text-secondary: rgba(17, 17, 17, 0.7);
+    --color-border: rgba(30, 30, 30, 0.2);
 
     --color-dark-text: rgba(255, 255, 255, 0.9);
     --color-dark-text-primary: rgba(255, 255, 255, 0.8);
     --color-dark-text-secondary: rgba(255, 255, 255, 0.6);
+    --color-dark-border: rgba(30, 30, 30, 0.2);
   }
 
   h1 {
@@ -46,8 +48,12 @@
   .body2 {
     @apply font-semibold text-xxs text-light-light dark:text-dark-light;
   }
+
+  .body3 {
+    @apply font-normal text-xxs leading-28 text-light-text-primary dark:text-dark-text-primary;
+  }
 }
 
 body {
-  /* @apply h-screen body font-inter text-light-primary dark:text-dark-primary bg-light-accent-200 dark:bg-dark-accent-200 mix-blend-multiply bg-no-repeat bg-cover bg-main; */
+  @apply h-screen body font-inter text-light-primary dark:text-dark-primary bg-light-accent-200 dark:bg-dark-accent-200 mix-blend-multiply bg-no-repeat bg-cover bg-main;
 }
