@@ -24,6 +24,9 @@ export default {
       82: "5.125rem",
     },
     extend: {
+      backgroundImage: {
+        main: "url('/wallpaper.webp')",
+      },
       spacing: {
         "0-sm": "4px",
         "0-md": "8px",

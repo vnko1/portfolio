@@ -48,10 +48,6 @@
   }
 }
 
-html {
-  @apply scroll-smooth;
-}
-
 body {
-  @apply h-screen body font-inter text-light-primary dark:text-dark-primary bg-light-accent-200 dark:bg-dark-accent-200;
+  @apply h-screen body font-inter text-light-primary dark:text-dark-primary bg-light-accent-200 dark:bg-dark-accent-200 mix-blend-multiply bg-no-repeat bg-cover bg-main;
 }
