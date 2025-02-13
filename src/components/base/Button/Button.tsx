@@ -1,8 +1,9 @@
 "use client";
 import React from "react";
 import Link from "next/link";
+
 import { IconsEnum } from "@/types";
-import Icon from "@/components/icons/Icon";
+import { Icon } from "@/components";
 
 interface Props {
   children: React.ReactNode;
