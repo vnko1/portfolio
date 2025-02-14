@@ -19,10 +19,13 @@ export default {
     },
     lineHeight: {
       16: "1rem",
+      18: "1.125rem",
       20: "1.25rem",
+      24: "1.5rem",
       28: "1.75rem",
       32: "2rem",
       36: "2.25rem",
+      48: "3rem",
       82: "5.125rem",
     },
     extend: {
@@ -72,6 +75,7 @@ export default {
           "text-primary": "var(--color-text-primary)",
           "text-secondary": "var(--color-text-secondary)",
           grey: "var(--color-border)",
+          line: "var(--color-line)",
         },
         dark: {
           primary: "#121212",
@@ -83,6 +87,7 @@ export default {
           "text-primary": "var(--color-dark-text-primary)",
           "text-secondary": "var(--color-dark-text-secondary)",
           grey: "var(--color-dark-border)",
+          line: "var(--color-dark-line)",
         },
       },
       dropShadow: {

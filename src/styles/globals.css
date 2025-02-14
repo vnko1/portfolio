@@ -7,11 +7,13 @@
     --color-text: rgba(30, 30, 30, 0.7);
     --color-text-primary: rgba(30, 30, 30, 0.6);
     --color-text-secondary: rgba(17, 17, 17, 0.7);
+    --color-line: rgba(255, 255, 255, 0.5);
     --color-border: rgba(30, 30, 30, 0.2);
 
     --color-dark-text: rgba(255, 255, 255, 0.9);
     --color-dark-text-primary: rgba(255, 255, 255, 0.8);
     --color-dark-text-secondary: rgba(255, 255, 255, 0.6);
+    --color-dark-line: rgba(255, 255, 255, 0.5);
     --color-dark-border: rgba(30, 30, 30, 0.2);
   }
 
@@ -56,9 +58,14 @@
   .page-transition {
     @apply opacity-0 bg-light-primary dark:bg-dark-primary translate-y-10 blur-md;
   }
+
+  .flex-centering {
+    @apply flex justify-center items-center;
+  }
 }
 
 body {
-  @apply transition-all duration-300 ease-in-out  h-screen body font-inter text-light-primary dark:text-dark-primary bg-light-accent-200 dark:bg-dark-accent-200 mix-blend-multiply bg-no-repeat bg-cover;
+  @apply transition-all duration-300 ease-in-out h-screen font-inter body text-light-primary dark:text-dark-primary;
   /* bg-main */
+  /* bg-light-accent-200 dark:bg-dark-accent-200 mix-blend-multiply bg-no-repeat bg-cover */
 }
