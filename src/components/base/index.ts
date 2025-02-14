@@ -4,3 +4,4 @@ export { default as NavLink } from "./NavLink/NavLink";
 export { default as ServiceCard } from "./ServiceCard/ServiceCard";
 export { default as PriceCard } from "./PriceCard/PriceCard";
 export { default as ExperienceCard } from "./ExperienceCard/ExperienceCard";
+export { default as Skill } from "./Skill/Skill";
