@@ -40,11 +40,11 @@
 
 @layer components {
   .body {
-    @apply font-normal text-xxs text-light-text-main dark:text-dark-text-secondary;
+    @apply font-normal text-xxs text-light-text-main dark:text-dark-text-main;
   }
 
   .body1 {
-    @apply font-medium text-xxs text-light-text-main dark:text-dark-text-secondary;
+    @apply font-medium text-xxs text-light-text-secondary dark:text-dark-text-secondary;
   }
 
   .body2 {

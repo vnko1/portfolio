@@ -1,17 +1,15 @@
-import { PriceCard } from "@/components";
+import { ExperienceCard } from "@/components";
 
 export default async function Home() {
   return (
     <section>
-      <PriceCard
-        tariff="basic"
-        icon={{ url: "/rocket.png", id: 1, documentId: "ads" }}
-        currency="$"
-        id={1}
-        documentId="asd"
-        amount={30}
-        billing_system={"/hr"}
-        includes={"Web development; -Advetising; -Music Writing; -Photography"}
+      <ExperienceCard
+        id={0}
+        documentId="1"
+        role="Web Developer"
+        period="2018 - Present"
+        place="-Envato"
+        description="I have acquired the skills and knowledge necessary to make your project a success."
       />
     </section>
   );

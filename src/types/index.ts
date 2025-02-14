@@ -3,3 +3,4 @@ export * from "./media.types";
 export * from "./icon.types";
 export * from "./serviceCard.types";
 export * from "./priceCard.types";
+export * from "./experienceCard.types";
