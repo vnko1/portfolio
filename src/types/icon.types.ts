@@ -13,4 +13,5 @@ export enum IconsEnum {
   Light = "light",
   Dark = "dark",
   Check = "check",
+  Quotes = "quotes",
 }

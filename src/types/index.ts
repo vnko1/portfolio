@@ -5,3 +5,4 @@ export * from "./serviceCard.types";
 export * from "./priceCard.types";
 export * from "./experienceCard.types";
 export * from "./skill.types";
+export * from "./reviewCard.types";
