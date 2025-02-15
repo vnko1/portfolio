@@ -1,0 +1,64 @@
+"use client";
+import React from "react";
+
+import Icon from "@/components/icons/Icon";
+import { IconsEnum } from "@/types";
+
+interface Props {
+  isChecked: boolean;
+  setIsChecked: React.Dispatch<React.SetStateAction<boolean>>;
+  classNames?: string;
+}
+
+const SwitchButton: React.FC<Props> = ({
+  isChecked,
+  setIsChecked,
+  classNames,
+}) => {
+  const handleSwitch = () => setIsChecked((state) => !state);
+  return (
+    <label
+      className={`relative inline-flex cursor-pointer select-none items-center justify-center rounded-[23px] bg-light-accent-100 dark:bg-dark-accent-100 p-1 ${classNames}`}
+    >
+      <input
+        type="checkbox"
+        name="switch"
+        id="switch"
+        checked={isChecked}
+        onChange={handleSwitch}
+        className="sr-only"
+      />
+
+      <span
+        className={`flex items-center space-x-[6px] rounded-[23px] py-2 px-[18px] text-xxs font-medium transition-all duration-150 ${
+          !isChecked
+            ? "text-light-primary dark:text-dark-primary bg-light-light dark:bg-dark-light"
+            : "text-light-light dark:text-dark-light"
+        }`}
+      >
+        <Icon
+          size={16}
+          icon={IconsEnum.Light}
+          className="mr-[6px] fill-current"
+        />
+        Light Mode
+      </span>
+      <span
+        className={`flex items-center space-x-[6px] rounded-[23px] py-2 px-[18px] text-xxs font-medium transition-all duration-150 ${
+          isChecked
+            ? "text-light-light dark:text-dark-light bg-light-primary dark:bg-dark-primary"
+            : "text-light-light dark:text-dark-light"
+        }`}
+      >
+        <Icon
+          size={16}
+          icon={IconsEnum.Dark}
+          className="mr-[6px] fill-current"
+        />
+        Dark Mode
+      </span>
+    </label>
+  );
+};
+
+export default SwitchButton;

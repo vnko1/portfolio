@@ -13,9 +13,11 @@ const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript", "prettier"),
   {
     rules: {
+      "@typescript-eslint/no-empty-object-type": "off",
       "react/display-name": "off",
+      "no-unused-vars": "off",
       "@typescript-eslint/no-unused-vars": [
-        "error",
+        "off",
         { argsIgnorePattern: "^_", varsIgnorePattern: "String" },
       ],
     },

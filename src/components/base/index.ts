@@ -8,3 +8,4 @@ export { default as Skill } from "./Skill/Skill";
 export { default as ReviewCard } from "./ReviewCard/ReviewCard";
 export { default as Client } from "./Client/Client";
 export { default as ProjectCard } from "./ProjectCard/ProjectCard";
+export { default as SwitchButton } from "./SwitchButton/SwitchButton";
