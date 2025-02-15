@@ -14,6 +14,10 @@ const eslintConfig = [
   {
     rules: {
       "react/display-name": "off",
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        { argsIgnorePattern: "^_", varsIgnorePattern: "String" },
+      ],
     },
   },
 ];

@@ -30,7 +30,7 @@ const IconButton: React.FC<Props> = ({
   const handleClick = (
     e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement, MouseEvent>
   ) => {
-    onClick && onClick(e);
+    if (typeof onClick === "function") onClick(e);
   };
 
   if (href)
