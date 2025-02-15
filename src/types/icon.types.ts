@@ -14,4 +14,5 @@ export enum IconsEnum {
   Dark,
   Check,
   Quotes,
+  Github,
 }

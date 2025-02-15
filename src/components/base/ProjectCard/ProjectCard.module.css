@@ -1,0 +1,26 @@
+.card {
+  @apply relative transition-all duration-300 hover:shadow-sm focus:shadow-sm hover:scale-[1.05]   overflow-hidden;
+}
+
+.card::after {
+  content: "";
+  @apply absolute top-0 left-0 block w-full h-full transition-all duration-300 translate-y-full z-10  bg-light-black-200 dark:bg-dark-black-200;
+}
+
+.content {
+  @apply absolute top-0 left-0 flex flex-col items-start gap-1-xs w-full h-full p-3-xs transition-transform duration-300 translate-y-full z-20;
+}
+
+.card:hover .content,
+.card:focus .content {
+  @apply translate-y-0;
+}
+
+.card:hover::after,
+.card:focus::after {
+  @apply translate-y-0 opacity-60;
+}
+
+.link {
+  @apply flex justify-center items-center w-4-md h-4-md rounded-[50%] bg-light-secondary dark:bg-dark-secondary;
+}

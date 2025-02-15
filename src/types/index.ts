@@ -7,3 +7,5 @@ export * from "./experienceCard.types";
 export * from "./skill.types";
 export * from "./reviewCard.types";
 export * from "./client.types";
+export * from "./category.types";
+export * from "./projectCard.types";

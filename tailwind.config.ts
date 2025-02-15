@@ -24,6 +24,7 @@ export default {
       24: "1.5rem",
       26: "1.625rem",
       28: "1.75rem",
+      30: "1.875rem",
       32: "2rem",
       36: "2.25rem",
       48: "3rem",
@@ -93,6 +94,10 @@ export default {
       },
       dropShadow: {
         sm: "2px 4px 36px rgba(17, 17, 17, 0.05)",
+      },
+
+      boxShadow: {
+        sm: "0 15px 30px rgba(0, 0, 0, 0.2)",
       },
       fontFamily: {
         inter: ["var(--font-inter)"],

@@ -15,6 +15,7 @@ import LightIcon from "./LightIcon";
 import DarkIcon from "./DarkIcon";
 import CheckIcon from "./CheckIcon";
 import QuotesIcon from "./QuotesIcon";
+import GithubIcon from "./GithubIcon";
 
 export const iconMap: Record<IconsEnum, React.FC> = {
   [IconsEnum.Home]: HomeIcon,
@@ -32,4 +33,5 @@ export const iconMap: Record<IconsEnum, React.FC> = {
   [IconsEnum.Dark]: DarkIcon,
   [IconsEnum.Check]: CheckIcon,
   [IconsEnum.Quotes]: QuotesIcon,
+  [IconsEnum.Github]: GithubIcon,
 };

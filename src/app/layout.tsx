@@ -7,6 +7,7 @@ import "@/styles/globals.css";
 const inter = Inter({
   variable: "--font-poppins",
   subsets: ["latin"],
+  style: ["normal", "italic"],
   display: "swap",
   weight: ["400", "500", "700", "800"],
 });
