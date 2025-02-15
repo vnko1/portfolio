@@ -15,7 +15,7 @@ const ExperienceCard: React.FC<Props> = ({
   description,
 }) => (
   <div
-    className={`flex flex-col p-3-xs bg-light-grey dark:bg-dark-grey ${
+    className={`flex flex-col p-3-xs bg-light-grey-100 dark:bg-dark-grey-100 ${
       classNames || ""
     }`}
   >

@@ -18,7 +18,7 @@ const Skill: React.FC<Props> = ({ classNames, progress, title, icon }) => {
       <div className="flex items-center gap-1-lg w-full">
         <div
           style={{ width: `${convertedValue}%` }}
-          className="bg-[#111] text-light-light dark:text-dark-light px-2-md py-0-md rounded-lg flex items-center gap-0-xl"
+          className="bg-light-black-200 dark:bg-dark-black-200 text-light-light dark:text-dark-light px-2-md py-0-md rounded-lg flex items-center gap-0-xl"
         >
           {icon && (
             <Image
@@ -34,7 +34,7 @@ const Skill: React.FC<Props> = ({ classNames, progress, title, icon }) => {
         <div className="flex-1 border-t border-black" />
       </div>
       {progress && (
-        <p className="inline-block ml-auto text-[#111] text-xs font-bold leading-26 uppercase">
+        <p className="inline-block ml-auto text-light-black-200 dark:text-dark-black-200 text-xs font-bold leading-26 uppercase">
           {convertedValue}%
         </p>
       )}
