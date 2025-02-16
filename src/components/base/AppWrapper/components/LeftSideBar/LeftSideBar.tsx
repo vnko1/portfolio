@@ -13,14 +13,14 @@ const LeftSideBar: React.FC<Props> = ({ url }) => {
   const { isDark, toggleTheme } = React.use(ThemeContext);
 
   return (
-    <div className="flex flex-col items-center justify-between pb-4-xs pt-[120px] h-screen bg-light-accent-200 dark:bg-dark-accent-200 mix-blend-multiply bg-no-repeat bg-cover bg-main">
+    <div className="hidden xl:flex flex-col items-center justify-between pb-4-xs xl:pt-[120px] h-screen bg-light-accent-200 dark:bg-dark-accent-200 mix-blend-multiply bg-no-repeat bg-cover bg-main">
       <SwitchButton
         onChange={toggleTheme}
         isActive={isDark}
         classNames="top-[120px] -rotate-90 w-[220px] sm:w-[298px]"
       />
       {url && (
-        <div>
+        <div className="flex flex-col items-center">
           <IconButton
             icon={IconsEnum.Print}
             size={20}

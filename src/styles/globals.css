@@ -58,7 +58,7 @@
   }
 
   .container {
-    @apply grid grid-rows-1 grid-cols-1 md:grid-cols-section gap-3-xs;
+    @apply grid grid-rows-1 grid-cols-1 xl:grid-cols-section gap-3-xs;
   }
 
   .section {
