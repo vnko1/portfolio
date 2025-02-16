@@ -7,3 +7,5 @@ export const links = [
   { href: "/portfolio", icon: IconsEnum.Briefcase },
   { href: "/contact", icon: IconsEnum.Messages },
 ];
+
+export const cvFileName = "Adrii_Valenko_CV.pdf";
