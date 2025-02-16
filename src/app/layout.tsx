@@ -6,6 +6,7 @@ import "@/extensions/string";
 import "@/styles/globals.css";
 
 import { AppWrapper, Header } from "@/components";
+import { Theme } from "@/context";
 
 const inter = Inter({
   variable: "--font-poppins",
@@ -30,10 +31,12 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={inter.variable}>
-        <AppWrapper>
-          <Header />
-          <main className="container">{children}</main>
-        </AppWrapper>
+        <Theme>
+          <AppWrapper>
+            <Header />
+            <main className="container">{children}</main>
+          </AppWrapper>
+        </Theme>
       </body>
     </html>
   );

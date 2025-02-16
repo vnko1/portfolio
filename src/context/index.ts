@@ -1,1 +1,2 @@
-export { default as Wrapper } from "./Wrapper/Wrapper";
+export { default as Theme } from "./Theme/Theme";
+export * from "./Theme/Theme";

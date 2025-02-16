@@ -1,21 +1,16 @@
 "use client";
 import React from "react";
 
-import Icon from "@/components/icons/Icon";
 import { IconsEnum } from "@/types";
+import { ThemeContext } from "@/context";
+import { Icon } from "@/components";
 
 interface Props {
-  isChecked: boolean;
-  setIsChecked: React.Dispatch<React.SetStateAction<boolean>>;
   classNames?: string;
 }
 
-const SwitchButton: React.FC<Props> = ({
-  isChecked,
-  setIsChecked,
-  classNames,
-}) => {
-  const handleSwitch = () => setIsChecked((state) => !state);
+const SwitchButton: React.FC<Props> = ({ classNames }) => {
+  const { isDark, toggleTheme } = React.use(ThemeContext);
   return (
     <label
       className={`relative inline-flex cursor-pointer select-none items-center justify-center rounded-[23px] bg-light-accent-100 dark:bg-dark-accent-100 p-1 ${classNames}`}
@@ -24,14 +19,14 @@ const SwitchButton: React.FC<Props> = ({
         type="checkbox"
         name="switch"
         id="switch"
-        checked={isChecked}
-        onChange={handleSwitch}
+        checked={isDark}
+        onChange={toggleTheme}
         className="sr-only"
       />
 
       <span
         className={`flex items-center space-x-[6px] rounded-[23px] py-2 px-[18px] text-xxs font-medium transition-all duration-150 ${
-          !isChecked
+          !isDark
             ? "text-light-primary dark:text-dark-primary bg-light-light dark:bg-dark-light"
             : "text-light-light dark:text-dark-light"
         }`}
@@ -45,7 +40,7 @@ const SwitchButton: React.FC<Props> = ({
       </span>
       <span
         className={`flex items-center space-x-[6px] rounded-[23px] py-2 px-[18px] text-xxs font-medium transition-all duration-150 ${
-          isChecked
+          isDark
             ? "text-light-light dark:text-dark-light bg-light-primary dark:bg-dark-primary"
             : "text-light-light dark:text-dark-light"
         }`}
