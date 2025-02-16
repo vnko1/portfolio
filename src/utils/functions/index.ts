@@ -8,14 +8,18 @@ export const getNameFromLink = (link: string) => {
   return name ? name.charAt(0).toUpperCase() + name.slice(1) : "Home";
 };
 
-export const handlePrint = (url: string) => {
+export const handlePrint = (url?: string | null) => {
   if (!url) return;
   const printWindow = window.open(url, "_blank");
   printWindow?.focus();
   printWindow?.print();
 };
 
-export const handleDownload = (url: string, fileName: string = cvFileName) => {
+export const handleDownload = (
+  url?: string | null,
+  fileName: string = cvFileName
+) => {
+  if (!url) return;
   const link = document.createElement("a");
   link.href = url;
   link.download = fileName;
