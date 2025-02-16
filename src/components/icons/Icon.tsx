@@ -7,7 +7,13 @@ interface Props extends React.SVGAttributes<SVGElement> {
   size?: number;
 }
 
-const Icon: React.FC<Props> = ({ size = 20, icon, ...props }) => {
+const Icon: React.FC<Props> = ({
+  size = 20,
+  width,
+  height,
+  icon,
+  ...props
+}) => {
   const IconComponent = iconMap[icon];
   if (!IconComponent) {
     console.warn(`Icon "${icon}" not found.`);
@@ -16,9 +22,9 @@ const Icon: React.FC<Props> = ({ size = 20, icon, ...props }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={size}
-      height={size}
-      viewBox={`0 0 ${size} ${size}`}
+      width={width || size}
+      height={height || size}
+      viewBox={`0 0 ${width || size} ${height || size}`}
       fill="none"
       {...props}
     >

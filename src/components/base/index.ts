@@ -10,3 +10,4 @@ export { default as Client } from "./Client/Client";
 export { default as ProjectCard } from "./ProjectCard/ProjectCard";
 export { default as SwitchButton } from "./SwitchButton/SwitchButton";
 export { default as AppWrapper } from "./AppWrapper/AppWrapper";
+export { default as Logo } from "./Logo/Logo";

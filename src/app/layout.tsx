@@ -3,7 +3,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@/lib/extensions/string";
 import "@/styles/globals.css";
-import { AppWrapper } from "@/components";
+
+import { AppWrapper, Header } from "@/components";
 
 const inter = Inter({
   variable: "--font-poppins",
@@ -31,8 +32,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.variable}>
         <AppWrapper>
-          {children}
-          {sections}
+          <Header />
+          <main className="container">
+            {children}
+            {sections}
+          </main>
         </AppWrapper>
       </body>
     </html>

@@ -82,6 +82,7 @@ export default {
           "text-secondary": "var(--color-text-secondary)",
           grey: { 100: "var(--color-border)", 200: "#c4c4c4" },
           line: "var(--color-line)",
+          "header-btn": "var(---color-header-btn)",
         },
         dark: {
           primary: "#121212",
@@ -94,6 +95,7 @@ export default {
           "text-secondary": "var(--color-dark-text-secondary)",
           grey: { 100: "var(--color-dark-border)", 200: "#c4c4c4" },
           line: "var(--color-dark-line)",
+          "header-btn": "var(---color-dark-header-btn)",
         },
       },
       dropShadow: {
