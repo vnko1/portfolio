@@ -1,7 +1,8 @@
 import React from "react";
 import type { Metadata } from "next";
+
 import { Inter } from "next/font/google";
-import "@/lib/extensions/string";
+import "@/extensions/string";
 import "@/styles/globals.css";
 
 import { AppWrapper, Header } from "@/components";
@@ -21,22 +22,17 @@ export const metadata: Metadata = {
 
 export const revalidate = 300;
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
-  sections,
 }: Readonly<{
   children: React.ReactNode;
-  sections: React.ReactNode;
 }>) {
   return (
     <html lang="en">
       <body className={inter.variable}>
         <AppWrapper>
           <Header />
-          <main className="container">
-            {children}
-            {sections}
-          </main>
+          <main className="container">{children}</main>
         </AppWrapper>
       </body>
     </html>

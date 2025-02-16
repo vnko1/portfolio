@@ -1,22 +1,21 @@
 "use client";
 import React from "react";
 import Link, { LinkProps } from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 import { IconsEnum } from "@/types";
-import { Icon } from "@/components";
-import { useRouter } from "next/navigation";
 import { sleep } from "@/utils";
+import { Icon } from "@/components";
 
 interface Props extends LinkProps {
-  children: React.ReactNode;
+  text: string;
   icon: IconsEnum;
   classNames?: string;
   size?: number;
 }
 const NavLink: React.FC<Props> = ({
   classNames,
-  children,
+  text,
   icon,
   size = 20,
   href,
@@ -29,14 +28,16 @@ const NavLink: React.FC<Props> = ({
     e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
   ) => {
     e.preventDefault();
-    document.body.classList.add("page-transition");
+    const section = document.querySelector("section");
+
+    section?.classList.add("section-transition");
     await sleep(300);
     push(href as string);
     await sleep(300);
-    document.body.classList.remove("page-transition");
+    section?.classList.remove("section-transition");
   };
 
-  const baseClassNames = `inline-flex items-center justify-center gap-0-lg px-2-xs py-3-xs transition-all duration-300 font-normal text-xxs leading-16 text-light-primary dark:text-dark-primary hover:bg-light-secondary focus:bg-light-secondary dark:hover:bg-dark-secondary dark:focus:bg-dark-secondary ${
+  const baseClassNames = `cursor-pointer inline-flex items-center justify-center gap-0-lg px-2-xs py-3-xs transition-all duration-300 font-normal text-xxs leading-16 text-light-primary dark:text-dark-primary hover:bg-light-secondary focus:bg-light-secondary dark:hover:bg-dark-secondary dark:focus:bg-dark-secondary ${
     pathname === href ? "bg-light-secondary dark:bg-dark-secondary" : ""
   } ${classNames}`;
 
@@ -48,7 +49,7 @@ const NavLink: React.FC<Props> = ({
       {...props}
     >
       <Icon icon={icon} size={size} />
-      {children}
+      {text}
     </Link>
   );
 };

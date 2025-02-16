@@ -61,8 +61,12 @@
     @apply grid grid-rows-1 grid-cols-1 md:grid-cols-section gap-3-xs;
   }
 
-  .page-transition {
-    @apply opacity-0 bg-light-primary dark:bg-dark-primary translate-y-10 blur-md;
+  .section {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  .section-transition {
+    @apply opacity-0 translate-y-10 blur-md;
   }
 
   .flex-centering {
@@ -76,10 +80,14 @@
   .grid-container > *:nth-child(odd) {
     @apply row-span-2;
   }
+
+  .link {
+    @apply py-1-sm px-2-md rounded-lg border border-light-header-btn dark:border-dark-header-btn bg-light-primary dark:bg-dark-primary font-medium leading-20 text-light-light dark:text-dark-light;
+  }
 }
 
 body {
-  @apply h-screen font-inter body text-light-primary dark:text-dark-primary bg-light-light dark:bg-dark-light transition-all duration-300 ease-in-out;
+  @apply h-screen font-inter body text-light-primary dark:text-dark-primary bg-light-light dark:bg-dark-light;
 }
 
 .app-border {

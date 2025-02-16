@@ -4,9 +4,16 @@ import React from "react";
 import { Icon } from "@/components";
 import { IconsEnum } from "@/types";
 
-const Logo: React.FC = () => {
+interface Props {
+  classNames?: string;
+}
+
+const Logo: React.FC<Props> = ({ classNames }) => {
   return (
-    <a className="inline-flex items-center gap-0-lg text-md font-bold" href="/">
+    <a
+      className={`inline-flex items-center gap-0-lg text-md font-bold ${classNames}`}
+      href="/"
+    >
       <Icon
         icon={IconsEnum.Logo}
         width={48}
