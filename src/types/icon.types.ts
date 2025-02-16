@@ -16,4 +16,6 @@ export enum IconsEnum {
   Quotes,
   Github,
   Logo,
+  Burger,
+  Cross,
 }
