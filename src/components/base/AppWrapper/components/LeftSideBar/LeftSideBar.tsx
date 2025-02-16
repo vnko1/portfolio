@@ -17,14 +17,20 @@ const LeftSideBar: React.FC<Props> = ({ url }) => {
       <SwitchButton
         onChange={toggleTheme}
         isActive={isDark}
-        classNames="-rotate-90 w-[298px] top-[120px]"
+        classNames="top-[120px] -rotate-90 w-[220px] sm:w-[298px]"
       />
       {url && (
-        <IconButton
-          icon={IconsEnum.Print}
-          size={20}
-          onClick={() => handlePrint(url)}
-        />
+        <div>
+          <IconButton
+            icon={IconsEnum.Print}
+            size={20}
+            onClick={() => handlePrint(url)}
+            classNames="mb-1-sm"
+          />
+          <p className="hidden sm:block font-medium text-3xs leading-12 md:text-xxs md:leading-16 text-light-light dark:text-dark-light">
+            Print Resume
+          </p>
+        </div>
       )}
     </div>
   );

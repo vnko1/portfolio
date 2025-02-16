@@ -15,7 +15,7 @@ const AppWrapper: React.FC<Props> = async ({ children, url }) => {
           {children}
         </div>
       </div>
-      <RightSideBar />
+      <RightSideBar url={url} />
     </div>
   );
 };

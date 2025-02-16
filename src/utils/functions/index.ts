@@ -27,3 +27,8 @@ export const handleDownload = (
   link.click();
   document.body.removeChild(link);
 };
+
+export const getCurrentYear = () =>
+  new Date().toLocaleDateString(undefined, {
+    year: "numeric",
+  });

@@ -9,7 +9,7 @@ import { AppWrapper, Header } from "@/components";
 import { Theme } from "@/context";
 
 const inter = Inter({
-  variable: "--font-poppins",
+  variable: "--font-inter",
   subsets: ["latin"],
   style: ["normal", "italic"],
   display: "swap",
@@ -32,7 +32,7 @@ export default async function RootLayout({
     <html lang="en">
       <body className={inter.variable}>
         <Theme>
-          <AppWrapper>
+          <AppWrapper url={"/"}>
             <Header />
             <main className="container">{children}</main>
           </AppWrapper>

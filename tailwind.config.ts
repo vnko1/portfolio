@@ -9,6 +9,7 @@ export default {
   ],
   theme: {
     fontSize: {
+      "3xs": "0.75rem", // 12px
       xxs: "1rem", // 16px
       xs: "1.125rem", // 18px
       sm: "1.25rem", // 20px
@@ -18,6 +19,7 @@ export default {
       xxl: "4.5rem", // 72px
     },
     lineHeight: {
+      12: "0.75rem",
       16: "1rem",
       18: "1.125rem",
       20: "1.25rem",
