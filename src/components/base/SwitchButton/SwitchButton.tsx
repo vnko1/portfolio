@@ -25,7 +25,7 @@ const SwitchButton: React.FC<Props> = ({ classNames, onChange, isActive }) => {
       />
 
       <span
-        className={`flex items-center space-x-[6px] rounded-[23px] py-1 sm:py-2 px-1-xs sm:px-1-xl text-3xs sm:text-xxs font-medium transition-all duration-150 ${
+        className={`flex items-center space-x-[6px] rounded-[23px] py-1 xl:py-2 px-1-xs xl:px-1-xl text-3xs xl:text-xxs font-medium transition-all duration-150 ${
           !isActive
             ? "text-light-primary dark:text-dark-primary bg-light-light dark:bg-dark-light"
             : "text-light-light dark:text-dark-light"
@@ -39,7 +39,7 @@ const SwitchButton: React.FC<Props> = ({ classNames, onChange, isActive }) => {
         Light Mode
       </span>
       <span
-        className={`flex items-center space-x-[6px] rounded-[23px] py-1 sm:py-2 px-1-xs sm:px-1-xl text-3xs sm:text-xxs  font-medium transition-all duration-150 ${
+        className={`flex items-center space-x-[6px] rounded-[23px] py-1 xl:py-2 px-1-xs xl:px-1-xl text-3xs xl:text-xxs font-medium transition-all duration-150 ${
           isActive
             ? "text-light-light dark:text-dark-light bg-light-primary dark:bg-dark-primary"
             : "text-light-light dark:text-dark-light"

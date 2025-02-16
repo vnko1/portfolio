@@ -1,15 +1,17 @@
 "use client";
 import React, { useState } from "react";
+import Link from "next/link";
 
 import { IconsEnum } from "@/types";
-import { Icon, Logo, NavLink } from "@/components";
-import Link from "next/link";
 import { getNameFromLink, links } from "@/utils";
+import { ThemeContext } from "@/context";
+import { Icon, Logo, NavLink, SwitchButton } from "@/components";
 
 interface Props {
   classNames?: string;
 }
 const Menu: React.FC<Props> = ({ classNames }) => {
+  const { isDark, toggleTheme } = React.use(ThemeContext);
   const [active, setActive] = useState(false);
 
   return (
@@ -45,6 +47,11 @@ const Menu: React.FC<Props> = ({ classNames }) => {
         >
           Hire me
         </Link>
+        <SwitchButton
+          onChange={toggleTheme}
+          isActive={isDark}
+          classNames="w-[80%] max-w-[220px] justify-self-start"
+        />
       </div>
     </div>
   );
