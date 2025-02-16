@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@/lib/extensions/string";
 import "@/styles/globals.css";
+import { AppWrapper } from "@/components";
 
 const inter = Inter({
   variable: "--font-poppins",
@@ -29,9 +30,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.variable}>
-        <main>
-          {children} {sections}
-        </main>
+        <AppWrapper>
+          {children}
+          {sections}
+        </AppWrapper>
       </body>
     </html>
   );

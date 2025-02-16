@@ -73,7 +73,9 @@
 }
 
 body {
-  @apply transition-all duration-300 ease-in-out h-screen font-inter body text-light-primary dark:text-dark-primary;
-  /* bg-main */
-  /* bg-light-accent-200 dark:bg-dark-accent-200 mix-blend-multiply bg-no-repeat bg-cover */
+  @apply h-screen font-inter body text-light-primary dark:text-dark-primary bg-light-light dark:bg-dark-light transition-all duration-300 ease-in-out;
+}
+
+.app-border {
+  @apply h-screen bg-light-accent-200 dark:bg-dark-accent-200 mix-blend-multiply bg-no-repeat bg-cover bg-main;
 }

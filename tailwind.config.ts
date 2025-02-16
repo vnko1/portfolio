@@ -31,6 +31,10 @@ export default {
       82: "5.125rem",
     },
     extend: {
+      gridTemplateColumns: {
+        wrapper: "minmax(10%, 1fr) minmax(0, 1520px) minmax(10%, 1fr)",
+        section: "0.5fr 1.5fr",
+      },
       backgroundImage: {
         main: "url('/wallpaper.webp')",
       },
