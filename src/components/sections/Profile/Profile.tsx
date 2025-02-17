@@ -51,11 +51,15 @@ const Profile: React.FC<Props> = ({
       <ul className="flex gap-1-lg px-4-xs">
         {social_links.map((link) => (
           <li key={link.documentId}>
-            <IconButton
-              href={link.link}
-              imageUrl={link.icon.url}
-              icon={IconsEnum.Home}
-            />
+            <Link href={link.link} className="icon-btn">
+              <Image
+                src={link.icon.url}
+                alt={link.text}
+                width={0}
+                height={0}
+                className="w-2-xs h-2-xs"
+              />
+            </Link>
           </li>
         ))}
       </ul>

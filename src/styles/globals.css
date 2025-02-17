@@ -84,6 +84,10 @@
   .link {
     @apply py-1-sm px-2-md rounded-lg border border-light-header-btn dark:border-dark-header-btn bg-light-primary dark:bg-dark-primary font-medium leading-20 text-light-light dark:text-dark-light;
   }
+
+  .icon-btn {
+    @apply inline-flex items-center justify-center w-3-xs h-3-xs md:w-4-xs md:h-4-xs rounded-[50%] text-light-primary dark:text-dark-primary bg-light-light dark:bg-dark-light transition-all duration-300 hover:shadow-sm focus:shadow-sm;
+  }
 }
 
 body {
