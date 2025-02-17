@@ -6,13 +6,15 @@ import { IconButton } from "@/components";
 
 interface Props {
   url?: string | null;
+  copyright_text?: string;
 }
 
-const RightSideBar: React.FC<Props> = ({ url }) => {
+const RightSideBar: React.FC<Props> = ({ url, copyright_text }) => {
   return (
     <div className="hidden xl:flex flex-col items-center justify-between xl:pb-4-xs xl:pt-[120px] h-screen bg-light-accent-200 dark:bg-dark-accent-200 mix-blend-multiply bg-no-repeat bg-cover bg-main">
       <p className="relative top-[120px] -rotate-90 w-[320px] text-3xs leading-12 sm:text-xxs sm:leading-24 text-light-light dark:text-dark-light">
-        &#169; {getCurrentYear()} VNKO. All rights reserved.
+        &#169; {getCurrentYear()}{" "}
+        {copyright_text ? copyright_text : "VNKO. All rights reserved."}
       </p>
       {url && (
         <div className="flex flex-col items-center">
