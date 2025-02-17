@@ -9,3 +9,4 @@ export * from "./reviewCard.types";
 export * from "./client.types";
 export * from "./category.types";
 export * from "./projectCard.types";
+export * from "./common.types";

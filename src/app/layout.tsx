@@ -5,8 +5,8 @@ import { Inter } from "next/font/google";
 import "@/extensions/string";
 import "@/styles/globals.css";
 
-import { AppWrapper, Header } from "@/components";
 import { Theme } from "@/context";
+import { AppWrapper, Header, Profile } from "@/components";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -34,7 +34,10 @@ export default async function RootLayout({
         <Theme>
           <AppWrapper url={"/"}>
             <Header />
-            <main className="container">{children}</main>
+            <main className="container">
+              <Profile />
+              {children}
+            </main>
           </AppWrapper>
         </Theme>
       </body>

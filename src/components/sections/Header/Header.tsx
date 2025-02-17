@@ -4,7 +4,7 @@ import Link from "next/link";
 import { getNameFromLink, links } from "@/utils";
 import { Logo, Menu, NavLink } from "@/components";
 
-const Header = () => {
+const Header: React.FC = () => {
   return (
     <header className="flex items-center">
       <Logo classNames="py-3-sm xl:py-0" />
