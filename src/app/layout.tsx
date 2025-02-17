@@ -5,6 +5,7 @@ import { Inter } from "next/font/google";
 import "@/extensions/string";
 import "@/styles/globals.css";
 
+import { strapi } from "@/api";
 import { Theme } from "@/context";
 import { AppWrapper, Header, Profile } from "@/components";
 
@@ -23,45 +24,18 @@ export const metadata: Metadata = {
 
 export const revalidate = 300;
 
-const contacts = [
-  { link: "/", title: "/", text: "+380933944629", id: 1, documentId: "1" },
-  {
-    link: "/",
-    title: "/",
-    text: "andreyvalenko@gmail.com",
-    id: 1,
-    documentId: "2",
-  },
-];
-const soc = [
-  {
-    link: "/",
-    icon: { url: "/user.svg", id: 0, documentId: "asd" },
-    text: "+380933944629",
-    id: 1,
-    documentId: "1",
-  },
-  {
-    link: "/",
-    icon: { url: "/user.svg", id: 0, documentId: "asd" },
-    text: "+380933944629",
-    id: 1,
-    documentId: "2",
-  },
-  {
-    link: "/",
-    icon: { url: "/user.svg", id: 0, documentId: "asd" },
-    text: "+380933944629",
-    id: 1,
-    documentId: "3",
-  },
-];
+const getCommonData = async () => {
+  "use server";
+  return strapi.getCommonData();
+};
 
 export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const res = await getCommonData();
+
   return (
     <html lang="en">
       <body className={inter.variable}>
@@ -69,14 +43,7 @@ export default async function RootLayout({
           <AppWrapper url={"/"}>
             <Header />
             <main className="container">
-              <Profile
-                banner={{ id: 1, documentId: "as", url: "/wallpaper.webp" }}
-                full_name="Andrii Valenko"
-                role="Web Developer"
-                city="Kyiv"
-                contact_links={contacts}
-                social_links={soc}
-              />
+              <Profile {...res.data.data} />
               {children}
             </main>
           </AppWrapper>

@@ -1,9 +1,9 @@
-import { SwitchButton } from "@/components";
+import { Home } from "@/components";
 
-export default function Home() {
+export default function HomePage() {
   return (
     <section id="section" className="section">
-      Home
+      <Home />
     </section>
   );
 }

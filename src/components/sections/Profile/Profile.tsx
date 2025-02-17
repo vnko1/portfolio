@@ -2,14 +2,13 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import { CommonType, IconsEnum } from "@/types";
-import { IconButton } from "@/components/base";
+import { CommonType } from "@/types";
 
 interface Props extends Omit<CommonType, "copyright_text"> {}
 
 const Profile: React.FC<Props> = ({
   banner,
-  full_name,
+  first_name,
   role,
   city,
   contact_links,
@@ -19,7 +18,7 @@ const Profile: React.FC<Props> = ({
     <section className="flex flex-col justify-between gap-3-xs pl-2-xs pt-2-xs pb-[86px] bg-light-secondary dark:bg-dark-secondary">
       <Image
         src={banner.url}
-        alt={full_name}
+        alt={first_name}
         width={410}
         height={488}
         sizes="(max-width: 1279px) 100vw, 33vw"
@@ -28,7 +27,7 @@ const Profile: React.FC<Props> = ({
 
       <div className="px-4-xs">
         <p className="mb-0-lg font-bold leading-48 text-lg text-light-primary dark:text-dark-primary">
-          {full_name}
+          {first_name}
         </p>
         <p className="font-normal text-xxs leading-24 text-light-primary/60 dark:text-dark-primary/60">
           {role} | {city}
@@ -41,6 +40,8 @@ const Profile: React.FC<Props> = ({
               <Link
                 href={link.link}
                 className="font-bold leading-24 text-light-primary dark:text-dark-primary"
+                target="_blank"
+                rel="noreferrer noopener"
               >
                 {link.text}
               </Link>
@@ -51,7 +52,12 @@ const Profile: React.FC<Props> = ({
       <ul className="flex gap-1-lg px-4-xs">
         {social_links.map((link) => (
           <li key={link.documentId}>
-            <Link href={link.link} className="icon-btn">
+            <Link
+              href={link.link}
+              className="icon-btn"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
               <Image
                 src={link.icon.url}
                 alt={link.text}
