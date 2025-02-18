@@ -26,7 +26,7 @@ export const revalidate = 300;
 
 const getCommonData = async () => {
   "use server";
-  return strapi.getCommonData();
+  return Promise.all([strapi.getCommonData(), strapi.getCV()]);
 };
 
 export default async function RootLayout({
@@ -34,16 +34,16 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // const res = await getCommonData();
+  const [commonData, cvData] = await getCommonData();
 
   return (
     <html lang="en">
       <body className={inter.variable}>
         <Theme>
-          <AppWrapper url={"/"}>
+          <AppWrapper url={cvData.data.data.cv_link}>
             <Header />
             <main className="container">
-              {/* <Profile {...res.data.data} /> */}
+              <Profile {...commonData.data.data} />
               {children}
             </main>
           </AppWrapper>

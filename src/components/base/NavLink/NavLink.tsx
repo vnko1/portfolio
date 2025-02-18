@@ -35,7 +35,7 @@ const NavLink: React.FC<Props> = ({
     }
     if (href === pathname) return;
 
-    const section = document.querySelector("section");
+    const section = document.querySelector(".section");
     section?.classList.add("section-transition");
     await sleep(300);
     push(href as string);

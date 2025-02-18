@@ -66,7 +66,7 @@
   }
 
   .section-transition {
-    @apply opacity-0 blur-md;
+    @apply opacity-0 translate-y-20 blur-md;
   }
 
   .flex-centering {

@@ -11,3 +11,4 @@ export * from "./category.types";
 export * from "./projectCard.types";
 export * from "./common.types";
 export * from "./links.types";
+export * from "./cv.types";
