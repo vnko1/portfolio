@@ -34,7 +34,7 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const res = await getCommonData();
+  // const res = await getCommonData();
 
   return (
     <html lang="en">
@@ -43,7 +43,7 @@ export default async function RootLayout({
           <AppWrapper url={"/"}>
             <Header />
             <main className="container">
-              <Profile {...res.data.data} />
+              {/* <Profile {...res.data.data} /> */}
               {children}
             </main>
           </AppWrapper>

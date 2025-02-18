@@ -1,6 +1,6 @@
 import React from "react";
 
-const About = () => {
+const About = async () => {
   return (
     <section id="section" className="section">
       ABOUT
