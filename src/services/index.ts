@@ -1,1 +1,1 @@
-export { default as ApiInstance } from "./apiInstance";
+export * from "./api";

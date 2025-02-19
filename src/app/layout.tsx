@@ -5,7 +5,7 @@ import { Inter } from "next/font/google";
 import "@/extensions/string";
 import "@/styles/globals.css";
 
-import { strapi } from "@/api";
+import { strapiApi } from "@/api";
 import { Theme } from "@/context";
 import { AppWrapper, Header, Profile } from "@/components";
 
@@ -26,7 +26,7 @@ export const revalidate = 300;
 
 const getCommonData = async () => {
   "use server";
-  return Promise.all([strapi.getCommonData(), strapi.getCV()]);
+  return Promise.all([strapiApi.getCommonData(), strapiApi.getCVData()]);
 };
 
 export default async function RootLayout({
@@ -40,10 +40,10 @@ export default async function RootLayout({
     <html lang="en">
       <body className={inter.variable}>
         <Theme>
-          <AppWrapper url={cvData.data.data.cv_link}>
+          <AppWrapper url={cvData.data.cv_link}>
             <Header />
             <main className="container">
-              <Profile {...commonData.data.data} />
+              <Profile {...commonData.data} />
               {children}
             </main>
           </AppWrapper>

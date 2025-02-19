@@ -1,3 +1,5 @@
-import axios from "axios";
+// export const strapiApi = axios.create({ baseURL: process.env.BASE_URL });
 
-export const strapiApi = axios.create({ baseURL: process.env.BASE_URL });
+import { StrapiInstance } from "@/services";
+
+export const strapiApi = new StrapiInstance(process.env.BASE_URL as string);
