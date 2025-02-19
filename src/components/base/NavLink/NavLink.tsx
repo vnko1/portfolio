@@ -35,12 +35,12 @@ const NavLink: React.FC<Props> = ({
     }
     if (href === pathname) return;
 
-    const section = document.querySelector(".section");
-    section?.classList.add("section-transition");
-    await sleep(300);
+    const section = document.querySelector(".page");
+    section?.classList.add("page-transition");
+    await sleep(500);
     push(href as string);
-    await sleep(300);
-    section?.classList.remove("section-transition");
+    await sleep(500);
+    section?.classList.remove("page-transition");
   };
 
   const baseClassNames = `cursor-pointer inline-flex items-center justify-center gap-0-lg px-2-xs py-3-xs transition-all duration-300 font-normal text-xxs leading-16 text-light-primary dark:text-dark-primary hover:bg-light-secondary focus:bg-light-secondary dark:hover:bg-dark-secondary dark:focus:bg-dark-secondary ${

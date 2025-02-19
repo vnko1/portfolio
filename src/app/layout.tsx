@@ -42,10 +42,10 @@ export default async function RootLayout({
         <Theme>
           <AppWrapper url={cvData.data.cv_link}>
             <Header />
-            <main className="container">
+            <div className="container">
               <Profile {...commonData.data} />
               {children}
-            </main>
+            </div>
           </AppWrapper>
         </Theme>
       </body>

@@ -58,15 +58,15 @@
   }
 
   .container {
-    @apply grid grid-rows-1 grid-cols-1 xl:grid-cols-section gap-3-xs;
+    @apply grid grid-rows-1 grid-cols-1 xl:grid-cols-section gap-3-xs overflow-x-hidden;
   }
 
-  .section {
-    @apply transition-all duration-300 ease-in-out;
+  .page {
+    @apply transition-all duration-500 ease-in-out;
   }
 
-  .section-transition {
-    @apply opacity-0 translate-y-20 blur-md;
+  .page-transition {
+    @apply opacity-0 blur-md;
   }
 
   .flex-centering {
@@ -91,7 +91,7 @@
 }
 
 body {
-  @apply h-screen font-inter body text-light-primary dark:text-dark-primary bg-light-light dark:bg-dark-light;
+  @apply h-screen overflow-y-auto font-inter body text-light-primary dark:text-dark-primary bg-light-light dark:bg-dark-light;
 }
 
 .app-border {

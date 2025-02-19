@@ -1,11 +1,7 @@
 import React from "react";
 
 const About = async () => {
-  return (
-    <section id="section" className="section">
-      ABOUT
-    </section>
-  );
+  return <main className="page">ABOUT</main>;
 };
 
 export default About;
