@@ -11,4 +11,4 @@ export { default as ProjectCard } from "./ProjectCard/ProjectCard";
 export { default as SwitchButton } from "./SwitchButton/SwitchButton";
 export { default as AppWrapper } from "./AppWrapper/AppWrapper";
 export { default as Logo } from "./Logo/Logo";
-export { default as Slider } from "./Slider/Slider";
+export { default as Carousel } from "./Carousel/Carousel";

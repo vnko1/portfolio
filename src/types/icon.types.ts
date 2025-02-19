@@ -8,7 +8,7 @@ export enum IconsEnum {
   Download,
   ArrowDownCircle,
   Point,
-  CircleArrow,
+  Arrow,
   RightArrow,
   Light,
   Dark,

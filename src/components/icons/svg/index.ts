@@ -9,7 +9,7 @@ import PrintIcon from "./PrintIcon";
 import DownloadArrowIcon from "./DownloadArrowIcon";
 import ArrowDownCircleIcon from "./ArrowDownCircleIcon";
 import PointIcon from "./PointIcon";
-import CircleArrowIcon from "./CircleArrowIcon";
+import ArrowIcon from "./ArrowIcon";
 import RightArrowIcon from "./RightArrowIcon";
 import LightIcon from "./LightIcon";
 import DarkIcon from "./DarkIcon";
@@ -30,7 +30,7 @@ export const iconMap: Record<IconsEnum, React.FC> = {
   [IconsEnum.Download]: DownloadArrowIcon,
   [IconsEnum.ArrowDownCircle]: ArrowDownCircleIcon,
   [IconsEnum.Point]: PointIcon,
-  [IconsEnum.CircleArrow]: CircleArrowIcon,
+  [IconsEnum.Arrow]: ArrowIcon,
   [IconsEnum.RightArrow]: RightArrowIcon,
   [IconsEnum.Light]: LightIcon,
   [IconsEnum.Dark]: DarkIcon,
