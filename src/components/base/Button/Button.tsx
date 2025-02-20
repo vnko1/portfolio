@@ -37,10 +37,10 @@ const Button: React.FC<Props> = ({
   }`;
 
   const classNamesMap = {
-    contained: `${baseClassNames} text-xxs leading-20 bg-light-accent-200 dark:bg-dark-accent-200 hover:bg-transparent focus:bg-transparent text-light-light dark:text-dark-light hover:text-light-primary dark:hover:text-dark-primary focus:text-light-primary dark:focus:text-dark-primary ${
+    contained: `${baseClassNames} text-xxs leading-20 bg-light-accent-200 dark:bg-dark-accent-200 hover:bg-transparent focus:bg-transparent text-light-light dark:text-dark-light hover:text-light-primary dark:hover:text-dark-primary focus:text-light-primary dark:focus:text-dark-primary hover:shadow-sm ${
       classNames || ""
     }`,
-    outlined: `${baseClassNames} text-xxs leading-28 tracking-[0.72px] text-light-primary dark:text-dark-primary hover:text-light-light dark:hover:text-dark-light focus:text-light-light dark:focus:text-dark-light hover:bg-light-accent-200 dark:hover:bg-dark-accent-200 focus:bg-light-accent-200 dark:focus:bg-dark-accent-200 ${
+    outlined: `${baseClassNames} text-xxs leading-28 tracking-[0.72px] text-light-primary dark:text-dark-primary hover:shadow-sm ${
       classNames || ""
     }`,
   };
@@ -54,7 +54,6 @@ const Button: React.FC<Props> = ({
   if (href)
     return (
       <Link
-        onClick={handleClick}
         href={href}
         rel={rel}
         target={target}

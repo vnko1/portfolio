@@ -57,12 +57,8 @@
     @apply font-normal text-xxs leading-28 text-light-text-primary dark:text-dark-text-primary;
   }
 
-  .container {
-    @apply grow flex flex-col xl:flex-row gap-3-xs overflow-x-hidden;
-  }
-
   .page {
-    @apply transition-all duration-500 ease-in-out;
+    @apply grow transition-all duration-500 ease-in-out;
   }
 
   .page-transition {

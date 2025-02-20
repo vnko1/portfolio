@@ -1,4 +1,4 @@
-import { CommonType, CVType } from "@/types";
+import { CommonType, CVType, HomeType } from "@/types";
 import ApiInstance from "../apiInstance";
 
 export default class StrapiInstance extends ApiInstance {
@@ -26,5 +26,9 @@ export default class StrapiInstance extends ApiInstance {
     });
 
     return this.get<{ data: CVType }>(`api/cv?${params}`);
+  }
+
+  getHomeData() {
+    return this.get<{ data: HomeType }>("api/home");
   }
 }

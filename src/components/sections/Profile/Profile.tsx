@@ -15,7 +15,7 @@ const Profile: React.FC<Props> = ({
   social_links,
 }) => {
   return (
-    <section className="basis-1/4 flex flex-col justify-between gap-3-xs pl-2-xs pt-2-xs pb-[86px] bg-light-secondary dark:bg-dark-secondary">
+    <div className="basis-1/4 flex flex-col justify-between gap-3-xs pl-2-xs pt-2-xs pb-[86px] bg-light-secondary dark:bg-dark-secondary">
       <Image
         src={banner.url}
         alt={first_name}
@@ -69,7 +69,7 @@ const Profile: React.FC<Props> = ({
           </li>
         ))}
       </ul>
-    </section>
+    </div>
   );
 };
 
