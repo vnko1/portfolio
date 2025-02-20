@@ -58,7 +58,7 @@
   }
 
   .container {
-    @apply grid grid-rows-1 grid-cols-1 xl:grid-cols-section gap-3-xs overflow-x-hidden;
+    @apply grow flex flex-col xl:flex-row gap-3-xs overflow-x-hidden;
   }
 
   .page {
