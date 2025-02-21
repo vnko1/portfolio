@@ -37,7 +37,7 @@ export default async function RootLayout({
         <Theme>
           <AppWrapper url={cvData.data.cv_link}>
             <Header />
-            <div className="grow flex flex-col gap-3-xs xl:flex-row xl:justify-between xl:gap-6-xs overflow-x-hidden">
+            <div className="grow flex flex-col gap-3-xs 2xl:flex-row 2xl:justify-between 2xl:gap-6-xs overflow-x-hidden">
               <Profile {...commonData.data} />
               {children}
             </div>

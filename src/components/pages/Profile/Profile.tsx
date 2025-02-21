@@ -15,13 +15,13 @@ const Profile: React.FC<Props> = ({
   social_links,
 }) => {
   return (
-    <div className="basis-1/4 flex flex-col justify-between gap-3-xs pl-2-xs pt-2-xs pb-[86px] bg-light-secondary dark:bg-dark-secondary">
+    <div className="self-start basis-1/4 flex flex-col justify-between gap-3-xs pl-2-xs pt-2-xs pb-[86px] bg-light-secondary dark:bg-dark-secondary">
       <Image
         src={banner.url}
         alt={first_name}
         width={410}
         height={488}
-        sizes="(max-width: 1279px) 100vw, 33vw"
+        sizes="(max-width: 1535px) 100vw, 33vw"
         priority
       />
 
