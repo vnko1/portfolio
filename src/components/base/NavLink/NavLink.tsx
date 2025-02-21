@@ -37,9 +37,9 @@ const NavLink: React.FC<Props> = ({
 
     const section = document.querySelector(".page");
     section?.classList.add("page-transition");
-    await sleep(500);
+    await sleep(300);
     push(href as string);
-    await sleep(500);
+    await sleep(300);
     section?.classList.remove("page-transition");
   };
 

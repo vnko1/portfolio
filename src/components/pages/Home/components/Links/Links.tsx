@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 import { IconsEnum } from "@/types";
 import { sleep } from "@/utils";
@@ -10,15 +10,12 @@ const Links: React.FC = () => {
   const { push } = useRouter();
 
   const handleClick = (href: string) => {
-    return async (
-      e?: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement, MouseEvent>
-    ) => {
-      console.log("🚀 ~ handleClick ~ e:", e);
+    return async () => {
       const section = document.querySelector(".page");
       section?.classList.add("page-transition");
-      await sleep(500);
+      await sleep(300);
       push(href as string);
-      await sleep(500);
+      await sleep(300);
       section?.classList.remove("page-transition");
     };
   };
