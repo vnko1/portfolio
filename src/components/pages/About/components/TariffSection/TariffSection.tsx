@@ -10,7 +10,6 @@ const TariffSection: React.FC<Props> = ({ tariffs }) =>
   tariffs ? (
     <section>
       <Carousel
-        slidesQty={tariffs.length}
         title={
           <h2 className="section-title line">
             My <span>Pricing</span>

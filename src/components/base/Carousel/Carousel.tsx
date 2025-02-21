@@ -11,14 +11,12 @@ interface Props extends React.PropsWithChildren {
   classNames?: string;
   slideClassNames?: string;
   title?: React.ReactNode;
-  slidesQty: number;
 }
 
 const Carousel: React.FC<Props> = ({
   options,
   classNames = "",
   title,
-  slidesQty,
   children,
 }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, ...options });
@@ -31,26 +29,24 @@ const Carousel: React.FC<Props> = ({
     <div className={classNames}>
       <div className="flex justify-between items-center">
         {title || null}
-        {slidesQty > 2 ? (
-          <div className="flex mb-4-xs gap-0-xl">
-            <IconButton
-              classNames="rotate-180 border border-light-primary dark:border-dark-primary"
-              icon={IconsEnum.Arrow}
-              size={24}
-              onClick={scrollPrev}
-              aria-label="Previous slide"
-              disabled={!emblaApi?.canScrollPrev()}
-            />
-            <IconButton
-              icon={IconsEnum.Arrow}
-              size={24}
-              onClick={scrollNext}
-              classNames="border border-light-primary dark:border-dark-primary"
-              aria-label="Next slide"
-              disabled={!emblaApi?.canScrollNext()}
-            />
-          </div>
-        ) : null}
+        <div className="flex mb-4-xs gap-0-xl">
+          <IconButton
+            classNames="rotate-180 border border-light-primary dark:border-dark-primary"
+            icon={IconsEnum.Arrow}
+            size={24}
+            onClick={scrollPrev}
+            aria-label="Previous slide"
+            disabled={!emblaApi?.canScrollPrev()}
+          />
+          <IconButton
+            icon={IconsEnum.Arrow}
+            size={24}
+            onClick={scrollNext}
+            classNames="border border-light-primary dark:border-dark-primary"
+            aria-label="Next slide"
+            disabled={!emblaApi?.canScrollNext()}
+          />
+        </div>
       </div>
       <div className="overflow-hidden" ref={emblaRef}>
         {children}
