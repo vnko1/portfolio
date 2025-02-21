@@ -35,12 +35,13 @@ export default class StrapiInstance extends ApiInstance {
   getAboutData() {
     const params = this.buildQueryString({
       populate: {
-        contact_links: true,
         services: { populate: { icon: { fields: ["url"] } } },
         tariffs: { populate: { icon: { fields: ["url"] } } },
       },
     });
 
-    return this.get<{ data: AboutType }>(`api/about?${params}`);
+    return this.get<{ data: Omit<AboutType, "contact_links"> }>(
+      `api/about?${params}`
+    );
   }
 }

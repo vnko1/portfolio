@@ -58,7 +58,7 @@
   }
 
   .page {
-    @apply grow transition-all duration-300 ease-in-out;
+    @apply grow transition-all duration-300 ease-in-out flex flex-col gap-6-xs;
   }
 
   .page-transition {
@@ -75,6 +75,18 @@
 
   .grid-container > *:nth-child(odd) {
     @apply row-span-2;
+  }
+
+  .section-title {
+    @apply font-medium italic;
+  }
+
+  .section-title > span {
+    @apply text-light-accent-100 dark:text-dark-accent-100 not-italic font-extrabold;
+  }
+
+  .line {
+    @apply after:block after:mt-1-xs after:mb-3-xs after:h-[1px] after:bg-light-primary/10 dark:after:bg-dark-primary/10 rounded-none;
   }
 
   .link {

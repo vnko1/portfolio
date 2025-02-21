@@ -8,7 +8,7 @@ import { IconButton } from "@/components";
 
 interface Props extends React.PropsWithChildren {
   options?: EmblaOptionsType;
-  slides: React.JSX.Element[];
+  slides: React.ReactNode[];
   classNames?: string;
   slideClassNames?: string;
 }
@@ -47,7 +47,7 @@ const Carousel: React.FC<Props> = ({
       ) : null}
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex">
-          {slides.map((Slide, idx) => (
+          {slides.map((slide, idx) => (
             <div
               key={idx}
               className={`${
@@ -56,7 +56,7 @@ const Carousel: React.FC<Props> = ({
                   : "ml-1-xs mr-2-xs flex-[0_0_100%]"
               }`}
             >
-              {Slide}
+              {slide}
             </div>
           ))}
         </div>
