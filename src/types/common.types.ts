@@ -8,6 +8,7 @@ export interface CommonType extends UIDType {
   last_name: string;
   role: string;
   city: string;
+  location: string;
   copyright_text: string | null;
   contact_links: Array<ContactLink>;
   social_links: Array<SocialLink>;

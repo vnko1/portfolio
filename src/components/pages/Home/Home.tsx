@@ -1,11 +1,13 @@
 import React from "react";
 import Markdown from "react-markdown";
 
-import { HomeType } from "@/types";
 import { Links } from "./components";
+import { strapiApi } from "@/api";
 
-interface Props extends HomeType {}
-const Home: React.FC<Props> = ({ title_md, sub_title, text }) => {
+const Home: React.FC = async () => {
+  const {
+    data: { title_md, sub_title, text },
+  } = await strapiApi.getHomeData();
   return (
     <section className="flex flex-col items-start">
       <Markdown

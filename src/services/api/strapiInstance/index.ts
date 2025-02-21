@@ -1,4 +1,4 @@
-import { CommonType, CVType, HomeType } from "@/types";
+import { AboutType, CommonType, CVType, HomeType } from "@/types";
 import ApiInstance from "../apiInstance";
 
 export default class StrapiInstance extends ApiInstance {
@@ -30,5 +30,17 @@ export default class StrapiInstance extends ApiInstance {
 
   getHomeData() {
     return this.get<{ data: HomeType }>("api/home");
+  }
+
+  getAboutData() {
+    const params = this.buildQueryString({
+      populate: {
+        contact_links: true,
+        services: { populate: { icon: { fields: ["url"] } } },
+        tariffs: { populate: { icon: { fields: ["url"] } } },
+      },
+    });
+
+    return this.get<{ data: AboutType }>(`api/about?${params}`);
   }
 }

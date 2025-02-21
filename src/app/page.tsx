@@ -1,12 +1,13 @@
-import { strapiApi } from "@/api";
-import { Home, Carousel, ExperienceCard } from "@/components";
+import { Suspense } from "react";
+
+import { Home, Loader } from "@/components";
 
 export default async function HomePage() {
-  const res = await strapiApi.getHomeData();
-
   return (
     <main className="page">
-      <Home {...res.data} />
+      <Suspense fallback={<Loader />}>
+        <Home />
+      </Suspense>
     </main>
   );
 }

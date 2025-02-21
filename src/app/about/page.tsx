@@ -1,7 +1,14 @@
-import React from "react";
+import React, { Suspense } from "react";
+import { About, Loader } from "@/components";
 
-const About = async () => {
-  return <main className="page">ABOUT</main>;
+const AboutPage = async () => {
+  return (
+    <main className="page">
+      <Suspense fallback={<Loader />}>
+        <About />
+      </Suspense>
+    </main>
+  );
 };
 
-export default About;
+export default AboutPage;

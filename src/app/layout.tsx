@@ -5,7 +5,7 @@ import { Inter } from "next/font/google";
 import "@/extensions/string";
 import "@/styles/globals.css";
 
-import { strapiApi } from "@/api";
+import { getCommonData } from "@/lib";
 import { Theme } from "@/context";
 import { AppWrapper, Header, Profile } from "@/components";
 
@@ -23,11 +23,6 @@ export const metadata: Metadata = {
 };
 
 export const revalidate = 300;
-
-const getCommonData = async () => {
-  "use server";
-  return Promise.all([strapiApi.getCommonData(), strapiApi.getCVData()]);
-};
 
 export default async function RootLayout({
   children,

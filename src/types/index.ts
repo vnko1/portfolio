@@ -13,3 +13,4 @@ export * from "./common.types";
 export * from "./links.types";
 export * from "./cv.types";
 export * from "./home.types";
+export * from "./about.types";
