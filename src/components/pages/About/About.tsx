@@ -1,7 +1,7 @@
 import React from "react";
 
 import { getAboutData } from "@/lib";
-import { AboutSection, ServicesSection } from "./components";
+import { AboutSection, ServicesSection, TariffSection } from "./components";
 
 const About: React.FC = async () => {
   const [commonRes, aboutRes] = await getAboutData();
@@ -12,6 +12,7 @@ const About: React.FC = async () => {
     <>
       <AboutSection {...commonProps} />
       <ServicesSection services={aboutRes.data.services} />
+      <TariffSection tariffs={aboutRes.data.tariffs} />
     </>
   );
 };
