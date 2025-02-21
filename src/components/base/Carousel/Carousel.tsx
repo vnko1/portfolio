@@ -27,9 +27,9 @@ const Carousel: React.FC<Props> = ({
 
   return (
     <div className={classNames}>
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center mb-4-xs">
         {title || null}
-        <div className="flex mb-4-xs gap-0-xl">
+        <div className="flex gap-0-xl">
           <IconButton
             classNames="rotate-180 border border-light-primary dark:border-dark-primary"
             icon={IconsEnum.Arrow}

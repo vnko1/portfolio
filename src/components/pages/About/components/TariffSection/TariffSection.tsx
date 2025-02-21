@@ -11,7 +11,7 @@ const TariffSection: React.FC<Props> = ({ tariffs }) =>
     <section>
       <Carousel
         title={
-          <h2 className="section-title line">
+          <h2 className="section-title">
             My <span>Pricing</span>
           </h2>
         }
