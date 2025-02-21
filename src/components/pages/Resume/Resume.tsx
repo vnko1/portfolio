@@ -1,7 +1,13 @@
 import React from "react";
 
+import { ExperienceSection } from "./components";
+
 const Resume: React.FC = () => {
-  return <div>Resume</div>;
+  return (
+    <>
+      <ExperienceSection />
+    </>
+  );
 };
 
 export default Resume;
