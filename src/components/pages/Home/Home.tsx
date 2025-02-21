@@ -1,8 +1,8 @@
 import React from "react";
 import Markdown from "react-markdown";
 
-import { HomeType, IconsEnum } from "@/types";
-import { Button } from "@/components";
+import { HomeType } from "@/types";
+import { Links } from "./components";
 
 interface Props extends HomeType {}
 const Home: React.FC<Props> = ({ title_md, sub_title, text }) => {
@@ -32,20 +32,7 @@ const Home: React.FC<Props> = ({ title_md, sub_title, text }) => {
         {sub_title}
       </p>
       <p className="mb-4-xl body text-xs leading-36">{text}</p>
-      <div className="flex items-center gap-2-sm">
-        <Button classNames="h-[68px]" href="/contact">
-          Contact Me
-        </Button>
-        <Button
-          variant="outlined"
-          icon={IconsEnum.ArrowDownCircle}
-          size={28}
-          reverse
-          href="/about"
-        >
-          About Me
-        </Button>
-      </div>
+      <Links />
     </section>
   );
 };

@@ -2,7 +2,8 @@ import React from "react";
 import Link from "next/link";
 
 import { getNameFromLink, links } from "@/utils";
-import { Logo, Menu, NavLink } from "@/components";
+import { Logo, NavLink } from "@/components";
+import { Menu } from "./components";
 
 const Header: React.FC = () => {
   return (

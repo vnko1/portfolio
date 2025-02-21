@@ -1,17 +1,19 @@
 "use client";
-
 import React from "react";
-import { Button } from "@/components";
+import { useRouter } from "next/router";
+
 import { IconsEnum } from "@/types";
 import { sleep } from "@/utils";
-import { useRouter } from "next/router";
+import { Button } from "@/components";
 
 const Links: React.FC = () => {
   const { push } = useRouter();
-  const handleClick = async (href: string) => {
-    return async (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-      e.preventDefault();
 
+  const handleClick = (href: string) => {
+    return async (
+      e?: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement, MouseEvent>
+    ) => {
+      console.log("🚀 ~ handleClick ~ e:", e);
       const section = document.querySelector(".page");
       section?.classList.add("page-transition");
       await sleep(500);
