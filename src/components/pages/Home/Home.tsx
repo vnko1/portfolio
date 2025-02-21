@@ -28,7 +28,7 @@ const Home: React.FC<Props> = ({ title_md, sub_title, text }) => {
       >
         {title_md}
       </Markdown>
-      <p className="mb-4-xl font-extrabold text-xxl leading-82 text-light-primary dark:text-dark-primary">
+      <p className="relative mb-4-xl font-extrabold text-xxl leading-82 text-light-primary dark:text-dark-primary after:relative after:bottom-5 after:block after:h-2-xs after:bg-light-secondary/20 dark:after:bg-dark-secondary/20">
         {sub_title}
       </p>
       <p className="mb-4-xl body text-xs leading-36">{text}</p>
