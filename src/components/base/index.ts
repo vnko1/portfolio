@@ -6,7 +6,7 @@ export { default as PriceCard } from "./PriceCard/PriceCard";
 export { default as ExperienceCard } from "./ExperienceCard/ExperienceCard";
 export { default as Skill } from "./Skill/Skill";
 export { default as ReviewCard } from "./ReviewCard/ReviewCard";
-export { default as Client } from "./Client/Client";
+export { default as ClientCard } from "./ClientCard/ClientCard";
 export { default as ProjectCard } from "./ProjectCard/ProjectCard";
 export { default as SwitchButton } from "./SwitchButton/SwitchButton";
 export { default as AppWrapper } from "./AppWrapper/AppWrapper";

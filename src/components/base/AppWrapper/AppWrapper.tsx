@@ -13,7 +13,7 @@ const AppWrapper: React.FC<Props> = async ({
   copyright_text,
 }) => {
   return (
-    <div className="grid grid-rows-1 grid-cols-1 xl:grid-cols-wrapper h-screen w-full">
+    <div className="grid grid-rows-1 grid-cols-1 xl:grid-cols-wrapper h-screen">
       <LeftSideBar url={url} />
       <div className="relative w-full h-screen mx-auto bg-light-light dark:bg-dark-light overflow-x-hidden">
         <div className="flex flex-col gap-4-xs w-full max-w-[88%] mx-auto">

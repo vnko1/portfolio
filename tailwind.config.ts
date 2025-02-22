@@ -35,7 +35,7 @@ export default {
     },
     extend: {
       gridTemplateColumns: {
-        wrapper: "minmax(10%, 1fr) minmax(0, 1520px) minmax(10%, 1fr)",
+        wrapper: "minmax(5%, 1fr) minmax(0, 1520px) minmax(5%, 1fr)",
         section: "0.5fr 1.5fr",
       },
       backgroundImage: {

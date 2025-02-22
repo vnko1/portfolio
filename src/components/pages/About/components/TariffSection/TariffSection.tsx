@@ -16,15 +16,16 @@ const TariffSection: React.FC<Props> = ({ tariffs }) =>
           </h2>
         }
       >
-        <div className="flex">
+        <ul className="flex">
           {tariffs.map((tariff) => (
-            <PriceCard
+            <li
               key={tariff.id}
-              classNames="ml-1-xs mr-1-xs flex-[0_0_100%] 2xl:flex-[0_0_30%]"
-              {...tariff}
-            />
+              className="ml-1-xs mr-1-xs flex-[0_0_100%] 2xl:flex-[0_0_30%]"
+            >
+              <PriceCard {...tariff} />
+            </li>
           ))}
-        </div>
+        </ul>
       </Carousel>
     </section>
   ) : null;

@@ -7,7 +7,7 @@ import Image from "next/image";
 interface Props extends ClientType {
   classNames?: string;
 }
-const Client: React.FC<Props> = ({ classNames, logo, name, link }) => {
+const ClientCard: React.FC<Props> = ({ classNames, logo, name, link }) => {
   return (
     <Link
       href={link}
@@ -20,4 +20,4 @@ const Client: React.FC<Props> = ({ classNames, logo, name, link }) => {
   );
 };
 
-export default Client;
+export default ClientCard;

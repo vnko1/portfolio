@@ -26,7 +26,7 @@ const Carousel: React.FC<Props> = ({
   const scrollNext = () => emblaApi?.scrollNext();
 
   return (
-    <div className={classNames}>
+    <div className={`${classNames}`}>
       <div className="flex justify-between items-center mb-4-xs">
         {title || null}
         <div className="flex gap-0-xl">

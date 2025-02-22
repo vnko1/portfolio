@@ -1,4 +1,4 @@
-import { AboutType, CommonType, CVType, HomeType } from "@/types";
+import { AboutType, CommonType, CVType, HomeType, ResumeType } from "@/types";
 import ApiInstance from "../apiInstance";
 
 export default class StrapiInstance extends ApiInstance {
@@ -43,5 +43,17 @@ export default class StrapiInstance extends ApiInstance {
     return this.get<{ data: Omit<AboutType, "contact_links"> }>(
       `api/about?${params}`
     );
+  }
+
+  getResumeData() {
+    const params = this.buildQueryString({
+      populate: {
+        experience: true,
+        skills: { populate: { icon: { fields: ["url"] } } },
+        reviews: { populate: { avatar: { fields: ["url"] } } },
+        clients: { populate: { logo: { fields: ["url"] } } },
+      },
+    });
+    return this.get<{ data: ResumeType }>(`api/resume?${params}`);
   }
 }
