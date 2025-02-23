@@ -6,10 +6,12 @@ import { CategoryType } from "@/types";
 
 interface Props {
   categories: Promise<{ data: CategoryType[] }>;
+  query?: string;
 }
-const Categories: React.FC<Props> = ({ categories }) => {
+const Categories: React.FC<Props> = ({ categories, query }) => {
   const res = use(categories);
   const searchParams = useSearchParams();
+  console.log("🚀 ~ searchParams:", query);
   const pathname = usePathname();
   const { replace } = useRouter();
 
@@ -33,7 +35,10 @@ const Categories: React.FC<Props> = ({ categories }) => {
   return (
     <ul className="flex flex-wrap gap-4-xs">
       <li>
-        <button className="category-btn" onClick={handleClearSearch}>
+        <button
+          className={`category-btn ${!query ? "active" : ""}`}
+          onClick={handleClearSearch}
+        >
           Show all
         </button>
       </li>
@@ -43,7 +48,9 @@ const Categories: React.FC<Props> = ({ categories }) => {
         return (
           <li key={category.id}>
             <button
-              className="category-btn"
+              className={`category-btn ${
+                query === category.category ? "active" : ""
+              }`}
               onClick={() => handleSearch(category.category)}
             >
               {normalizedText}
