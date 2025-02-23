@@ -1,15 +1,7 @@
-import React, { Suspense } from "react";
+import React from "react";
 
-import { Loader, Resume } from "@/components";
+import { Resume } from "@/components";
 
-const Page = () => {
-  return (
-    <main className="page">
-      <Suspense fallback={<Loader />}>
-        <Resume />
-      </Suspense>
-    </main>
-  );
-};
+const Page = () => <Resume />;
 
 export default Page;

@@ -2,12 +2,11 @@ import { Suspense } from "react";
 
 import { Home, Loader } from "@/components";
 
-export default async function HomePage() {
+export default function HomePage() {
+  return <Home />;
   return (
-    <main className="page">
-      <Suspense fallback={<Loader />}>
-        <Home />
-      </Suspense>
-    </main>
+    <Suspense fallback={<Loader />}>
+      <Home />
+    </Suspense>
   );
 }

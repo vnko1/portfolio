@@ -56,14 +56,16 @@
   .body3 {
     @apply font-normal text-xxs leading-28 text-light-text-primary dark:text-dark-text-primary;
   }
-
+  /*
   .page {
-    @apply transition-all duration-300 ease-in-out flex flex-col gap-6-xs;
+    @apply flex flex-col gap-6-xs;
+
+    transition-all duration-300 ease-in-out
   }
 
   .page-transition {
     @apply opacity-0 blur-md;
-  }
+  } */
 
   .flex-centering {
     @apply flex justify-center items-center;

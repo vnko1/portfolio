@@ -1,8 +1,9 @@
 import React from "react";
 import Markdown from "react-markdown";
 
-import { Links } from "./components";
 import { strapiApi } from "@/api";
+import { IconsEnum } from "@/types";
+import { Button } from "@/components";
 
 const Home: React.FC = async () => {
   const {
@@ -34,7 +35,20 @@ const Home: React.FC = async () => {
         {sub_title}
       </p>
       <p className="mb-4-xl body text-xs leading-36">{text}</p>
-      <Links />
+      <div className="flex items-center gap-2-sm">
+        <Button classNames="h-[68px]" href="/contact">
+          Contact Me
+        </Button>
+        <Button
+          variant="outlined"
+          icon={IconsEnum.ArrowDownCircle}
+          size={28}
+          reverse
+          href="/about"
+        >
+          About Me
+        </Button>
+      </div>
     </section>
   );
 };
