@@ -1,4 +1,11 @@
-import { AboutType, CommonType, CVType, HomeType, ResumeType } from "@/types";
+import {
+  AboutType,
+  CommonType,
+  CVType,
+  HomeType,
+  ProjectCardType,
+  ResumeType,
+} from "@/types";
 import ApiInstance from "../apiInstance";
 
 export default class StrapiInstance extends ApiInstance {
@@ -55,5 +62,17 @@ export default class StrapiInstance extends ApiInstance {
       },
     });
     return this.get<{ data: ResumeType }>(`api/resume?${params}`);
+  }
+
+  getPortfolio(query?: string) {
+    const params = this.buildQueryString({
+      populate: {
+        banner: { fields: ["url", "name"] },
+        category: true,
+      },
+      filters: query ? { category: { category: { $eqi: query } } } : {},
+    });
+
+    return this.get<{ data: ProjectCardType[] }>(`api/projects?${params}`);
   }
 }
