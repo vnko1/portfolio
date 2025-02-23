@@ -36,7 +36,7 @@ export default {
     extend: {
       gridTemplateColumns: {
         wrapper: "minmax(5%, 1fr) minmax(0, 1520px) minmax(5%, 1fr)",
-        section: "0.5fr 1.5fr",
+        page: "30% 65%",
       },
       backgroundImage: {
         main: "url('/wallpaper.webp')",

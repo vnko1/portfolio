@@ -32,3 +32,7 @@ export const getCurrentYear = () =>
   new Date().toLocaleDateString(undefined, {
     year: "numeric",
   });
+
+export function multiplyArray<T>(array: T[], iter: number): T[] {
+  return iter <= 1 ? array : [...array, ...multiplyArray(array, iter - 1)];
+}

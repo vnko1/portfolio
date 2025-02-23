@@ -58,7 +58,7 @@
   }
 
   .page {
-    @apply grow transition-all duration-300 ease-in-out flex flex-col gap-6-xs;
+    @apply transition-all duration-300 ease-in-out flex flex-col gap-6-xs;
   }
 
   .page-transition {

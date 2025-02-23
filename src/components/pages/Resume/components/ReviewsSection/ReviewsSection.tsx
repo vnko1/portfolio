@@ -6,8 +6,8 @@ import { Carousel, ReviewCard } from "@/components";
 interface Props {
   reviews: ReviewCardType[];
 }
-const ReviewsSection: React.FC<Props> = ({ reviews }) => {
-  return reviews.length ? (
+const ReviewsSection: React.FC<Props> = ({ reviews }) =>
+  reviews.length ? (
     <section>
       <Carousel
         title={
@@ -29,6 +29,4 @@ const ReviewsSection: React.FC<Props> = ({ reviews }) => {
       </Carousel>
     </section>
   ) : null;
-};
-
 export default ReviewsSection;

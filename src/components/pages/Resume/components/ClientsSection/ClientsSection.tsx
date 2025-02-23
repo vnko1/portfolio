@@ -1,14 +1,15 @@
 import React from "react";
 
 import { ClientType } from "@/types";
+import { multiplyArray } from "@/utils";
 import { Carousel, ClientCard } from "@/components";
 
 interface Props {
   clients: ClientType[];
 }
 
-const ClientsSection: React.FC<Props> = ({ clients }) => {
-  return clients.length ? (
+const ClientsSection: React.FC<Props> = ({ clients }) =>
+  clients.length ? (
     <section>
       <Carousel
         title={
@@ -18,8 +19,8 @@ const ClientsSection: React.FC<Props> = ({ clients }) => {
         }
       >
         <ul className="flex">
-          {clients.map((clients) => (
-            <li key={clients.id} className="flex-[0_0_200px] ml-1-xs mr-1-xs">
+          {multiplyArray(clients, 2).map((clients, idx) => (
+            <li key={idx} className="w-[200px]">
               <ClientCard {...clients} />
             </li>
           ))}
@@ -27,6 +28,4 @@ const ClientsSection: React.FC<Props> = ({ clients }) => {
       </Carousel>
     </section>
   ) : null;
-};
-
 export default ClientsSection;
