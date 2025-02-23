@@ -1,5 +1,6 @@
 import {
   AboutType,
+  CategoryType,
   CommonType,
   CVType,
   HomeType,
@@ -62,6 +63,10 @@ export default class StrapiInstance extends ApiInstance {
       },
     });
     return this.get<{ data: ResumeType }>(`api/resume?${params}`);
+  }
+
+  getCategories() {
+    return this.get<{ data: CategoryType[] }>("api/categories");
   }
 
   getPortfolio(query?: string) {
