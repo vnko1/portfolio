@@ -1,9 +1,9 @@
 "use server";
 import { redirect } from "next/navigation";
+import { cookies } from "next/headers";
 import { z } from "zod";
 
 import { formApi, strapiApi } from "@/api";
-import { cookies } from "next/headers";
 
 export const getCommonData = async () => {
   return Promise.all([strapiApi.getCommonData(), strapiApi.getCVData()]);
@@ -32,23 +32,21 @@ const schema = z.object({
 
 export const sendMessage = async (_: unknown, formData: FormData) => {
   const cookieStore = await cookies();
-  const validatedFields = schema.safeParse({
+  const values = {
     name: formData.get("name"),
     email: formData.get("email"),
     tariff: formData.get("tariff"),
     message: formData.get("message"),
-  });
+  };
+  const validatedFields = schema.safeParse(values);
 
-  if (!validatedFields.success) {
+  if (!validatedFields.success)
     return {
+      ...values,
       errors: validatedFields.error.flatten().fieldErrors,
     };
-  }
 
-  // await new Promise((res) => setTimeout(res, 3000));
-  const res = await formApi.sendMessage(validatedFields.data);
-  console.log("🚀 ~ sendMessage ~ res:", res);
-
+  await formApi.sendMessage(validatedFields.data);
   cookieStore.set("x-page-access-allowed", "1", { maxAge: 20 });
   redirect("/success");
 };

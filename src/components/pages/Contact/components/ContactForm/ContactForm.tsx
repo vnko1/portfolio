@@ -1,6 +1,7 @@
 "use client";
 import React, { useActionState } from "react";
 import Form from "next/form";
+import { AnimatePresence, motion } from "motion/react";
 
 import { sendMessage } from "@/lib";
 import { Button } from "@/components";
@@ -37,6 +38,7 @@ const ContactForm: React.FC<Props> = ({ tariff }) => {
         <label className="label">
           <input
             name="name"
+            defaultValue={state.name as string}
             className={`input ${state.errors.name ? "error" : ""}`}
             placeholder="Name"
           />
@@ -47,6 +49,7 @@ const ContactForm: React.FC<Props> = ({ tariff }) => {
         <label className="label">
           <input
             name="email"
+            defaultValue={state.email as string}
             className={`input ${state.errors.email ? "error" : ""}`}
             placeholder="Email"
           />
@@ -60,6 +63,7 @@ const ContactForm: React.FC<Props> = ({ tariff }) => {
         <label className="label mb-0-xl">
           <textarea
             name="message"
+            defaultValue={state.message as string}
             className={`input resize-none ${
               state.errors.message ? "error" : ""
             }`}
@@ -69,8 +73,22 @@ const ContactForm: React.FC<Props> = ({ tariff }) => {
             {state.errors.message ? state.errors.message[0] : null}
           </p>
         </label>
-        <Button disabled={pending} type="submit" classNames="self-start">
-          {pending ? "Loading..." : "Send Message"}
+        <Button
+          disabled={pending}
+          type="submit"
+          classNames="self-start min-w-[194px]"
+        >
+          <AnimatePresence mode="wait">
+            <motion.span
+              key={pending ? "loading" : "send-message"}
+              initial={{ opacity: 0, y: -5 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 5 }}
+              transition={{ duration: 0.2 }}
+            >
+              {pending ? "Loading..." : "Send Message"}
+            </motion.span>
+          </AnimatePresence>
         </Button>
       </Form>
     </div>
