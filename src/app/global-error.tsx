@@ -9,10 +9,10 @@ export default function GlobalError({
   return (
     <html>
       <body className="h-screen py-[120px] flex flex-col items-center justify-around gap-3-xs bg-dark-primary">
-        <h1 className="text-light-light">Something went wrong!</h1>
+        <h1 className="text-light-light-100">Something went wrong!</h1>
         <div className="flex flex-col gap-3-xs text-center ">
-          <p className="body1 text-lg text-light-light">{error.name}</p>
-          <p className="body1 text-md text-light-light">{error.message}</p>
+          <p className="body1 text-lg text-light-light-100">{error.name}</p>
+          <p className="body1 text-md text-light-light-100">{error.message}</p>
         </div>
         <button onClick={() => reset()} className="link">
           Try again

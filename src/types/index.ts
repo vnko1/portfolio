@@ -15,3 +15,4 @@ export * from "./cv.types";
 export * from "./home.types";
 export * from "./about.types";
 export * from "./resume.types";
+export * from "./contact.types";

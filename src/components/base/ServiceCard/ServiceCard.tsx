@@ -24,7 +24,7 @@ const ServiceCard: React.FC<Props> = ({
       classNames || ""
     }`}
   >
-    <div className="flex shrink-0 justify-center items-center w-full max-w-4-xl h-4-xl rounded-[50%] drop-shadow-sm bg-light-light dark:bg-dark-light">
+    <div className="flex shrink-0 justify-center items-center w-full max-w-4-xl h-4-xl rounded-[50%] drop-shadow-sm bg-light-light-100 dark:bg-dark-light-100">
       <Image
         src={icon.url}
         alt={alt}

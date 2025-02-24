@@ -77,7 +77,7 @@ export default {
         light: {
           primary: "#1E1E1E",
           secondary: "#FFDF00",
-          light: "#ffffff",
+          light: { 100: "#ffffff", 200: "#fafafa" },
           black: { 100: "#000000", 200: "#111" },
           accent: { 100: "#754EF9", 200: "#5B1BFF" },
           "text-main": "var(--color-text)",
@@ -90,7 +90,7 @@ export default {
         dark: {
           primary: "#121212",
           secondary: "#FFDF00",
-          light: "#e0e0e0",
+          light: { 100: "#e0e0e0", 200: "#fafafa" },
           black: { 100: "#000000", 200: "#111" },
           accent: { 100: "#754EF9", 200: "#5B1BFF" },
           "text-main": "var(--color-dark-text)",

@@ -18,7 +18,7 @@ const Skill: React.FC<Props> = ({ classNames, progress, title, icon }) => {
       <div className="flex items-center gap-1-lg w-full">
         <div
           style={{ width: `${convertedValue}%` }}
-          className="bg-light-black-200 dark:bg-dark-black-200 text-light-light dark:text-dark-light px-2-md py-0-md rounded-lg flex items-center gap-0-xl"
+          className="bg-light-black-200 dark:bg-dark-black-200 text-light-light-100 dark:text-dark-light-100 px-2-md py-0-md rounded-lg flex items-center gap-0-xl"
         >
           {icon && (
             <Image

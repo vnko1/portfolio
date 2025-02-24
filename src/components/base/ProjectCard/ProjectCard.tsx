@@ -38,7 +38,7 @@ const ProjectCard: React.FC<Props> = ({
             <h4 className="font-normal text-light-secondary dark:text-dark-secondary">
               {title}
             </h4>
-            <p className="font-bold text-sm leading-30 text-light-light dark:text-dark-light">
+            <p className="font-bold text-sm leading-30 text-light-light-100 dark:text-dark-light-100">
               {tech_stack}
             </p>
           </div>

@@ -2,6 +2,7 @@ import {
   AboutType,
   CategoryType,
   CommonType,
+  ContactType,
   CVType,
   HomeType,
   ProjectCardType,
@@ -79,5 +80,16 @@ export default class StrapiInstance extends ApiInstance {
     });
 
     return this.get<{ data: ProjectCardType[] }>(`api/projects?${params}`);
+  }
+
+  getContact() {
+    const params = this.buildQueryString({
+      populate: {
+        contact_links: true,
+        social_links: { populate: { icon: { fields: ["url"] } } },
+      },
+    });
+
+    return this.get<{ data: ContactType }>(`api/connect?${params}`);
   }
 }
