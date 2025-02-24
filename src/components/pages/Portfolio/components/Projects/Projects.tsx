@@ -1,4 +1,6 @@
 import React from "react";
+import * as motion from "motion/react-client";
+import { AnimatePresence } from "motion/react";
 
 import { ProjectCardType } from "@/types";
 import { ProjectCard } from "@/components";
@@ -9,13 +11,24 @@ interface Props {
 }
 
 const Projects: React.FC<Props> = ({ projects, classNames }) => (
-  <ul className={`grid-container ${classNames}`}>
-    {projects.map((project) => (
-      <li className="flex" key={project.id}>
-        <ProjectCard classNames="grow" {...project} />
-      </li>
-    ))}
-  </ul>
+  <AnimatePresence>
+    <ul className={`grid-container ${classNames}`}>
+      {projects.map((project) => (
+        <motion.li
+          className="flex"
+          key={project.id}
+          initial={{ y: 100 }}
+          animate={{ y: 0 }}
+          transition={{
+            duration: 0.6,
+          }}
+          layout
+        >
+          <ProjectCard classNames="grow" {...project} />
+        </motion.li>
+      ))}
+    </ul>
+  </AnimatePresence>
 );
 
 export default Projects;

@@ -11,7 +11,6 @@ interface Props {
 const Categories: React.FC<Props> = ({ categories, query }) => {
   const res = use(categories);
   const searchParams = useSearchParams();
-  console.log("🚀 ~ searchParams:", query);
   const pathname = usePathname();
   const { replace } = useRouter();
 
