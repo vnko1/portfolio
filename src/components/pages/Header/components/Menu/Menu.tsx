@@ -20,7 +20,7 @@ const Menu: React.FC<Props> = ({ classNames }) => {
         <Icon icon={IconsEnum.Burger} size={24} />
       </button>
       <div
-        className={`absolute top-0 left-0 right-0 bottom-0 p-3-sm flex flex-col justify-between gap-2-xs bg-light-light-100 dark:bg-dark-light-100 overflow-y-auto opacity-0 -translate-y-full transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 bottom-0 p-3-sm flex flex-col justify-between gap-2-xs bg-light-light-100 dark:bg-dark-light-100 overflow-y-auto opacity-0 -translate-y-full transition-all duration-300 ${
           active ? "opacity-100 translate-y-0" : ""
         }`}
       >

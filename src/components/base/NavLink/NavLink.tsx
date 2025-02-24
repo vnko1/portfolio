@@ -29,7 +29,7 @@ const NavLink: React.FC<Props> = ({
   } ${classNames}`;
 
   return (
-    <Link href={href} className={baseClassNames} {...props}>
+    <Link href={href} className={baseClassNames} {...props} onClick={onClick}>
       <Icon icon={icon} size={size} />
       {text}
     </Link>
