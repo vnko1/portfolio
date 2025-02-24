@@ -2,25 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  @apply scroll-smooth;
-}
-
-body {
-  @apply h-screen bg-gl-0 dark:bg-gd-0 text-gl-600 dark:text-gd-600 scroll-smooth;
-}
-
 @layer base {
+  :root {
+    --color-text: rgba(30, 30, 30, 0.7);
+    --color-text-primary: rgba(30, 30, 30, 0.6);
+    --color-text-secondary: rgba(17, 17, 17, 0.7);
+    --color-line: rgba(255, 255, 255, 0.5);
+    --color-border: rgba(30, 30, 30, 0.2);
+    --color-header-btn: rgba(30, 30, 30, 0.1);
+
+    --color-dark-text: rgba(255, 255, 255, 0.9);
+    --color-dark-text-primary: rgba(255, 255, 255, 0.8);
+    --color-dark-text-secondary: rgba(255, 255, 255, 0.6);
+    --color-dark-line: rgba(255, 255, 255, 0.5);
+    --color-dark-border: rgba(30, 30, 30, 0.2);
+    --color-dark-header-btn: rgba(30, 30, 30, 0.1);
+  }
+
   h1 {
-    @apply text-h1_sm leading-xl font-semibold md:text-h1_md md:font-bold md:leading-xxl md:tracking-tight lg:leading-3xl lg:text-h1_lg;
+    @apply font-extrabold text-xxl leading-82;
   }
 
   h2 {
-    @apply tracking-tight leading-sm font-semibold text-h2_sm lg:leading-xl lg:text-h2_lg;
+    @apply font-extrabold text-md leading-32;
   }
 
   h3 {
-    @apply tracking-tight leading-md font-semibold text-h3_sm lg:text-h3_lg lg:leading-lg;
+    @apply font-bold text-sm leading-32;
+  }
+
+  p {
+    @apply font-normal text-xs leading-32;
   }
 
   img {
@@ -29,110 +41,99 @@ body {
 }
 
 @layer components {
-  .h2 {
-    @apply tracking-tight leading-sm font-semibold text-h2_sm lg:leading-xl lg:text-h2_lg;
-  }
-  .subtitle {
-    @apply leading-sm text-md font-normal lg:leading-sm lg:text-lg;
+  .body {
+    @apply font-normal text-xxs text-light-text-main dark:text-dark-text-main;
   }
 
   .body1 {
-    @apply leading-xs text-base font-normal lg:leading-sm lg:text-md;
+    @apply font-medium text-xxs text-light-text-secondary dark:text-dark-text-secondary;
   }
 
   .body2 {
-    @apply leading-xs text-base font-normal;
+    @apply font-semibold text-xxs text-light-light-100 dark:text-dark-light-100;
   }
 
   .body3 {
-    @apply leading-xxs text-sm font-normal;
+    @apply font-normal text-xxs leading-28 text-light-text-primary dark:text-dark-text-primary;
   }
 
-  .icon-stroke {
-    @apply stroke-gl-600 dark:stroke-gd-600;
+  .flex-centering {
+    @apply flex justify-center items-center;
   }
 
-  .icon-fill {
-    @apply fill-gl-600 dark:fill-gd-600;
+  .category-btn {
+    @apply relative leading-24 font-normal text-light-black-200 dark:text-dark-black-200 transition-all duration-300;
+  }
+
+  .category-btn:hover,
+  .category-btn:focus,
+  .category-btn.active {
+    @apply text-light-accent-100 dark:text-dark-accent-100;
+  }
+
+  .category-btn::after {
+    content: "";
+    @apply absolute left-0 -bottom-[1px] block w-full h-[1px] rounded-none bg-current transition-all duration-300 origin-left scale-x-0;
+  }
+  .category-btn:hover::after,
+  .category-btn:focus::after,
+  .category-btn.active::after {
+    @apply scale-x-100;
+  }
+
+  .grid-container {
+    @apply gap-3-xs grid auto-rows-[minmax(400px,1fr)] grid-cols-1 xl:grid-cols-2 2xl:auto-rows-[minmax(220px,1fr)];
+  }
+
+  .grid-container > *:nth-child(odd) {
+    @apply 2xl:row-span-2;
+  }
+
+  .section-title {
+    @apply font-medium italic;
+  }
+
+  .section-title > span {
+    @apply text-light-accent-100 dark:text-dark-accent-100 not-italic font-extrabold;
+  }
+
+  .line {
+    @apply after:block after:mt-1-xs after:mb-3-xs after:h-[1px] after:bg-light-primary/10 dark:after:bg-dark-primary/10 rounded-none;
   }
 
   .link {
-    @apply font-normal text-base leading-xs cursor-pointer transition-all duration-150 text-gl-600 dark:text-gd-600;
-  }
-  .link:hover,
-  .link:focus,
-  .link:active,
-  .link.active {
-    @apply text-gl-900 dark:text-gd-900;
-    text-decoration-line: underline;
-    text-decoration-style: solid;
-    text-decoration-skip-ink: none;
-    text-decoration-thickness: auto;
-    text-underline-offset: auto;
-    text-underline-position: from-font;
+    @apply py-1-sm px-2-md rounded-lg border border-light-header-btn dark:border-dark-header-btn bg-light-primary dark:bg-dark-primary font-medium leading-20 text-light-light-100 dark:text-dark-light-100;
   }
 
-  .link:active,
-  .link.active {
-    @apply text-gl-600 dark:text-gd-600;
+  .icon-btn {
+    @apply inline-flex items-center justify-center w-3-xs h-3-xs md:w-4-xs md:h-4-xs rounded-[50%] text-light-primary dark:text-dark-primary bg-light-light-100 dark:bg-dark-light-100 transition-all duration-300 hover:shadow-sm focus:shadow-sm;
   }
 
-  .link.menu {
-    @apply font-medium;
+  .label {
+    @apply relative block;
   }
 
-  .link.menu:hover,
-  .link.menu:focus,
-  .link.menu:active,
-  .link.menu.active {
-    text-decoration: none;
+  .input {
+    @apply w-full py-2-xs pl-2-md pr-4-xs rounded-xl border border-light-header-btn dark:border-dark-header-btn outline-none placeholder:text-xxs placeholder:leading-20 placeholder:text-light-primary/50 dark:placeholder:text-dark-primary/50 transition-colors duration-150;
   }
 
-  .button {
-    @apply py-[0.375rem] px-4 rounded-xl text-base font-medium leading-xs text-gl-50 dark:text-gd-50 bg-gl-900 dark:bg-gd-900 transition-all duration-150 cursor-pointer;
+  .input.error {
+    @apply border-red-500 text-red-500 placeholder:text-red-500;
   }
 
-  .button:hover,
-  .button:focus {
-    @apply bg-gl-700 dark:bg-gd-700;
+  .error-text {
+    @apply absolute -bottom-3 left-0 text-3xs leading-12 text-red-500 transition-all opacity-0;
   }
 
-  .button:active,
-  .button.active {
-    @apply bg-gl-800 dark:bg-gd-800;
+  .error-text.active {
+    @apply opacity-100;
   }
+}
 
-  .button.icon {
-    @apply p-[0.375rem] bg-transparent;
-  }
+body {
+  @apply h-screen overflow-y-auto font-inter body text-light-primary dark:text-dark-primary bg-light-light-100 dark:bg-dark-light-100;
+}
 
-  .button.icon:hover,
-  .button.icon:focus {
-    @apply bg-gl-100 dark:bg-gd-100;
-  }
-
-  .button.icon:active,
-  .button.icon.active {
-    @apply bg-gl-200 dark:bg-gd-200;
-  }
-
-  .tag {
-    @apply inline-flex justify-center py-1 px-5 rounded-xl text-sm leading-xxs font-medium text-gl-600 dark:text-gd-600 bg-gl-200 dark:bg-gd-200;
-  }
-
-  .banner {
-    @apply max-w-[80%] lg:max-w-[320px] border-[8px] border-gl-0 dark:border-gd-0 object-cover;
-  }
-
-  .banner.banner2 {
-    @apply max-w-[80%] lg:max-w-[400px] lg:h-[480px];
-  }
-
-  .section-container {
-    @apply flex flex-col items-center gap-2-md lg:gap-4-xl;
-  }
-
-  .section-content {
-    @apply flex flex-col gap-1-lg;
-  }
+.app-border {
+  @apply h-screen bg-light-accent-200 dark:bg-dark-accent-200 mix-blend-multiply bg-no-repeat bg-cover bg-main;
 }

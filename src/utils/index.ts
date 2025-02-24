@@ -1,3 +1,3 @@
-export * from "./localStorage/localStorage";
-export * from "./constants/links";
-export * from "./constants/image";
+export * from "./functions";
+export * from "./localstorage";
+export * from "./constants";

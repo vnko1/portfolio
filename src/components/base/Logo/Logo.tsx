@@ -1,21 +1,28 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 import React from "react";
-import Link from "next/link";
 
-interface LogoProps {
-  setActive?: React.Dispatch<React.SetStateAction<boolean>>;
+import { Icon } from "@/components";
+import { IconsEnum } from "@/types";
+
+interface Props {
+  classNames?: string;
 }
 
-const Logo: React.FC<LogoProps> = ({ setActive }) => (
-  <Link
-    onClick={() => {
-      // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-      setActive && setActive(false);
-    }}
-    href='/'
-    aria-label='home link'
-    className='font-bold leading-md tracking-[-0.48px] text-xl lg:text-h3_lg lg:leading-lg lg:tracking-[-0.6px] text-gl-900 dark:text-gd-900'>
-    {"<AV />"}
-  </Link>
-);
+const Logo: React.FC<Props> = ({ classNames }) => {
+  return (
+    <a
+      className={`inline-flex items-center gap-0-lg text-md font-bold ${classNames}`}
+      href="/"
+    >
+      <Icon
+        icon={IconsEnum.Logo}
+        width={48}
+        height={27}
+        className="text-light-accent-200 dark:text-dark-accent-200"
+      />
+      VNKO
+    </a>
+  );
+};
 
 export default Logo;

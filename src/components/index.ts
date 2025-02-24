@@ -1,3 +1,3 @@
+export { default as Icon } from "./icons/Icon";
 export * from "./base";
-export * from "./icons";
-export * from "./sections";
+export * from "./pages";

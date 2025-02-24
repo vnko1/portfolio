@@ -1,62 +1,67 @@
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 
-import { IconsEnum, ProjectType } from "@/types";
-import { defaultImageDescription } from "@/utils";
-import { CustomImage, BaseIcon } from "@/components";
+import { IconsEnum, ProjectCardType } from "@/types";
+import { Icon } from "@/components";
 
-interface ProjectCardProps extends ProjectType {
+import styles from "./ProjectCard.module.css";
+
+interface Props extends ProjectCardType {
   classNames?: string;
-  reverse: boolean;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({
+const ProjectCard: React.FC<Props> = ({
   classNames,
-  reverse,
-  banner,
-  bannerDescription,
   title,
+  tech_stack,
+  banner,
   description,
-  techStacks,
-  liveLink,
-  codeLink,
+  code_link,
+  live_link,
 }) => {
   return (
-    <div
-      className={`flex flex-col rounded-xl overflow-hidden shadow-md lg:shadow-lg ${
-        reverse ? "lg:flex-row-reverse" : "lg:flex-row"
-      } ${classNames}`}>
+    <div className={`${styles.card} ${classNames || ""}`}>
+      <Image src={banner.url} alt={title} fill sizes="33vw" />
       <div
-        className={`flex justify-center items-center flex-1 p-md border-b border-gl-100 dark:border-gd-100 bg-gl-50 dark:bg-gd-50 lg:p-4-xl lg:border-b-0 ${
-          reverse ? "border-l" : "border-r"
-        }`}>
-        <CustomImage
-          src={banner?.url ?? "#"}
-          alt={bannerDescription || defaultImageDescription}
-          className='rounded-xl h-auto w-auto lg:max-h-[384px] object-contain lg:object-cover'
-        />
-      </div>
-      <div className='flex-1 p-md bg-gl-100 dark:bg-gd-100 lg:p-4-xl flex flex-col gap-2-md'>
-        <h4 className='subtitle font-semibold text-gl-900 dark:text-gd-900'>
-          {title}
-        </h4>
-        <p className='body2'>{description}</p>
-        <ul className='flex flex-wrap gap-0-md'>
-          {techStacks.map(({ title }, index) => (
-            <li key={index} className='tag'>
+        className={`${styles.content} ${
+          description ? "justify-between" : "justify-end"
+        }`}
+      >
+        {description && (
+          <p className="body2 leading-26 font-medium w-full overflow-y-auto">
+            {description}
+          </p>
+        )}
+        <div className="w-full flex items-center justify-between gap-1-xs">
+          <div className="flex flex-col flex-1 ">
+            <h4 className="font-normal text-light-secondary dark:text-dark-secondary">
               {title}
-            </li>
-          ))}
-        </ul>
-        <div className='flex gap-1-lg items-center'>
-          <Link href={liveLink} className='button icon'>
-            <BaseIcon icon={IconsEnum.Navigation} />
-          </Link>
-          {codeLink && (
-            <Link href={codeLink} className='button icon'>
-              <BaseIcon icon={IconsEnum.Github} />
+            </h4>
+            <p className="font-bold text-sm leading-30 text-light-light-100 dark:text-dark-light-100">
+              {tech_stack}
+            </p>
+          </div>
+          <div className="flex gap-0-xl">
+            <Link
+              className={styles.link}
+              href={live_link}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <Icon icon={IconsEnum.RightArrow} size={24} />
             </Link>
-          )}
+            {code_link && (
+              <Link
+                className={styles.link}
+                href={code_link}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <Icon icon={IconsEnum.Github} size={24} />
+              </Link>
+            )}
+          </div>
         </div>
       </div>
     </div>
