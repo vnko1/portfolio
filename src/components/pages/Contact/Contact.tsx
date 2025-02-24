@@ -6,7 +6,7 @@ import { Contacts, ContactForm } from "./components";
 interface Props {
   tariff?: string;
 }
-const Contact: React.FC<Props> = async () => {
+const Contact: React.FC<Props> = async ({ tariff }) => {
   const res = await strapiApi.getContact();
 
   return (
@@ -16,7 +16,7 @@ const Contact: React.FC<Props> = async () => {
       </h2>
       <div className="flex flex-col gap-3-xs 2xl:flex-row 2xl:justify-between">
         <Contacts {...res.data} />
-        <ContactForm />
+        <ContactForm tariff={tariff} />
       </div>
     </section>
   );

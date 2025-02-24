@@ -6,6 +6,7 @@ import { IconsEnum } from "@/types";
 import { Icon } from "@/components";
 
 interface Props {
+  type?: "button" | "submit" | "reset";
   children: React.ReactNode;
   href?: string;
   rel?: string;
@@ -15,6 +16,7 @@ interface Props {
   classNames?: string;
   reverse?: boolean;
   size?: number;
+  disabled?: boolean;
   onClick?: (
     e?: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement, MouseEvent>
   ) => void;
@@ -30,6 +32,8 @@ const Button: React.FC<Props> = ({
   icon,
   size = 28,
   reverse = false,
+  type,
+  disabled,
   onClick,
 }) => {
   const baseClassNames = `inline-flex items-center justify-center gap-1-xs px-4-xs py-2-xs rounded-xl font-medium transition-all duration-300 ${
@@ -63,7 +67,12 @@ const Button: React.FC<Props> = ({
       </Link>
     );
   return (
-    <button onClick={handleClick} className={classNamesMap[variant]}>
+    <button
+      type={type}
+      onClick={handleClick}
+      className={classNamesMap[variant]}
+      disabled={disabled}
+    >
       {children} {icon ? <Icon size={size} icon={icon} /> : null}
     </button>
   );

@@ -1,7 +1,7 @@
 import { UIDType } from "./uid.types";
 import { ImageType } from "./media.types";
 
-type TariffType = "basic" | "premium" | "unlimited";
+export type TariffType = "basic" | "premium" | "unlimited";
 
 export interface PriceCardType extends UIDType {
   icon: ImageType | null;
