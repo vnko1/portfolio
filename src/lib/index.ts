@@ -2,7 +2,7 @@
 import { redirect } from "next/navigation";
 import { z } from "zod";
 
-import { strapiApi } from "@/api";
+import { formApi, strapiApi } from "@/api";
 import { cookies } from "next/headers";
 
 export const getCommonData = async () => {
@@ -45,10 +45,10 @@ export const sendMessage = async (_: unknown, formData: FormData) => {
     };
   }
 
-  await new Promise((res) => setTimeout(res, 3000));
+  // await new Promise((res) => setTimeout(res, 3000));
+  const res = await formApi.sendMessage(validatedFields.data);
+  console.log("🚀 ~ sendMessage ~ res:", res);
 
-  console.log("🚀 ~ sendMessage ~ validatedFields:", validatedFields.data);
   cookieStore.set("x-page-access-allowed", "1", { maxAge: 20 });
-
   redirect("/success");
 };

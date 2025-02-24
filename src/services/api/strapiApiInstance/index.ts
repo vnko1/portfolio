@@ -10,7 +10,7 @@ import {
 } from "@/types";
 import ApiInstance from "../apiInstance";
 
-export default class StrapiInstance extends ApiInstance {
+export default class StrapiApiInstance extends ApiInstance {
   constructor(baseUrl: RequestInfo | URL, baseInit: RequestInit = {}) {
     super(baseUrl, baseInit);
   }
