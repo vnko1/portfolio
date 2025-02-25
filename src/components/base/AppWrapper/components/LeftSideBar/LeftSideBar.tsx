@@ -27,7 +27,7 @@ const LeftSideBar: React.FC<Props> = ({ url }) => {
             onClick={() => handlePrint(url)}
             classNames="mb-1-sm"
           />
-          <p className="hidden sm:block font-medium text-3xs leading-12 md:text-xxs md:leading-16 text-primary-light">
+          <p className="hidden sm:block font-medium text-3xs leading-12 md:text-xxs md:leading-16 text-text-secondary">
             Print Resume
           </p>
         </div>

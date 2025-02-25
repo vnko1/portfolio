@@ -16,11 +16,11 @@ const ExperienceCard: React.FC<Props> = ({
 }) => (
   <div className={`flex flex-col p-3-xs bg-secondary-dark ${classNames || ""}`}>
     <div className="flex items-center justify-between mb-0-md">
-      <p className="flex items-center gap-1-xs font-medium leading-24 text-primary-contrast">
+      <p className="flex items-center gap-1-xs font-medium leading-24 text-text-hint">
         <Icon size={16} icon={IconsEnum.Point} />
         {period}
       </p>
-      <p className="font-normal leading-24 text-primary-main">{place}</p>
+      <p className="font-normal leading-24 text-text-primary">{place}</p>
     </div>
     <h3 className="mb-1-lg">{role}</h3>
     <p className="max-w-[76%] body">{description}</p>

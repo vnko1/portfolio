@@ -74,6 +74,13 @@ export default {
         "6-xs": "60px",
       },
       colors: {
+        text: {
+          primary: "var(--color-text-primary)",
+          secondary: "var(--color-text-secondary)",
+          disabled: "var(--color-text-disabled)",
+          hint: "var(--color-text-hint)",
+          contrast: "var(--color-text-contrast)",
+        },
         primary: {
           main: "var(--color-primary-main)",
           light: "var(--color-primary-light)",
@@ -88,6 +95,7 @@ export default {
         },
         bg: { paper: "var(--color-background-paper)" },
         error: { main: "var(--color-error-main)" },
+        logo: "var(--color-logo)",
       },
       dropShadow: {
         sm: "2px 4px 36px rgba(17, 17, 17, 0.05)",

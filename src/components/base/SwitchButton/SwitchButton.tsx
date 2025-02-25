@@ -27,8 +27,8 @@ const SwitchButton: React.FC<Props> = ({ classNames, onChange, isActive }) => {
       <span
         className={`flex items-center space-x-[6px] rounded-[23px] py-1 xl:py-2 px-1-xs xl:px-1-xl text-3xs xl:text-xxs font-medium transition-all duration-150 ${
           !isActive
-            ? "text-primary-main bg-primary-light"
-            : "text-light-light dark:text-dark-light"
+            ? "text-text-primary bg-primary-light"
+            : "text-text-secondary"
         }`}
       >
         <Icon
@@ -40,7 +40,9 @@ const SwitchButton: React.FC<Props> = ({ classNames, onChange, isActive }) => {
       </span>
       <span
         className={`flex items-center space-x-[6px] rounded-[23px] py-1 xl:py-2 px-1-xs xl:px-1-xl text-3xs xl:text-xxs font-medium transition-all duration-150 ${
-          isActive ? "text-primary-light bg-primary-main" : "text-primary-light"
+          isActive
+            ? "text-text-secondary bg-primary-main"
+            : "text-text-secondary"
         }`}
       >
         <Icon

@@ -32,9 +32,7 @@ const ReviewCard: React.FC<Props> = ({
           />
         </div>
         <div>
-          <p className="font-bold leading-24 text-light-primary-dark">
-            {full_name}
-          </p>
+          <p className="font-bold leading-24 text-text-primary">{full_name}</p>
           {location && (
             <p className="body1 leading-28 font-normal">{location}</p>
           )}
@@ -42,7 +40,7 @@ const ReviewCard: React.FC<Props> = ({
         <Icon
           size={24}
           icon={IconsEnum.Quotes}
-          className="ml-auto text-primary-contrast"
+          className="ml-auto text-text-hint"
         />
       </div>
     </div>

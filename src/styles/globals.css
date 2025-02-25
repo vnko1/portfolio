@@ -4,6 +4,12 @@
 
 @layer base {
   :root {
+    --color-text-primary: #1e1e1e;
+    --color-text-secondary: #fff;
+    --color-text-disabled: #c4c4c4;
+    --color-text-hint: #754ef9;
+    --color-text-contrast: #ffdf00;
+
     --color-primary-main: #1e1e1e;
     --color-primary-light: #fff;
     --color-primary-dark: #111;
@@ -17,9 +23,17 @@
     --color-background-paper: #ffdf00;
 
     --color-error-main: #d32f2f;
+
+    --color-logo: #5b1bff;
   }
 
   :root[class~="dark"] {
+    --color-text-primary: #1e1e1e;
+    --color-text-secondary: #fff;
+    --color-text-disabled: #c4c4c4;
+    --color-text-hint: #754ef9;
+    --color-text-contrast: #ffdf00;
+
     --color-primary-main: #1e1e1e;
     --color-primary-light: #fff;
     --color-primary-dark: #111;
@@ -30,9 +44,11 @@
     --color-secondary-dark: #c4c4c4;
     --color-secondary-contrast: #5b1bff;
 
-    --color-background-paper: green;
+    --color-background-paper: #ffdf00;
 
     --color-error-main: #d32f2f;
+
+    --color-logo: #5b1bff;
   }
 
   h1 {
@@ -58,19 +74,19 @@
 
 @layer components {
   .body {
-    @apply font-normal text-xxs text-primary-main;
+    @apply font-normal text-xxs text-text-primary;
   }
 
   .body1 {
-    @apply font-medium text-xxs text-primary-dark;
+    @apply font-medium text-xxs text-text-primary;
   }
 
   .body2 {
-    @apply font-semibold text-xxs text-primary-light;
+    @apply font-semibold text-xxs text-text-secondary;
   }
 
   .body3 {
-    @apply font-normal text-xxs leading-28 text-primary-main;
+    @apply font-normal text-xxs leading-28 text-text-primary;
   }
 
   .flex-centering {
@@ -78,13 +94,13 @@
   }
 
   .category-btn {
-    @apply relative leading-24 font-normal text-primary-dark transition-all duration-300;
+    @apply relative leading-24 font-normal text-text-primary transition-all duration-300;
   }
 
   .category-btn:hover,
   .category-btn:focus,
   .category-btn.active {
-    @apply text-primary-contrast;
+    @apply text-text-hint;
   }
 
   .category-btn::after {
@@ -110,7 +126,7 @@
   }
 
   .section-title > span {
-    @apply text-primary-contrast not-italic font-extrabold;
+    @apply text-text-hint not-italic font-extrabold;
   }
 
   .line {
@@ -118,11 +134,11 @@
   }
 
   .link {
-    @apply py-1-sm px-2-md rounded-lg border border-primary-main bg-primary-main font-medium leading-20 text-primary-light;
+    @apply py-1-sm px-2-md rounded-lg border border-primary-main bg-primary-main font-medium leading-20 text-text-secondary;
   }
 
   .icon-btn {
-    @apply inline-flex items-center justify-center w-3-xs h-3-xs md:w-4-xs md:h-4-xs rounded-[50%] text-primary-main bg-primary-light transition-all duration-300 hover:shadow-sm focus:shadow-sm;
+    @apply inline-flex items-center justify-center w-3-xs h-3-xs md:w-4-xs md:h-4-xs rounded-[50%] text-text-primary bg-primary-light transition-all duration-300 hover:shadow-sm focus:shadow-sm;
   }
 
   .label {
@@ -130,7 +146,7 @@
   }
 
   .input {
-    @apply w-full py-2-xs pl-2-md pr-4-xs rounded-xl border border-primary-main outline-none placeholder:text-xxs placeholder:leading-20 placeholder:text-primary-main transition-colors duration-150;
+    @apply w-full py-2-xs pl-2-md pr-4-xs rounded-xl border border-primary-main outline-none placeholder:text-xxs placeholder:leading-20 placeholder:text-text-primary transition-colors duration-150;
   }
 
   .input.error {
@@ -147,7 +163,7 @@
 }
 
 body {
-  @apply h-screen overflow-y-auto font-inter body text-primary-main bg-primary-light;
+  @apply h-screen overflow-y-auto font-inter body text-text-primary bg-primary-light;
 }
 
 .app-border {

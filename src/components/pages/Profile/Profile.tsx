@@ -26,10 +26,10 @@ const Profile: React.FC<Props> = ({
       />
 
       <div className="px-4-xs">
-        <p className="mb-0-lg font-bold leading-48 text-lg text-primary-main">
+        <p className="mb-0-lg font-bold leading-48 text-lg text-text-primary">
           {first_name}
         </p>
-        <p className="font-normal text-xxs leading-24 text-primary-main">
+        <p className="font-normal text-xxs leading-24 text-text-primary">
           {role} | {city}
         </p>
       </div>
@@ -39,7 +39,7 @@ const Profile: React.FC<Props> = ({
             <li key={link.documentId}>
               <Link
                 href={link.link}
-                className="font-bold leading-24 text-primary-main"
+                className="font-bold leading-24 text-text-primary"
                 target="_blank"
                 rel="noreferrer noopener"
               >
