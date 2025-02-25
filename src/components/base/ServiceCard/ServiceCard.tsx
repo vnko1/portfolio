@@ -20,7 +20,7 @@ const ServiceCard: React.FC<Props> = ({
   description,
 }) => (
   <div
-    className={`flex gap-2-md py-3-xs px-[7%] border border-light-grey-100 dark:border-dark-grey-100 ${
+    className={`flex gap-2-md py-3-xs px-[7%] border border-light-primary/20 dark:border-dark-primary/20 ${
       classNames || ""
     }`}
   >

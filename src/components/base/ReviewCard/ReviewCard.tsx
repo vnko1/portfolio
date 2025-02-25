@@ -18,7 +18,7 @@ const ReviewCard: React.FC<Props> = ({
 }) => {
   return (
     <div
-      className={`py-3-xs px-4-xs border border-light-grey-100 dark:border-dark-grey-100 ${classNames}`}
+      className={`py-3-xs px-4-xs border border-light-primary/20 dark:border-dark-primary/20 ${classNames}`}
     >
       <p className="max-w-[90%] mb-2-md body1 leading-26 italic">{text}</p>
       <div className="flex gap-1-sm items-center">
