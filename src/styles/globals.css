@@ -29,7 +29,7 @@
 
 @layer components {
   .body {
-    @apply font-normal text-xxs text-light-primary/79 dark:text-dark-primary/70;
+    @apply font-normal text-xxs text-light-primary/70 dark:text-dark-primary/70;
   }
 
   .body1 {
