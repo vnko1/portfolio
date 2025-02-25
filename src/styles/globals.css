@@ -3,8 +3,37 @@
 @tailwind utilities;
 
 @layer base {
-  /* :root {
-  } */
+  :root {
+    --color-primary-main: #1e1e1e;
+    --color-primary-light: #fff;
+    --color-primary-dark: #111;
+    --color-primary-contrast: #754ef9;
+
+    --color-secondary-main: #000;
+    --color-secondary-light: #fafafa;
+    --color-secondary-dark: #c4c4c4;
+    --color-secondary-contrast: #5b1bff;
+
+    --color-background-paper: #ffdf00;
+
+    --color-error-main: #d32f2f;
+  }
+
+  :root[class~="dark"] {
+    --color-primary-main: #1e1e1e;
+    --color-primary-light: #fff;
+    --color-primary-dark: #111;
+    --color-primary-contrast: #754ef9;
+
+    --color-secondary-main: #000;
+    --color-secondary-light: #fafafa;
+    --color-secondary-dark: #c4c4c4;
+    --color-secondary-contrast: #5b1bff;
+
+    --color-background-paper: green;
+
+    --color-error-main: #d32f2f;
+  }
 
   h1 {
     @apply font-extrabold text-xxl leading-82;
@@ -29,19 +58,19 @@
 
 @layer components {
   .body {
-    @apply font-normal text-xxs text-light-primary/70 dark:text-dark-primary/70;
+    @apply font-normal text-xxs text-primary-main;
   }
 
   .body1 {
-    @apply font-medium text-xxs text-light-black-200/70 dark:text-dark-black-200/70;
+    @apply font-medium text-xxs text-primary-dark;
   }
 
   .body2 {
-    @apply font-semibold text-xxs text-light-light-100 dark:text-dark-light-100;
+    @apply font-semibold text-xxs text-primary-light;
   }
 
   .body3 {
-    @apply font-normal text-xxs leading-28 text-light-primary/60 dark:text-dark-primary/60;
+    @apply font-normal text-xxs leading-28 text-primary-main;
   }
 
   .flex-centering {
@@ -49,13 +78,13 @@
   }
 
   .category-btn {
-    @apply relative leading-24 font-normal text-light-black-200 dark:text-dark-black-200 transition-all duration-300;
+    @apply relative leading-24 font-normal text-primary-dark transition-all duration-300;
   }
 
   .category-btn:hover,
   .category-btn:focus,
   .category-btn.active {
-    @apply text-light-accent-100 dark:text-dark-accent-100;
+    @apply text-primary-contrast;
   }
 
   .category-btn::after {
@@ -81,19 +110,19 @@
   }
 
   .section-title > span {
-    @apply text-light-accent-100 dark:text-dark-accent-100 not-italic font-extrabold;
+    @apply text-primary-contrast not-italic font-extrabold;
   }
 
   .line {
-    @apply after:block after:mt-1-xs after:mb-3-xs after:h-[1px] after:bg-light-primary/10 dark:after:bg-dark-primary/10 rounded-none;
+    @apply after:block after:mt-1-xs after:mb-3-xs after:h-[1px] after:bg-primary-main rounded-none;
   }
 
   .link {
-    @apply py-1-sm px-2-md rounded-lg border border-light-primary/10 dark:border-dark-primary/10 bg-light-primary dark:bg-dark-primary font-medium leading-20 text-light-light-100 dark:text-dark-light-100;
+    @apply py-1-sm px-2-md rounded-lg border border-primary-main bg-primary-main font-medium leading-20 text-primary-light;
   }
 
   .icon-btn {
-    @apply inline-flex items-center justify-center w-3-xs h-3-xs md:w-4-xs md:h-4-xs rounded-[50%] text-light-primary dark:text-dark-primary bg-light-light-100 dark:bg-dark-light-100 transition-all duration-300 hover:shadow-sm focus:shadow-sm;
+    @apply inline-flex items-center justify-center w-3-xs h-3-xs md:w-4-xs md:h-4-xs rounded-[50%] text-primary-main bg-primary-light transition-all duration-300 hover:shadow-sm focus:shadow-sm;
   }
 
   .label {
@@ -101,15 +130,15 @@
   }
 
   .input {
-    @apply w-full py-2-xs pl-2-md pr-4-xs rounded-xl border border-light-primary/10 dark:border-dark-primary/10 outline-none placeholder:text-xxs placeholder:leading-20 placeholder:text-light-primary/50 dark:placeholder:text-dark-primary/50 transition-colors duration-150;
+    @apply w-full py-2-xs pl-2-md pr-4-xs rounded-xl border border-primary-main outline-none placeholder:text-xxs placeholder:leading-20 placeholder:text-primary-main transition-colors duration-150;
   }
 
   .input.error {
-    @apply border-red-500 text-red-500 placeholder:text-red-500;
+    @apply border-error-main text-error-main placeholder:text-error-main;
   }
 
   .error-text {
-    @apply absolute -bottom-3 left-0 text-3xs leading-12 text-red-500 transition-all opacity-0;
+    @apply absolute -bottom-3 left-0 text-3xs leading-12 text-error-main transition-all opacity-0;
   }
 
   .error-text.active {
@@ -118,9 +147,9 @@
 }
 
 body {
-  @apply h-screen overflow-y-auto font-inter body text-light-primary dark:text-dark-primary bg-light-light-100 dark:bg-dark-light-100;
+  @apply h-screen overflow-y-auto font-inter body text-primary-main bg-primary-light;
 }
 
 .app-border {
-  @apply h-screen bg-light-accent-200 dark:bg-dark-accent-200 mix-blend-multiply bg-no-repeat bg-cover bg-main;
+  @apply h-screen bg-secondary-contrast mix-blend-multiply bg-no-repeat bg-cover bg-main;
 }

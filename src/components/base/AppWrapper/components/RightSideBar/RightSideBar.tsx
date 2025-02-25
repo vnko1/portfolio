@@ -11,8 +11,8 @@ interface Props {
 
 const RightSideBar: React.FC<Props> = ({ url, copyright_text }) => {
   return (
-    <div className="hidden xl:flex flex-col items-center justify-between xl:pb-4-xs xl:pt-[120px] h-screen bg-light-accent-200 dark:bg-dark-accent-200 mix-blend-multiply bg-no-repeat bg-cover bg-main">
-      <p className="relative top-[120px] -rotate-90 w-[320px] text-3xs leading-12 sm:text-xxs sm:leading-24 text-light-light-100 dark:text-dark-light-100">
+    <div className="hidden xl:flex flex-col items-center justify-between xl:pb-4-xs xl:pt-[120px] h-screen bg-secondary-contrast mix-blend-multiply bg-no-repeat bg-cover bg-main">
+      <p className="relative top-[120px] -rotate-90 w-[320px] text-3xs leading-12 sm:text-xxs sm:leading-24 text-primary-light">
         &#169; {getCurrentYear()}{" "}
         {copyright_text ? copyright_text : "VNKO. All rights reserved."}
       </p>
@@ -24,7 +24,7 @@ const RightSideBar: React.FC<Props> = ({ url, copyright_text }) => {
             onClick={() => handleDownload(url)}
             classNames="mb-1-sm"
           />
-          <p className="hidden sm:block text-right font-medium text-3xs leading-12 md:text-xxs md:leading-16 text-light-light-100 dark:text-dark-light-100">
+          <p className="hidden sm:block text-right font-medium text-3xs leading-12 md:text-xxs md:leading-16 text-primary-light">
             My Resume
           </p>
         </div>

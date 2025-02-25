@@ -24,8 +24,8 @@ const NavLink: React.FC<Props> = ({
 }) => {
   const pathname = usePathname();
 
-  const baseClassNames = `cursor-pointer inline-flex items-center justify-center gap-0-lg px-2-xs py-3-xs transition-all duration-300 font-normal text-xxs leading-16 text-light-primary dark:text-dark-primary hover:bg-light-secondary focus:bg-light-secondary dark:hover:bg-dark-secondary dark:focus:bg-dark-secondary ${
-    pathname === href ? "bg-light-secondary dark:bg-dark-secondary" : ""
+  const baseClassNames = `cursor-pointer inline-flex items-center justify-center gap-0-lg px-2-xs py-3-xs transition-all duration-300 font-normal text-xxs leading-16 text-primary-main hover:bg-bg-paper focus:bg-bg-paper ${
+    pathname === href ? "bg-bg-paper" : ""
   } ${classNames}`;
 
   return (

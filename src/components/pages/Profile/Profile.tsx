@@ -15,7 +15,7 @@ const Profile: React.FC<Props> = ({
   social_links,
 }) => {
   return (
-    <div className="2xl:self-start flex flex-col justify-between gap-3-xs pl-2-xs pt-2-xs pb-[86px] bg-light-secondary dark:bg-dark-secondary">
+    <div className="2xl:self-start flex flex-col justify-between gap-3-xs pl-2-xs pt-2-xs pb-[86px] bg-bg-paper">
       <Image
         src={banner.url}
         alt={first_name}
@@ -26,20 +26,20 @@ const Profile: React.FC<Props> = ({
       />
 
       <div className="px-4-xs">
-        <p className="mb-0-lg font-bold leading-48 text-lg text-light-primary dark:text-dark-primary">
+        <p className="mb-0-lg font-bold leading-48 text-lg text-primary-main">
           {first_name}
         </p>
-        <p className="font-normal text-xxs leading-24 text-light-primary/60 dark:text-dark-primary/60">
+        <p className="font-normal text-xxs leading-24 text-primary-main/60">
           {role} | {city}
         </p>
       </div>
       <div className="px-4-xs">
-        <ul className="flex flex-col pl-1-sm gap-0-lg border-l-2 border-light-primary dark:border-dark-primary">
+        <ul className="flex flex-col pl-1-sm gap-0-lg border-l-2 border-primary-main">
           {contact_links.map((link) => (
             <li key={link.documentId}>
               <Link
                 href={link.link}
-                className="font-bold leading-24 text-light-primary dark:text-dark-primary"
+                className="font-bold leading-24 text-primary-main"
                 target="_blank"
                 rel="noreferrer noopener"
               >

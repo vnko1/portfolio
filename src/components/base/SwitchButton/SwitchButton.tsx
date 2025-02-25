@@ -13,7 +13,7 @@ interface Props {
 const SwitchButton: React.FC<Props> = ({ classNames, onChange, isActive }) => {
   return (
     <label
-      className={`relative flex cursor-pointer select-none items-center justify-between rounded-[23px] bg-light-accent-100 dark:bg-dark-accent-100 p-1 ${classNames}`}
+      className={`relative flex cursor-pointer select-none items-center justify-between p-1 rounded-[23px] bg-primary-contrast ${classNames}`}
     >
       <input
         type="checkbox"
@@ -27,7 +27,7 @@ const SwitchButton: React.FC<Props> = ({ classNames, onChange, isActive }) => {
       <span
         className={`flex items-center space-x-[6px] rounded-[23px] py-1 xl:py-2 px-1-xs xl:px-1-xl text-3xs xl:text-xxs font-medium transition-all duration-150 ${
           !isActive
-            ? "text-light-primary dark:text-dark-primary bg-light-light-100 dark:bg-dark-light-100"
+            ? "text-primary-main bg-primary-light"
             : "text-light-light dark:text-dark-light"
         }`}
       >
@@ -40,9 +40,7 @@ const SwitchButton: React.FC<Props> = ({ classNames, onChange, isActive }) => {
       </span>
       <span
         className={`flex items-center space-x-[6px] rounded-[23px] py-1 xl:py-2 px-1-xs xl:px-1-xl text-3xs xl:text-xxs font-medium transition-all duration-150 ${
-          isActive
-            ? "text-light-light-100 dark:text-dark-light-100 bg-light-primary dark:bg-dark-primary"
-            : "text-light-light-100 dark:text-dark-light-100"
+          isActive ? "text-primary-light bg-primary-main" : "text-primary-light"
         }`}
       >
         <Icon

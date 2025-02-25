@@ -20,11 +20,11 @@ const ServiceCard: React.FC<Props> = ({
   description,
 }) => (
   <div
-    className={`flex gap-2-md py-3-xs px-[7%] border border-light-primary/20 dark:border-dark-primary/20 ${
+    className={`flex gap-2-md py-3-xs px-[7%] border border-primary-main/20 ${
       classNames || ""
     }`}
   >
-    <div className="flex shrink-0 justify-center items-center w-full max-w-4-xl h-4-xl rounded-[50%] drop-shadow-sm bg-light-light-100 dark:bg-dark-light-100">
+    <div className="flex shrink-0 justify-center items-center w-full max-w-4-xl h-4-xl rounded-[50%] drop-shadow-sm bg-primary-light">
       <Image
         src={icon.url}
         alt={alt}

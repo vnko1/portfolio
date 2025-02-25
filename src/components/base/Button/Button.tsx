@@ -41,10 +41,10 @@ const Button: React.FC<Props> = ({
   }`;
 
   const classNamesMap = {
-    contained: `${baseClassNames} text-xxs leading-20 bg-light-accent-200 dark:bg-dark-accent-200 hover:bg-transparent focus:bg-transparent text-light-light-100 dark:text-dark-light-100 hover:text-light-primary dark:hover:text-dark-primary focus:text-light-primary dark:focus:text-dark-primary hover:shadow-sm ${
+    contained: `${baseClassNames} text-xxs leading-20 bg-secondary-contrast hover:bg-transparent focus:bg-transparent text-primary-light hover:text-primary-main  focus:text-primary-main hover:shadow-sm ${
       classNames || ""
     }`,
-    outlined: `${baseClassNames} text-xxs leading-28 tracking-[0.72px] text-light-primary dark:text-dark-primary hover:shadow-sm ${
+    outlined: `${baseClassNames} text-xxs leading-28 tracking-[0.72px] text-primary-main hover:shadow-sm ${
       classNames || ""
     }`,
   };

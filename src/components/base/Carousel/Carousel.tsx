@@ -31,7 +31,7 @@ const Carousel: React.FC<Props> = ({
         {title || null}
         <div className="flex gap-0-xl">
           <IconButton
-            classNames="rotate-180 border border-light-primary dark:border-dark-primary"
+            classNames="rotate-180 border border-primary-main"
             icon={IconsEnum.Arrow}
             size={24}
             onClick={scrollPrev}
@@ -42,7 +42,7 @@ const Carousel: React.FC<Props> = ({
             icon={IconsEnum.Arrow}
             size={24}
             onClick={scrollNext}
-            classNames="border border-light-primary dark:border-dark-primary"
+            classNames="border border-primary-main"
             aria-label="Next slide"
             disabled={!emblaApi?.canScrollNext()}
           />

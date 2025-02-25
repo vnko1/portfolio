@@ -18,7 +18,7 @@ const Logo: React.FC<Props> = ({ classNames }) => {
         icon={IconsEnum.Logo}
         width={48}
         height={27}
-        className="text-light-accent-200 dark:text-dark-accent-200"
+        className="text-secondary-contrast"
       />
       VNKO
     </a>
