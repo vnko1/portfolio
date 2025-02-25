@@ -37,7 +37,7 @@ const PriceCard: React.FC<Props> = ({
         />
       )}
     </h4>
-    <p className="font-bold text-xs leading-24 text-light-light-100/[0.8] dark:text-dark-light-100/[0.8] after:block after:h-[1px] after:mt-1-sm after:mb-2-md after:bg-light-line dark:after:bg-dark-line">
+    <p className="font-bold text-xs leading-24 text-light-light-100/[0.8] dark:text-dark-light-100/[0.8] after:block after:h-[1px] after:mt-1-sm after:mb-2-md after:bg-light-light-100/50 dark:after:bg-dark-light-100/50">
       <span>{currency}</span>
       <span className="text-xl leading-48 text-light-accent-100 dark:text-dark-accent-100">
         {amount}

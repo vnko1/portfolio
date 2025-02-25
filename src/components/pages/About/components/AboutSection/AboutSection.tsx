@@ -42,20 +42,20 @@ const AboutSection: React.FC<Props> = ({
     </div>
     <ul className="grid grid-rows-2 grid-cols-2 gap-y-2-xl">
       <li>
-        <h4 className="uppercase italic font-medium leading-30 text-xs text-light-text-primary dark:text-dark-text-primary">
+        <h4 className="uppercase italic font-medium leading-30 text-xs text-light-primary/60 dark:text-dark-primary/60">
           age
         </h4>
         <p className="font-bold text-sm leading-34">{age}</p>
       </li>
       <li>
-        <h4 className="uppercase italic font-medium leading-30 text-xs text-light-text-primary dark:text-dark-text-primary">
+        <h4 className="uppercase italic font-medium leading-30 text-xs text-light-primary/60 dark:text-dark-primary/60">
           LOCATION
         </h4>
         <p className="font-bold text-sm leading-34">{location}</p>
       </li>
       {contact_links.map((contact) => (
         <li key={contact.documentId}>
-          <h4 className="uppercase italic font-medium leading-30 text-xs text-light-text-primary dark:text-dark-text-primary">
+          <h4 className="uppercase italic font-medium leading-30 text-xs text-light-primary/60 dark:text-dark-primary/60">
             {contact.title}
           </h4>
           <Link href={contact.link} className="font-bold text-sm leading-34">

@@ -3,21 +3,8 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --color-text: rgba(30, 30, 30, 0.7);
-    --color-text-primary: rgba(30, 30, 30, 0.6);
-    --color-text-secondary: rgba(17, 17, 17, 0.7);
-    --color-line: rgba(255, 255, 255, 0.5);
-    --color-border: rgba(30, 30, 30, 0.2);
-    --color-header-btn: rgba(30, 30, 30, 0.1);
-
-    --color-dark-text: rgba(255, 255, 255, 0.9);
-    --color-dark-text-primary: rgba(255, 255, 255, 0.8);
-    --color-dark-text-secondary: rgba(255, 255, 255, 0.6);
-    --color-dark-line: rgba(255, 255, 255, 0.5);
-    --color-dark-border: rgba(30, 30, 30, 0.2);
-    --color-dark-header-btn: rgba(30, 30, 30, 0.1);
-  }
+  /* :root {
+  } */
 
   h1 {
     @apply font-extrabold text-xxl leading-82;
@@ -42,11 +29,11 @@
 
 @layer components {
   .body {
-    @apply font-normal text-xxs text-light-text-main dark:text-dark-text-main;
+    @apply font-normal text-xxs text-light-primary/79 dark:text-dark-primary/70;
   }
 
   .body1 {
-    @apply font-medium text-xxs text-light-text-secondary dark:text-dark-text-secondary;
+    @apply font-medium text-xxs text-light-black-200/70 dark:text-dark-black-200/70;
   }
 
   .body2 {
@@ -54,7 +41,7 @@
   }
 
   .body3 {
-    @apply font-normal text-xxs leading-28 text-light-text-primary dark:text-dark-text-primary;
+    @apply font-normal text-xxs leading-28 text-light-primary/60 dark:text-dark-primary/60;
   }
 
   .flex-centering {
@@ -102,7 +89,7 @@
   }
 
   .link {
-    @apply py-1-sm px-2-md rounded-lg border border-light-header-btn dark:border-dark-header-btn bg-light-primary dark:bg-dark-primary font-medium leading-20 text-light-light-100 dark:text-dark-light-100;
+    @apply py-1-sm px-2-md rounded-lg border border-light-primary/10 dark:border-dark-primary/10 bg-light-primary dark:bg-dark-primary font-medium leading-20 text-light-light-100 dark:text-dark-light-100;
   }
 
   .icon-btn {
@@ -114,7 +101,7 @@
   }
 
   .input {
-    @apply w-full py-2-xs pl-2-md pr-4-xs rounded-xl border border-light-header-btn dark:border-dark-header-btn outline-none placeholder:text-xxs placeholder:leading-20 placeholder:text-light-primary/50 dark:placeholder:text-dark-primary/50 transition-colors duration-150;
+    @apply w-full py-2-xs pl-2-md pr-4-xs rounded-xl border border-light-primary/10 dark:border-dark-primary/10 outline-none placeholder:text-xxs placeholder:leading-20 placeholder:text-light-primary/50 dark:placeholder:text-dark-primary/50 transition-colors duration-150;
   }
 
   .input.error {
