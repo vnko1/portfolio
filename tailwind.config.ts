@@ -93,7 +93,10 @@ export default {
           dark: "var(--color-secondary-dark)",
           contrast: "var(--color-secondary-contrast)",
         },
-        bg: { paper: "var(--color-background-paper)" },
+        bg: {
+          DEFAULT: "var(--color-background-default)",
+          paper: "var(--color-background-paper)",
+        },
         error: { main: "var(--color-error-main)" },
         logo: "var(--color-logo)",
       },
