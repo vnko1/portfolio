@@ -98,7 +98,6 @@ export default {
           paper: "var(--color-background-paper)",
         },
         error: { main: "var(--color-error-main)" },
-        logo: "var(--color-logo)",
       },
       dropShadow: {
         sm: "2px 4px 36px rgba(17, 17, 17, 0.05)",
