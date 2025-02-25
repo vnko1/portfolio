@@ -13,7 +13,7 @@ const LeftSideBar: React.FC<Props> = ({ url }) => {
   const { isDark, toggleTheme } = React.use(ThemeContext);
 
   return (
-    <div className="hidden xl:flex flex-col items-center justify-between pb-4-xs xl:pt-[120px] h-screen bg-secondary-contrast mix-blend-multiply bg-no-repeat bg-cover bg-main">
+    <div className="hidden xl:flex flex-col items-center justify-between pb-4-xs xl:pt-[120px] h-screen mix-blend-multiply dark:mix-blend-screen bg-no-repeat bg-cover bg-main">
       <SwitchButton
         onChange={toggleTheme}
         isActive={isDark}

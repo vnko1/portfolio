@@ -11,7 +11,7 @@ interface Props {
 
 const RightSideBar: React.FC<Props> = ({ url, copyright_text }) => {
   return (
-    <div className="hidden xl:flex flex-col items-center justify-between xl:pb-4-xs xl:pt-[120px] h-screen bg-secondary-contrast mix-blend-multiply bg-no-repeat bg-cover bg-main">
+    <div className="hidden xl:flex flex-col items-center justify-between xl:pb-4-xs xl:pt-[120px] h-screen bg-secondary-contrast mix-blend-multiply dark:mix-blend-screen bg-no-repeat bg-cover bg-main">
       <p className="relative top-[120px] -rotate-90 w-[320px] text-3xs leading-12 sm:text-xxs sm:leading-24 text-text-secondary">
         &#169; {getCurrentYear()}{" "}
         {copyright_text ? copyright_text : "VNKO. All rights reserved."}
