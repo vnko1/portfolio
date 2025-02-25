@@ -14,9 +14,7 @@ const ExperienceCard: React.FC<Props> = ({
   role,
   description,
 }) => (
-  <div
-    className={`flex flex-col p-3-xs bg-primary-main/20 ${classNames || ""}`}
-  >
+  <div className={`flex flex-col p-3-xs bg-secondary-dark ${classNames || ""}`}>
     <div className="flex items-center justify-between mb-0-md">
       <p className="flex items-center gap-1-xs font-medium leading-24 text-primary-contrast">
         <Icon size={16} icon={IconsEnum.Point} />

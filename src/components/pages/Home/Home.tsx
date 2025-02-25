@@ -31,7 +31,7 @@ const Home: React.FC = async () => {
       >
         {title_md}
       </Markdown>
-      <p className="relative mb-4-xl font-extrabold text-xxl leading-82 text-primary-main after:relative after:bottom-5 after:block after:h-2-xs after:bg-bg-paper/20">
+      <p className="relative mb-4-xl font-extrabold text-xxl leading-82 text-primary-main after:relative after:bottom-5 after:block after:h-2-xs after:bg-bg-paper after:opacity-20">
         {sub_title}
       </p>
       <p className="mb-4-xl body text-xs leading-36">{text}</p>

@@ -19,7 +19,7 @@ const IconButton: React.FC<Props> = ({
 }) => (
   <button
     onClick={onClick}
-    className={`inline-flex items-center justify-center w-3-xs h-3-xs md:w-4-xs md:h-4-xs rounded-[50%] text-primary-main bg-primary-light transition-all duration-300 hover:bg-secondary-contrast focus:bg-secondary-contrast hover:text-primary-light focus:text-primary-light disabled:bg-primary-main/20 disabled:text-primary-main ${classNames}`}
+    className={`inline-flex items-center justify-center w-3-xs h-3-xs md:w-4-xs md:h-4-xs rounded-[50%] text-primary-main bg-primary-light transition-all duration-300 hover:bg-secondary-contrast focus:bg-secondary-contrast hover:text-primary-light focus:text-primary-light disabled:bg-secondary-dark disabled:opacity-20 disabled:text-primary-main ${classNames}`}
     {...props}
   >
     <Icon size={size} icon={icon} />

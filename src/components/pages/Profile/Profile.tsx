@@ -29,7 +29,7 @@ const Profile: React.FC<Props> = ({
         <p className="mb-0-lg font-bold leading-48 text-lg text-primary-main">
           {first_name}
         </p>
-        <p className="font-normal text-xxs leading-24 text-primary-main/60">
+        <p className="font-normal text-xxs leading-24 text-primary-main">
           {role} | {city}
         </p>
       </div>
