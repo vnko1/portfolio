@@ -165,7 +165,7 @@
 }
 
 body {
-  @apply h-screen overflow-y-auto font-inter body text-text-primary bg-primary-light;
+  @apply h-screen overflow-y-auto font-inter body text-text-primary bg-bg;
 }
 
 .app-border {
