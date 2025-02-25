@@ -39,7 +39,7 @@
     --color-primary-contrast: #754ef9;
 
     --color-secondary-main: #000;
-    --color-secondary-light: #fafafa;
+    --color-secondary-light: #585555;
     --color-secondary-dark: #c4c4c4;
     --color-secondary-contrast: #5b1bff;
 
@@ -144,7 +144,7 @@
   }
 
   .input {
-    @apply w-full py-2-xs pl-2-md pr-4-xs rounded-xl border border-primary-main outline-none placeholder:text-xxs placeholder:leading-20 placeholder:text-text-primary transition-colors duration-150;
+    @apply w-full py-2-xs pl-2-md pr-4-xs rounded-xl border border-primary-main outline-none placeholder:text-xxs placeholder:leading-20 placeholder:text-text-primary transition-colors duration-150 bg-secondary-light dark:bg-bg-paper;
   }
 
   .input.error {

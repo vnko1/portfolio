@@ -62,7 +62,7 @@ const PriceCard: React.FC<Props> = ({
     </ul>
     <Link
       href={`/contact?tariff=${tariff}`}
-      className="inline-flex justify-center items-center px-4-xs py-1-lg rounded-xl border border-white font-semibold leading-20 text-text-secondary transition-colors duration-300 hover:bg-primary-light focus:bg-white hover:text-current focus:text-current"
+      className="inline-flex justify-center items-center px-4-xs py-1-lg rounded-xl border border-white font-semibold leading-20 text-text-secondary transition-colors duration-300 hover:bg-primary-light focus:bg-white hover:text-current dark:hover:text-text-hint dark:focus:text-text-hint focus:text-current"
     >
       Buy Now
     </Link>
