@@ -22,7 +22,7 @@ const AboutSection: React.FC<Props> = ({
     <h2 className="section-title line">
       About <span>Me</span>
     </h2>
-    <div className="flex flex-col gap-3-xs max-w-[70%] mb-4-xs">
+    <div className="flex flex-col gap-3-xs md:max-w-[70%] mb-4-xs">
       <Markdown
         components={{
           h1(props) {
