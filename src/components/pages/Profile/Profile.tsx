@@ -34,7 +34,7 @@ const Profile: React.FC<Props> = ({
         </p>
       </div>
       <div className="px-4-xs">
-        <ul className="flex flex-col pl-1-sm gap-0-lg border-l-2 border-primary-main">
+        <ul className="flex flex-col pl-1-sm gap-0-lg border-l-2 border-current">
           {contact_links.map((link) => (
             <li key={link.documentId}>
               <Link
