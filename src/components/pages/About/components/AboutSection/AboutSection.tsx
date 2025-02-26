@@ -22,18 +22,14 @@ const AboutSection: React.FC<Props> = ({
     <h2 className="section-title line">
       About <span>Me</span>
     </h2>
-    <div className="flex flex-col gap-3-xs max-w-[70%] mb-4-xs">
+    <div className="flex flex-col gap-3-xs md:max-w-[70%] mb-4-xs">
       <Markdown
         components={{
           h1(props) {
             return <p className="body leading-32">{props.children}</p>;
           },
           strong(props) {
-            return (
-              <span className="text-light-accent-100 dark:text-dark-accent-100">
-                {props.children}
-              </span>
-            );
+            return <span className="text-text-hint">{props.children}</span>;
           },
         }}
       >
@@ -42,20 +38,20 @@ const AboutSection: React.FC<Props> = ({
     </div>
     <ul className="grid grid-rows-2 grid-cols-2 gap-y-2-xl">
       <li>
-        <h4 className="uppercase italic font-medium leading-30 text-xs text-light-primary/60 dark:text-dark-primary/60">
+        <h4 className="uppercase italic font-medium leading-30 text-xs text-text-contrast">
           age
         </h4>
         <p className="font-bold text-sm leading-34">{age}</p>
       </li>
       <li>
-        <h4 className="uppercase italic font-medium leading-30 text-xs text-light-primary/60 dark:text-dark-primary/60">
+        <h4 className="uppercase italic font-medium leading-30 text-xs text-text-contrast">
           LOCATION
         </h4>
         <p className="font-bold text-sm leading-34">{location}</p>
       </li>
       {contact_links.map((contact) => (
         <li key={contact.documentId}>
-          <h4 className="uppercase italic font-medium leading-30 text-xs text-light-primary/60 dark:text-dark-primary/60">
+          <h4 className="uppercase italic font-medium leading-30 text-xs text-text-contrast">
             {contact.title}
           </h4>
           <Link href={contact.link} className="font-bold text-sm leading-34">

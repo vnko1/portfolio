@@ -12,7 +12,7 @@ const SkillsSection: React.FC<Props> = ({ skills }) =>
       <h2 className="section-title line">
         My <span>Skills</span>
       </h2>
-      <ul className="grid grid-cols-2 gap-2-md justify-between">
+      <ul className="grid grid-cols-1 md:grid-cols-2 gap-2-md justify-between">
         {skills.map((skill) => (
           <li key={skill.id}>
             <Skill {...skill} />

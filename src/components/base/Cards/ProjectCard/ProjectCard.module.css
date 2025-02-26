@@ -4,7 +4,7 @@
 
 .card::after {
   content: "";
-  @apply absolute top-0 left-0 block w-full h-full transition-all duration-300 translate-y-full z-10  bg-light-black-200 dark:bg-dark-black-200;
+  @apply absolute top-0 left-0 block w-full h-full transition-all duration-300 translate-y-full z-10  bg-primary-dark;
 }
 
 .content {
@@ -22,5 +22,5 @@
 }
 
 .link {
-  @apply flex justify-center items-center w-4-md h-4-md rounded-[50%] bg-light-secondary dark:bg-dark-secondary;
+  @apply flex justify-center items-center w-4-md h-4-md rounded-[50%] bg-bg-paper;
 }

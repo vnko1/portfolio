@@ -74,27 +74,34 @@ export default {
         "6-xs": "60px",
       },
       colors: {
-        light: {
-          primary: "#1E1E1E",
-          secondary: "#FFDF00",
-          light: { 100: "#ffffff", 200: "#fafafa" },
-          black: { 100: "#000000", 200: "#111" },
-          accent: { 100: "#754EF9", 200: "#5B1BFF" },
-          grey: { 200: "#c4c4c4" },
+        text: {
+          primary: "var(--color-text-primary)",
+          secondary: "var(--color-text-secondary)",
+          disabled: "var(--color-text-disabled)",
+          hint: "var(--color-text-hint)",
+          contrast: "var(--color-text-contrast)",
         },
-        dark: {
-          primary: "#121212",
-          secondary: "#FFDF00",
-          light: { 100: "#e0e0e0", 200: "#fafafa" },
-          black: { 100: "#000000", 200: "#111" },
-          accent: { 100: "#754EF9", 200: "#5B1BFF" },
-          grey: { 200: "#c4c4c4" },
+        primary: {
+          main: "var(--color-primary-main)",
+          light: "var(--color-primary-light)",
+          dark: "var(--color-primary-dark)",
+          contrast: "var(--color-primary-contrast)",
         },
+        secondary: {
+          main: "var(--color-secondary-main)",
+          light: "var(--color-secondary-light)",
+          dark: "var(--color-secondary-dark)",
+          contrast: "var(--color-secondary-contrast)",
+        },
+        bg: {
+          DEFAULT: "var(--color-background-default)",
+          paper: "var(--color-background-paper)",
+        },
+        error: { main: "var(--color-error-main)" },
       },
       dropShadow: {
         sm: "2px 4px 36px rgba(17, 17, 17, 0.05)",
       },
-
       boxShadow: {
         sm: "0 15px 30px rgba(0, 0, 0, 0.2)",
       },

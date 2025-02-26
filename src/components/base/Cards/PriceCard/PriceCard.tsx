@@ -21,11 +21,11 @@ const PriceCard: React.FC<Props> = ({
   includes,
 }) => (
   <div
-    className={`flex flex-col px-4-xs py-4-xl bg-light-primary dark:bg-dark-primary ${
+    className={`flex flex-col px-4-xs py-4-xl bg-primary-main ${
       classNames || ""
     }`}
   >
-    <h4 className="flex items-center gap-0-xl mb-1-xs text-xs font-semibold leading-18 text-light-light-100 dark:text-dark-light-100 uppercase">
+    <h4 className="flex items-center gap-0-xl mb-1-xs text-xs font-semibold leading-18 text-text-secondary uppercase">
       {tariff}
       {icon && (
         <Image
@@ -37,11 +37,9 @@ const PriceCard: React.FC<Props> = ({
         />
       )}
     </h4>
-    <p className="font-bold text-xs leading-24 text-light-light-100/[0.8] dark:text-dark-light-100/[0.8] after:block after:h-[1px] after:mt-1-sm after:mb-2-md after:bg-light-light-100/50 dark:after:bg-dark-light-100/50">
+    <p className="font-bold text-xs leading-24 text-text-secondary after:block after:h-[1px] after:mt-1-sm after:mb-2-md after:bg-primary-light after:opacity-50">
       <span>{currency}</span>
-      <span className="text-xl leading-48 text-light-accent-100 dark:text-dark-accent-100">
-        {amount}
-      </span>
+      <span className="text-xl leading-48 text-text-hint">{amount}</span>
       <span>{billing_system}</span>
     </p>
     <ul className="flex flex-col gap-1-lg mb-4-xs">
@@ -50,7 +48,7 @@ const PriceCard: React.FC<Props> = ({
         return (
           <li
             key={idx}
-            className={`flex items-center gap-1-sm text-xxs font-semibold text-white leading-24 ${
+            className={`flex items-center gap-1-sm text-xxs font-semibold text-text-secondary leading-24 ${
               isInactive ? "line-through" : ""
             }`}
           >
@@ -64,7 +62,7 @@ const PriceCard: React.FC<Props> = ({
     </ul>
     <Link
       href={`/contact?tariff=${tariff}`}
-      className="inline-flex justify-center items-center px-4-xs py-1-lg rounded-xl border border-white font-semibold leading-20 text-white transition-colors duration-300 hover:bg-white focus:bg-white hover:text-current focus:text-current"
+      className="inline-flex justify-center items-center px-4-xs py-1-lg rounded-xl border border-white font-semibold leading-20 text-text-secondary transition-colors duration-300 hover:bg-primary-light focus:bg-white hover:text-current dark:hover:text-text-hint dark:focus:text-text-hint focus:text-current"
     >
       Buy Now
     </Link>

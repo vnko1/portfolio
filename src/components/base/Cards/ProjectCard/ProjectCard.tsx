@@ -35,10 +35,8 @@ const ProjectCard: React.FC<Props> = ({
         )}
         <div className="w-full flex items-center justify-between gap-1-xs">
           <div className="flex flex-col flex-1 ">
-            <h4 className="font-normal text-light-secondary dark:text-dark-secondary">
-              {title}
-            </h4>
-            <p className="font-bold text-sm leading-30 text-light-light-100 dark:text-dark-light-100">
+            <h4 className="font-normal text-text-contrast">{title}</h4>
+            <p className="font-bold text-sm leading-30 text-text-secondary">
               {tech_stack}
             </p>
           </div>

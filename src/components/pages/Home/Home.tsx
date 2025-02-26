@@ -15,7 +15,7 @@ const Home: React.FC = async () => {
         components={{
           h1(props) {
             return (
-              <h1 className="mb-1-xs italic font-medium text-light-primary dark:text-dark-primary">
+              <h1 className="mb-1-xs italic font-medium text-text-primary">
                 {props.children}
               </h1>
             );
@@ -31,11 +31,11 @@ const Home: React.FC = async () => {
       >
         {title_md}
       </Markdown>
-      <p className="relative mb-4-xl font-extrabold text-xxl leading-82 text-light-primary dark:text-dark-primary after:relative after:bottom-5 after:block after:h-2-xs after:bg-light-secondary/20 dark:after:bg-dark-secondary/20">
+      <p className="relative mb-4-xl font-extrabold text-xl md:text-xxl leading-82 text-text-primary after:relative after:bottom-5 after:block after:h-2-xs after:bg-bg-paper after:opacity-20">
         {sub_title}
       </p>
       <p className="mb-4-xl body text-xs leading-36">{text}</p>
-      <div className="flex items-center gap-2-sm">
+      <div className="w-full md:w-max flex flex-col md:flex-row md:items-center gap-2-sm">
         <Button classNames="h-[68px]" href="/contact">
           Contact Me
         </Button>
