@@ -3,7 +3,8 @@ import { ImageType } from "./media.types";
 
 export interface SocialLink extends UIDType {
   link: string;
-  icon: ImageType;
+  light_icon: ImageType;
+  dark_icon: ImageType;
   text: string;
 }
 

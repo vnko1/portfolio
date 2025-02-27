@@ -4,5 +4,6 @@ import { ImageType } from "./media.types";
 export interface SkillType extends UIDType {
   title: string;
   progress: number | null;
-  icon: ImageType | null;
+  light_icon: ImageType | null;
+  dark_icon: ImageType | null;
 }

@@ -59,11 +59,18 @@ const Profile: React.FC<Props> = ({
               rel="noreferrer noopener"
             >
               <Image
-                src={link.icon.url}
+                src={link.light_icon.url}
                 alt={link.text}
                 width={0}
                 height={0}
-                className="w-2-xs h-2-xs"
+                className="w-2-xs h-2-xs dark:hidden"
+              />
+              <Image
+                src={link.dark_icon.url}
+                alt={link.text}
+                width={0}
+                height={0}
+                className="w-2-xs h-2-xs hidden dark:block"
               />
             </Link>
           </li>

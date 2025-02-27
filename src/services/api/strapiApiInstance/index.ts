@@ -20,7 +20,12 @@ export default class StrapiApiInstance extends ApiInstance {
       populate: {
         banner: { fields: ["url"] },
         contact_links: true,
-        social_links: { populate: { icon: { fields: ["url"] } } },
+        social_links: {
+          populate: {
+            light_icon: { fields: ["url"] },
+            dark_icon: { fields: ["url"] },
+          },
+        },
       },
     });
 
@@ -44,8 +49,18 @@ export default class StrapiApiInstance extends ApiInstance {
   getAboutData() {
     const params = this.buildQueryString({
       populate: {
-        services: { populate: { icon: { fields: ["url"] } } },
-        tariffs: { populate: { icon: { fields: ["url"] } } },
+        services: {
+          populate: {
+            light_icon: { fields: ["url"] },
+            dark_icon: { fields: ["url"] },
+          },
+        },
+        tariffs: {
+          populate: {
+            light_icon: { fields: ["url"] },
+            dark_icon: { fields: ["url"] },
+          },
+        },
       },
     });
 
@@ -58,9 +73,19 @@ export default class StrapiApiInstance extends ApiInstance {
     const params = this.buildQueryString({
       populate: {
         experience: true,
-        skills: { populate: { icon: { fields: ["url"] } } },
+        skills: {
+          populate: {
+            light_icon: { fields: ["url"] },
+            dark_icon: { fields: ["url"] },
+          },
+        },
         reviews: { populate: { avatar: { fields: ["url"] } } },
-        clients: { populate: { logo: { fields: ["url"] } } },
+        clients: {
+          populate: {
+            light_logo: { fields: ["url"] },
+            dark_logo: { fields: ["url"] },
+          },
+        },
       },
     });
     return this.get<{ data: ResumeType }>(`api/resume?${params}`);
@@ -86,7 +111,12 @@ export default class StrapiApiInstance extends ApiInstance {
     const params = this.buildQueryString({
       populate: {
         contact_links: true,
-        social_links: { populate: { icon: { fields: ["url"] } } },
+        social_links: {
+          populate: {
+            light_icon: { fields: ["url"] },
+            dark_icon: { fields: ["url"] },
+          },
+        },
       },
     });
 

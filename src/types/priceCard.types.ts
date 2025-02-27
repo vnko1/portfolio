@@ -4,7 +4,8 @@ import { ImageType } from "./media.types";
 export type TariffType = "basic" | "premium" | "unlimited";
 
 export interface PriceCardType extends UIDType {
-  icon: ImageType | null;
+  light_icon: ImageType | null;
+  dark_icon: ImageType | null;
   currency: string;
   amount: number;
   billing_system: string | null;

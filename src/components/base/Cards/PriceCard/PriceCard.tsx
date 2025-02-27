@@ -13,7 +13,8 @@ interface Props extends PriceCardType {
 const PriceCard: React.FC<Props> = ({
   classNames,
   tariff,
-  icon,
+  light_icon,
+  dark_icon,
   alt = "tariff icon",
   currency,
   amount,
@@ -27,13 +28,22 @@ const PriceCard: React.FC<Props> = ({
   >
     <h4 className="flex items-center gap-0-xl mb-1-xs text-xs font-semibold leading-18 text-text-secondary uppercase">
       {tariff}
-      {icon && (
+      {light_icon && (
         <Image
-          src={icon.url}
+          src={light_icon.url}
           alt={alt}
           width={"0"}
           height={"0"}
-          className="max-w-2-md w-full"
+          className="max-w-2-md w-full dark:hidden"
+        />
+      )}
+      {dark_icon && (
+        <Image
+          src={dark_icon.url}
+          alt={alt}
+          width={"0"}
+          height={"0"}
+          className="max-w-2-md w-full hidden dark:block"
         />
       )}
     </h4>

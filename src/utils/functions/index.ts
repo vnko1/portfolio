@@ -36,3 +36,10 @@ export const getCurrentYear = () =>
 export function multiplyArray<T>(array: T[], iter: number): T[] {
   return iter <= 1 ? array : [...array, ...multiplyArray(array, iter - 1)];
 }
+
+export function calculateMultiplyNumber(val: number) {
+  if (val <= 1) return 10;
+  if (val < 6) return val * 5;
+  if (val <= 10) return 1;
+  return 0;
+}
