@@ -38,7 +38,7 @@ export default async function RootLayout({
         <Theme>
           <AppWrapper url={cvData.data.cv_link}>
             <Header />
-            <div className="pb-5-xs grow grid grid-cols-1 gap-3-xs 2xl:grid-cols-page overflow-x-hidden">
+            <div className="pb-5-xs grow grid grid-cols-1 gap-3-xs 2xl:grid-cols-page">
               <Profile {...commonData.data} />
               {children}
             </div>
