@@ -7,7 +7,13 @@ interface Props extends SkillType {
   classNames?: string;
 }
 
-const Skill: React.FC<Props> = ({ classNames, progress, title, icon }) => {
+const Skill: React.FC<Props> = ({
+  classNames,
+  progress,
+  title,
+  light_icon,
+  dark_icon,
+}) => {
   if (progress === 0) return null;
   let progressValue = progress ?? 1;
   if (progressValue > 1) progressValue = 1;
@@ -20,11 +26,20 @@ const Skill: React.FC<Props> = ({ classNames, progress, title, icon }) => {
           style={{ width: `${convertedValue}%` }}
           className="bg-primary-dark text-text-secondary px-2-md py-0-md rounded-lg flex items-center gap-0-xl"
         >
-          {icon && (
+          {light_icon && (
             <Image
-              src={icon.url}
+              src={light_icon.url}
               alt={title}
-              className="w-5 h-5"
+              className="w-5 h-5 dark:hidden"
+              width={0}
+              height={0}
+            />
+          )}
+          {dark_icon && (
+            <Image
+              src={dark_icon.url}
+              alt={title}
+              className="w-5 h-5 hidden dark:block"
               width={0}
               height={0}
             />

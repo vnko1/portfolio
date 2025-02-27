@@ -7,7 +7,13 @@ import Image from "next/image";
 interface Props extends ClientType {
   classNames?: string;
 }
-const ClientCard: React.FC<Props> = ({ classNames, logo, name, link }) => {
+const ClientCard: React.FC<Props> = ({
+  classNames,
+  light_logo,
+  dark_logo,
+  name,
+  link,
+}) => {
   return (
     <Link
       href={link}
@@ -15,7 +21,13 @@ const ClientCard: React.FC<Props> = ({ classNames, logo, name, link }) => {
       rel="noreferrer noopener"
       target="_blank"
     >
-      <Image src={logo.url} alt={name} fill />
+      <Image src={light_logo.url} alt={name} fill className="dark:hidden" />
+      <Image
+        src={dark_logo.url}
+        alt={name}
+        fill
+        className="hidden dark:block"
+      />
     </Link>
   );
 };

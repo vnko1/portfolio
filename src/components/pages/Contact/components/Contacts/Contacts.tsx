@@ -48,11 +48,18 @@ const Contacts: React.FC<Props> = ({
               rel="noreferrer noopener"
             >
               <Image
-                src={social.icon.url}
+                src={social.light_icon.url}
                 alt={social.text}
                 width={0}
                 height={0}
-                className="w-2-xs h-2-xs"
+                className="w-2-xs h-2-xs dark:hidden"
+              />
+              <Image
+                src={social.dark_icon.url}
+                alt={social.text}
+                width={0}
+                height={0}
+                className="w-2-xs h-2-xs hidden dark:block"
               />
             </Link>
           </li>

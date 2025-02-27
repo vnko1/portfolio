@@ -15,7 +15,8 @@ const ServiceCard: React.FC<Props> = ({
   alt = "service icon",
   width = 24,
   height = 24,
-  icon,
+  light_icon,
+  dark_icon,
   title,
   description,
 }) => (
@@ -26,10 +27,19 @@ const ServiceCard: React.FC<Props> = ({
   >
     <div className="flex shrink-0 justify-center items-center w-full max-w-4-xl h-4-xl rounded-[50%] drop-shadow-sm bg-primary-light">
       <Image
-        src={icon.url}
+        src={light_icon.url}
         alt={alt}
         width={width}
         height={height}
+        className="dark:hidden"
+        style={{ objectFit: "contain", width, height }}
+      />
+      <Image
+        src={dark_icon.url}
+        alt={alt}
+        width={width}
+        height={height}
+        className="hidden dark:block"
         style={{ objectFit: "contain", width, height }}
       />
     </div>

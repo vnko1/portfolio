@@ -12,7 +12,7 @@
 
     --color-primary-main: #1e1e1e;
     --color-primary-light: #fff;
-    --color-primary-dark: #111;
+    --color-primary-dark: rgb(44, 56, 126);
     --color-primary-contrast: #754ef9;
 
     --color-secondary-main: #000;
@@ -35,7 +35,7 @@
 
     --color-primary-main: #1e1e1e;
     --color-primary-light: #fff;
-    --color-primary-dark: #111;
+    --color-primary-dark: #8393e8;
     --color-primary-contrast: #754ef9;
 
     --color-secondary-main: #000;

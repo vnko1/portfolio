@@ -7,7 +7,7 @@ interface Props {
 }
 
 const TariffSection: React.FC<Props> = ({ tariffs }) =>
-  tariffs ? (
+  tariffs.length ? (
     <section>
       <Carousel
         title={
