@@ -13,9 +13,10 @@ const Contacts: React.FC<Props> = ({
   social_links,
 }) => {
   return (
-    <div className="2xl:basis-1/2 px-[80px] py-[60px] bg-secondary-light">
+    <div className="2xl:basis-1/2 px-2-xs py-1-md sm:px-3-md sm:py-2-lg 2xl:px-[80px] 2xl:py-[60px] bg-secondary-light">
       <h3 className="text-xl leading-48 font-extrabold mb-1-lg">
-        Feel free to <span className="font-medium">contact me</span>
+        Feel free to <br />
+        <span className="font-medium">contact me</span>
       </h3>
       <p className="body leading-26 mb-3-xs">{text}</p>
       <ul className="flex flex-col gap-0-md  mb-2-md text-xs leading-28">

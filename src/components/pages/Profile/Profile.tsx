@@ -15,7 +15,7 @@ const Profile: React.FC<Props> = ({
   social_links,
 }) => {
   return (
-    <div className="2xl:self-start flex flex-col justify-between gap-3-xs pl-2-xs pt-2-xs pb-[86px] bg-bg-paper">
+    <div className="2xl:self-start flex flex-col justify-between gap-3-xs pl-2-xs pt-2-xs pb-[86px] pr-2-xs 2xl:pr-0 bg-bg-paper">
       <Image
         src={banner.url}
         alt={first_name}
