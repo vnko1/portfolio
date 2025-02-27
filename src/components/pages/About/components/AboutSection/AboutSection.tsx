@@ -36,7 +36,7 @@ const AboutSection: React.FC<Props> = ({
         {description}
       </Markdown>
     </div>
-    <ul className="grid grid-rows-2 grid-cols-2 gap-y-2-xl">
+    <ul className="grid grid-cols-1 md:grid-rows-2 md:grid-cols-2 gap-y-2-xl">
       <li>
         <h4 className="uppercase italic font-medium leading-30 text-xs text-text-contrast">
           age
