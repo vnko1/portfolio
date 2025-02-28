@@ -26,5 +26,5 @@
 }
 
 .link {
-  @apply flex justify-center items-center w-4-md h-4-md rounded-[50%] bg-bg-paper;
+  @apply flex justify-center items-center w-4-md h-4-md rounded-[50%] bg-bg-paper text-primary-contrast;
 }
