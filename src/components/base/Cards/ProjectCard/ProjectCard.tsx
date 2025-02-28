@@ -22,20 +22,26 @@ const ProjectCard: React.FC<Props> = ({
 }) => {
   return (
     <div className={`${styles.card} ${classNames || ""}`}>
-      <Image src={banner.url} alt={title} fill sizes="33vw" />
+      <Image
+        src={banner.url}
+        alt={title}
+        fill
+        sizes="33vw"
+        className={styles.img}
+      />
       <div
         className={`${styles.content} ${
           description ? "justify-between" : "justify-end"
         }`}
       >
         {description && (
-          <p className="body2 leading-26 font-medium w-full overflow-y-auto">
+          <p className="body2 text-text-secondary leading-26 font-semibold w-full overflow-y-auto">
             {description}
           </p>
         )}
         <div className="w-full flex items-center justify-between gap-1-xs">
           <div className="flex flex-col flex-1 ">
-            <h4 className="font-normal text-text-contrast">{title}</h4>
+            <h4 className="font-normal text-text-hint">{title}</h4>
             <p className="font-bold text-sm leading-30 text-text-secondary">
               {tech_stack}
             </p>

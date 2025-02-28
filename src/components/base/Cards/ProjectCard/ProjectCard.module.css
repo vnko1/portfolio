@@ -2,13 +2,17 @@
   @apply relative transition-all duration-300 hover:shadow-sm focus:shadow-sm hover:scale-[1.05] focus:scale-[1.05] overflow-hidden;
 }
 
+.img {
+  @apply object-cover;
+}
+
 .card::after {
   content: "";
   @apply absolute top-0 left-0 block w-full h-full transition-all duration-300 translate-y-full z-10  bg-primary-dark;
 }
 
 .content {
-  @apply absolute top-0 left-0 flex flex-col items-start gap-1-xs w-full h-full p-3-xs transition-transform duration-300 translate-y-full z-20;
+  @apply absolute top-0 left-0 flex flex-col items-start gap-1-xs w-full h-full p-2-xs transition-transform duration-300 translate-y-full z-20;
 }
 
 .card:hover .content,
@@ -18,7 +22,7 @@
 
 .card:hover::after,
 .card:focus::after {
-  @apply translate-y-0 opacity-60;
+  @apply translate-y-0 opacity-90;
 }
 
 .link {
