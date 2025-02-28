@@ -112,11 +112,7 @@
   }
 
   .grid-container {
-    @apply gap-3-xs grid auto-rows-[minmax(400px,1fr)] grid-cols-1 xl:grid-cols-2 2xl:auto-rows-[minmax(220px,1fr)];
-  }
-
-  .grid-container > *:nth-child(odd) {
-    @apply 2xl:row-span-2;
+    @apply gap-3-xs grid auto-rows-[minmax(400px,1fr)] grid-cols-1 xl:grid-cols-2;
   }
 
   .section-title {
